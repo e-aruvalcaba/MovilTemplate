@@ -1,73 +1,66 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="html">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Jekyll v4.1.1">
+  <meta name="description" content="E-Learning">
   <title>Mobile E-Learning</title>
-
-  <!-- <link href="dashboard.css" rel="stylesheet"> -->
   <!-- Bootstrap core CSS -->
+  <link href="awesome/css/all.min.css" rel="stylesheet">
+  <!--load all styles -->
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
   <!-- Custom styles for this template -->
   <link href="offcanvas.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand mr-auto mr-lg-0" href="#">Offcanvas navbar</a>
+
+  <!-- loader -->
+
+  <div class="loading-page" id="loader">
+    <div class="counter">
+      <p>Cargando</p>
+      <h1>0%
+      </h1>
+      <hr />
+    </div>
+  </div>
+
+  <!-- loader -->
+  <nav class="navbar fixed-top navbar-dark bg-dark d-none" id="navbar">
+    <a class="navbar-brand mr-auto mr-lg-0" href="#">E-Trainers</a>
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
-  <!-- <main role="main" class="container-fluid">
-    
-  </main> -->
 
-  <div class="container-fluid">
+  <div class="container-fluid d-none" id="superContainer">
     <div class="row">
-      <div class="col-lg-2 bg-dark sidebarCol" id="sidebarCol">
+      <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
         <div class="navbar-collapse offcanvas-collapse col-lg-3" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item active" data-toggle="offcanvas">
               <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" data-toggle="offcanvas">
               <a class="nav-link" href="#">Notifications</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" data-toggle="offcanvas">
               <a class="nav-link" href="#">Profile</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" data-toggle="offcanvas">
               <a class="nav-link" href="#">Switch account</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">Settings</a>
               <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#" data-toggle="offcanvas">Action</a>
+                <a class="dropdown-item" href="#" data-toggle="offcanvas">Another action</a>
+                <a class="dropdown-item" href="#" data-toggle="offcanvas">Something else here</a>
               </div>
             </li>
           </ul>
@@ -78,15 +71,37 @@
         </div>
       </div>
 
-      <div class="col offset-lg-2">
+      <div class="col">
         <div class="nav-scroller bg-white shadow-sm">
           <nav class="nav nav-underline d-flex justify-content-center p-1">
             <a href="" class="btn btn-primary" onclick="loadContent(event)">Load content</a>
+            <button class="btn btn-primary" onclick="animateme()">Animateme</button>
+            <button class="btn btn-primary" onclick="animatemeBack()">Animateme Back</button>
 
           </nav>
         </div>
-        <div id="contenido" name="contenido"></div>
-        <div id="content"></div>
+
+        <div class="contenido" class="col">
+          <div class="mainContent" id="content">asasdsadasdasda asdasdasdsa dasd asdasdas dasd asd asdasdasd asdasd sa
+            <button>asdasdsadsa</button>
+          </div>
+        </div>
+
+        <div class="control-buttons">
+
+          <div class="backButton" id="control-button-back">
+            <a href="#" class="float nextAnimation my-float-back">
+              <i class="fa fa-arrow-left my-float"></i>
+            </a>
+          </div>
+          <div class="nextButton" id="control-button-next">
+            <a href="#" class="float nextAnimation">
+              <i class="fa fa-arrow-right my-float"></i>
+            </a>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -94,26 +109,8 @@
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="offcanvas.js"></script>
-  <script>
-    $(document).ready(function () {
-
-      // $('#content').load("test.html");
-      // $('#sidebarCol').css("width", $('#sidebarCol').width().toString());
-      // $("#sidebarCol").width(('#sidebarCol').width());
-
-    });
-
-    // window.onresize = function(){
-    //   $('#sidebarCol').css("width", $('#sidebarCol').width().toString());
-    // }
-
-    function loadContent(e) {
-      e.preventDefault();
-      $('#content').load("soplas/new.html");
-      // alert('finish')
-    }
-  </script>
+  <script src="js/gsap.min.js"></script>
+  <script src="start.js"></script>
 </body>
 
 </html>
