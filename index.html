@@ -16,7 +16,7 @@
   <link href="offcanvas.css" rel="stylesheet">
 </head>
 
-<body>
+<body style='background-image: url("assets/img/fondo_blur.jpg");'>
 
   <!-- loader -->
 
@@ -31,86 +31,80 @@
 
   <!-- loader -->
   <nav class="navbar fixed-top navbar-dark bg-dark d-none" id="navbar">
-    <a class="navbar-brand mr-auto mr-lg-0" href="#">E-Trainers</a>
+    <img src="IMAGES PRUEBA/logs.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplciacion"
+      class="navbar-brand mr-lg-0" href="#"></img>
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
 
-  <div class="container-fluid d-none" id="superContainer">
+  <div class="container d-none" id="superContainer">
     <div class="row">
       <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
-        <div class="navbar-collapse offcanvas-collapse col-lg-3" id="navbarsExampleDefault">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active" data-toggle="offcanvas">
-              <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item" data-toggle="offcanvas">
-              <a class="nav-link" href="#">Notifications</a>
-            </li>
-            <li class="nav-item" data-toggle="offcanvas">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item" data-toggle="offcanvas">
-              <a class="nav-link" href="#">Switch account</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Settings</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="#" data-toggle="offcanvas">Action</a>
-                <a class="dropdown-item" href="#" data-toggle="offcanvas">Another action</a>
-                <a class="dropdown-item" href="#" data-toggle="offcanvas">Something else here</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+        <div class="navbar-collapse offcanvas-collapse col-lg-3" id="menuContainer">
+          <!-- Contenido de menu -->
         </div>
       </div>
 
       <div class="col">
-        <div class="nav-scroller bg-white shadow-sm">
-          <nav class="nav nav-underline d-flex justify-content-center p-1">
-            <a href="" class="btn btn-primary" onclick="loadContent(event)">Load content</a>
-            <button class="btn btn-primary" onclick="animateme()">Animateme</button>
-            <button class="btn btn-primary" onclick="animatemeBack()">Animateme Back</button>
+      </div>
 
-          </nav>
+      <div class="contenido" class="col">
+        <div class="mainContent" id="content">
+
         </div>
+      </div>
 
-        <div class="contenido" class="col">
-          <div class="mainContent" id="content">asasdsadasdasda asdasdasdsa dasd asdasdas dasd asd asdasdasd asdasd sa
-            <button>asdasdsadsa</button>
-          </div>
+      <!-- MOBILE BOTONES FLOTANTES  -->
+      <div class="control-buttons d-lg-none">
+        <div class="backButton" id="control-button-back">
+          <a href="#" class="float nextAnimation my-float-back">
+            <i class="fa fa-arrow-left my-float"></i>
+          </a>
         </div>
-
-        <div class="control-buttons">
-
-          <div class="backButton" id="control-button-back">
-            <a href="#" class="float nextAnimation my-float-back">
-              <i class="fa fa-arrow-left my-float"></i>
-            </a>
-          </div>
-          <div class="nextButton" id="control-button-next">
-            <a href="#" class="float nextAnimation">
-              <i class="fa fa-arrow-right my-float"></i>
-            </a>
-
-          </div>
+        <div class="nextButton" id="control-button-next">
+          <a href="#" class="float nextAnimation">
+            <i class="fa fa-arrow-right my-float"></i>
+          </a>
         </div>
-
       </div>
     </div>
   </div>
+  </div>
+
+  <!-- FOOTER SOLO PARA LA VISTA DESKTOP -->
+  <footer class="fixed-bottom bg-dark d-none d-lg-flex justify-content-center">
+    <!-- OCULTAR EN VISTAS MOVILES-->
+    <div class="row d-flex justify-content-center" style="color:white">
+
+      <div id="btnAtras" onclick="anterior_frame()" class="disabledButton col-5 d-flex justify-content-around"
+        style="cursor: pointer; font-size: 20px;">
+        <a><i class="fa fa-chevron-left iconColor"></i></a>
+        <p class="reset"> Anterior </p>
+      </div>
+
+      <div id="numTemasCompletados" class="col-2 d-flex justify-content-center"
+        style="cursor: default; font-size: 20px;">
+        <p>1/13</p>
+      </div>
+
+      <div id="btnSiguiente" onclick="siguiente_frame()" class="disabledButton col-5 d-flex justify-content-around"
+        style="cursor: pointer; font-size: 20px;">
+        <p class="reset" style="margin-right: 5px;">
+          Siguiente
+        </p>
+        <a><i class="fa fa-chevron-right iconColor"></i></a>
+      </div>
+
+    </div>
+  </footer>
 
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/gsap.min.js"></script>
   <script src="start.js"></script>
+  <!-- <script src=""></script> -->
 </body>
 
 </html>

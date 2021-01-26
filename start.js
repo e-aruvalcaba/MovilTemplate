@@ -18,9 +18,43 @@ $(document).ready(function () {
 
 })
 
-function loadContent(e) {
+function loadContent(e, index) {
+    arr = ['/movil/temas/botones_contenido.html','/movil/temas/tema1.html', '/movil/temas/cartas_giratorias.html', '/movil/temas/botones_contenido.html', '/movil/temas/texto1Bloque.html', '/movil/temas/cartas_giratorias.html', '/movil/temas/acordeon.html']
     e.preventDefault();
-    animateContentOut();
+
+    switch (index) {
+        case 1:
+            // iframe = document.getElementById("b1");
+            setTimeout(() => {
+                $('#b1').load(arr[index - 1], () => {
+                    setTimeout(() => {
+                        // animateContentIn();
+                    }, 1000);
+                });
+            }, 100);
+            break;
+        case 2:
+            // iframe = document.getElementById("b2");
+            setTimeout(() => {
+                $('#b2').load(arr[index - 1], () => {
+                    setTimeout(() => {
+                        // animateContentIn();
+                    }, 1000);
+                });
+            }, 100);
+            break;
+        case 3:
+            setTimeout(() => {
+                $('#b3').load(arr[index - 1], () => {
+                    setTimeout(() => {
+                        // animateContentIn();
+                    }, 1000);
+                });
+            }, 100);
+            break;
+        default:
+            break;
+    }
 
     // $('#content').animate({
     //     opacity: 0,
@@ -31,11 +65,65 @@ function loadContent(e) {
     // });
 
     setTimeout(() => {
-        $('#content').load("soplas/new.html", () => {
+        $('#content').load(arr[index - 1], () => {
             setTimeout(() => {
                 animateContentIn();
             }, 1000);
         });
+    }, 100);
+
+    // setTimeout(() => {
+    //     $('#content').load("soplas/new.html", () => {
+    //         $('#content').animate({
+    //             opacity: 1,
+    //             left: "0px",
+    //             display: "block"
+    //         }, 1000, function () {
+    //             // Animation complete.
+    //         });
+    //     })
+    // }, 500);
+}
+
+function loadContentIframe(index) {
+    arr = ['/movil/temas/tema1.html', 'movil/temas/cartas_giratorias.html', 'movil/temas/acordeon.html']
+    animateContentOut();
+    let iframe;
+    switch (index) {
+        case 1:
+            iframe = document.getElementById("b1");
+            break;
+        case 2:
+            iframe = document.getElementById("b2");
+            break;
+        case 3:
+            iframe = document.getElementById("b3");
+            break;
+        default:
+            break;
+    }
+    // $('#content').animate({
+    //     opacity: 0,
+    //     left: "-9999px",
+    //     display: "none"
+    // }, 500, function () {
+    //     // Animation complete.
+    // });
+
+    setTimeout(() => {
+
+        iframe.src = arr[index - 1];
+        iframe.onload = function () {
+            setTimeout(() => {
+                animateContentIn();
+            }, 1000);
+        }
+
+        // $('#content').load(arr[index - 1], () => {
+        //     setTimeout(() => {
+        //         animateContentIn();
+        //     }, 1000);
+        // });
     }, 100);
 
     // setTimeout(() => {
@@ -66,14 +154,14 @@ $('[data-toggle="offcanvas"]').on('click', () => {
 
 function animateme() {
     $(".float").removeClass("nextAnimation");
-    gsap.to($(".float"), {duration: 1, y: "500"});
+    gsap.to($(".float"), { duration: 1.5, y: "500" });
 }
 
 function animatemeBack() {
-    gsap.to($(".float"), {duration: 2,  ease: "elastic.out(1, 0.3)", y: "0", onComplete: addNextAnimation});
+    gsap.to($(".float"), { duration: 2, ease: "elastic.out(1, 0.3)", y: "0", onComplete: addNextAnimation });
 }
 
-function addNextAnimation(){
+function addNextAnimation() {
     $(".float").css("y", "0px")
     $(".float").addClass("nextAnimation");
 }

@@ -5,6 +5,13 @@ body{
   z-index: 9999 !important;
 }
 
+footer {
+  position: fixed;
+  height: 35px;
+  bottom: 0;
+  width: 100%;
+}
+
 .sidebarCol {
   z-index: 9999 !important;
   /* margin-top: 56px; */
@@ -54,6 +61,10 @@ body{
 .my-float{
 	margin-top:22px;
 }
+
+.my-float-back{
+	left: 10px;
+}
 .control-buttons :hover{
   background-color: rgb(59, 194, 243)!important;
 }
@@ -78,6 +89,7 @@ body{
     overflow: hidden;
     overflow-y: hidden;
     max-height: 100vh; /* approximate max height */
+    min-width: 360px!important;
     left:0px;  
     opacity: 1;
     transition-property: all;
@@ -93,8 +105,6 @@ body{
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0.1s, 0.1s, 0.1s, 0.1s);
   }
-}
-.my-float-back{
 }
 .blck_scroll{
   overflow-y: hidden;
@@ -241,3 +251,650 @@ body{
   100% {background-color: rgb(0, 0, 0);  transform: translateY(0px);}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ANIMATE STYLES */
+
+.vertical-center {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.verticalCenterResponsive {
+  margin-top: 20%;
+  transition: all, 0.5s, ease-in;
+}
+
+h1 {
+  color: white;
+}
+
+/*BARRA CANVAS ESTILOS LEGACY */
+
+.barra {
+  background-color: white;
+  border-radius: 0px;
+  display: block;
+  font-size: 1.7vw;
+  height: 25px;
+  text-align: center;
+  width: 80%;
+}
+
+#principal {
+  border-radius: 0px;
+  background-color: #CECECE;
+  margin-top: 1%;
+  margin-bottom: 0%;
+  padding: 1%;
+  width: 60%;
+  text-align: center;
+}
+
+.Contenedor1 {
+  margin-top: 2%;
+  width: 100%;
+}
+
+.Contenedor2 {
+  margin-top: 2%;
+  width: 100%;
+}
+
+.back-link a {
+  color: #4ca340;
+  text-decoration: none;
+  border-bottom: 1px #4ca340 solid;
+}
+
+.back-link a:hover, .back-link a:focus {
+  color: #408536;
+  text-decoration: none;
+  border-bottom: 1px #408536 solid;
+}
+
+.entry-header {
+  text-align: left;
+  width: 80%;
+  max-width: 978px;
+  position: relative;
+  z-index: 10001;
+}
+
+/* Estilos para barra HTML CDI */
+
+.barraInferior {
+  position: absolute;
+  z-index: 7;
+  height: 30px;
+  max-height: 36px;
+  background: rgba(0, 0, 0, .75);
+  /*Eliminado para el tamaño final de 1280x720
+  /* margin-left: 15px; 
+  width: 950px;
+  max-width: 950px; */
+}
+
+/* BARRA HTML ESTILO ARCA CONTINENTAL*/
+
+.barraHTML {
+  max-width: 950px;
+  padding: 0%;
+  margin: 0%;
+  background-color: #d6d6d6;
+  height: 52px;
+}
+
+.barraHTMLLogoBackground {
+  background-color: white;
+  -webkit-border-top-right-radius: 125px;
+  -webkit-border-bottom-right-radius: 125px;
+  -moz-border-radius-topright: 125px;
+  -moz-border-radius-bottomright: 125px;
+  border-top-right-radius: 125px;
+  border-bottom-right-radius: 125px;
+}
+
+.barraHTMLLogo {
+  float: none;
+  padding: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.barraIcons>li {
+  float: right!important;
+}
+
+/* Estilos para los estados del menu y la apariencia del habilitado y deshabilitado */
+
+.iconStyle {
+  background-color: gray!important;
+  border-radius: 76px!important;
+  padding: 0%!important;
+  padding-left: 10px!important;
+  padding-right: 11px!important;
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+  margin-top: 7px!important;
+  margin-right: 7px;
+}
+
+.iconStyle:hover {
+  background-color: crimson!important;
+  transition: 0.5s;
+}
+
+.iconColor {
+  color: white;
+  padding: 0%;
+  /* font-size: 15px; */
+  font-size: 20px;
+}
+
+.Title {
+  font-weight: bold;
+  color: black!important;
+}
+
+.menuHTML {
+  position: absolute;
+  /* z-index: 6; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* width: 350px; */
+  /* height: 550px; */
+  /* max-height: 580px; */
+  /* Nuevo tamaño para dar espacio a la barra inferior  */
+  /* height: 521px; */
+  /* max-height: 521px; */
+  background: rgba(0, 0, 0, .8);
+  display: none;
+  /* max-width: 450px; */
+  /* z-index: 9998; */
+  z-index: 6;
+  /* overflow-x: hidden; */
+  /* Para internet explorer */
+  -ms-overflow-x: hidden;
+  /* For hidden */
+  /* margin-left: -70%!important; */
+  /* Para tamaño final 1280x720 */
+  /* margin-left: 15px; */
+}
+
+.content {
+  min-height: 931px;
+}
+.ultimoContainer {
+  /* position: absolute; */
+  z-index: 9999;
+  width: 950px;
+  /* height: 550px; */
+  height: 115vh;
+  background: rgba(0, 0, 0, .75);
+  display: none;
+  /* margin-left: 15px; */
+  /* max-width: 950px; */
+  position: relative;
+}
+
+.ultimoTema {
+  /* background: dimgray; */
+  background: transparent;
+  border-radius: 10px;
+  /* width: 360px; */
+  width: 450px;
+  padding: 35px;
+}
+
+.btnUltimo {
+  width: 175px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.disabledButton {
+  pointer-events: none!important;
+  opacity: 0.35;
+  cursor: default!important;
+}
+
+.menuTitle {
+  color: white;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.menuIconStyle {
+  color: white;
+  font-size: 6px;
+  /* padding-left: 5px; */
+  /* padding-bottom: 2px; */
+  pointer-events: none;
+}
+
+.menuIconStyleNoIniciado {
+  color: orange;
+  font-size: 6px;
+  opacity: 0.30;
+  pointer-events: all;
+}
+
+.menuIconStyleIniciado {
+  color: orange;
+  font-size: 6px;
+  /* padding-left: 5px; */
+  /* padding-bottom: 2px; */
+  pointer-events: all;
+}
+
+.menuIconStyleCompletado {
+  color: green;
+  font-size: 6px;
+  /* padding-left: 5px; */
+  /* padding-bottom: 2px; */
+  pointer-events: all;
+}
+
+.menuTemaDisabled {
+  color: white;
+  /* font-size: 10px; */
+  padding-left: 5px;
+  padding-bottom: 2px;
+  /* opacity: 0.30; */
+  pointer-events: none;
+}
+
+.menuTemaDesbloqueado {
+  color: white;
+  /* font-size: 10px; */
+  padding-left: 5px;
+  padding-bottom: 2px;
+  pointer-events: all;
+}
+
+/*  */
+
+.menuTemaLibre {
+  color: white;
+  opacity: 0.30;
+  /* font-size: 10px; */
+  padding-left: 5px;
+  padding-bottom: 2px;
+  pointer-events: all;
+}
+
+.tituloModulo {
+  padding-left: 0px;
+}
+
+.tituloModulo>p {
+  padding-left: 0px;
+}
+
+.tituloTemaMenuNoIniciado {
+  opacity: 0.30;
+}
+
+.tituloTemaMenu {
+  padding-left: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: -20px;
+  font-family: sans-serif;
+  transition: all 0.7s ease-out;
+}
+
+.tituloTemaMenu:hover p {
+  color: lightgray;
+  transition: 0.5s, ease-in;
+}
+
+.tituloTemaMenu:hover .menuIconStyle {
+  transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.tituloTemaMenu:hover .menuIconStyleIniciado {
+  transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.tituloTemaMenu:hover .menuIconStyleCompletado {
+  transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.menu-open {
+  display: block;
+}
+
+
+
+/* Comienzan Estilos para las alertas */
+
+.alertasContainer {
+  color: black;
+  font-weight: bold;
+  /* display: none; */
+  float: right;
+  margin-right: 5px!important;
+}
+
+.siguiente {
+  display: inline-block!important;
+  background-color: #fac637;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.completado {
+  display: inline-block!important;
+  background-color: #50b81c;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.mensajes {
+  background-color: transparent!important;
+  color: white;
+  height: 50px!important;
+  max-height: 50px;
+  float: right!important;
+  display: none;
+  margin-bottom: 15px;
+  /* margin-left: 5px!important; */
+}
+
+.progressMod {
+  margin-top: 6px!important;
+  height: 10px!important;
+}
+
+.indent {
+  text-indent: 18px;
+}
+
+.blur {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-Filter: blur(5px);
+}
+
+/* LOADER */
+
+@keyframes load {
+  0% {
+    opacity: 0.08;
+    filter: blur(5px);
+    letter-spacing: 3px;
+  }
+  100% {
+    /*         opacity: 1; */
+    /*         font-size: 12px; */
+    /* 				font-weight:600; */
+    /* 				filter: blur(0); */
+  }
+}
+
+.animate {
+  background-color: black;
+  z-index: 9999;
+  height: 100vh!important;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  font-family: Helvetica, sans-serif, Arial;
+  animation: load 1.2s infinite 0s ease-in-out;
+  animation-direction: alternate;
+  text-shadow: 0 0 1px white;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Mediaquerys para la barra HTML ESTILO ARCA CONTINENTAL */
+
+/* @media only screen and (max-width: 768px) {
+  .CourseTitle {
+    display: none;
+  }
+  .verticalCenterResponsive {
+    margin-top: 10%;
+  }
+  .btnsbarra{
+    padding-left: 0px;
+    padding-right: 20px;    
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .avance {
+    display: none;
+  }
+} */
+
+/* @media only screen and (min-width: 992px) {
+  .verticalCenterResponsive {
+   margin-left: 20%!important;
+  }  
+}
+
+@media only screen and (min-width: 1150px) {
+  .verticalCenterResponsive {
+   margin-left: 25%!important;
+  }  
+}
+
+@media only screen and (min-width: 1200px) {
+  .verticalCenterResponsive {
+   margin-left: 30%!important;
+  }  
+} */
+
+/* @media only screen and (min-width: 600px) and (max-width: 767px) {
+  .CourseTitle {
+    display: none;
+  }
+} */
+/* 
+@media only screen and (max-width: 992px) {
+  .Title {
+    font-size: 14px!important;
+  }
+  .menuDerecha {
+    display: none;
+  }
+  .rowInferior{
+    padding-right: 0px!important;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .menuHTML {
+    margin-left: 0px;
+  }
+  .barraInferior {
+    margin-left: 0px;
+  }
+  .contenedor {
+    width: 100%;
+  }
+} */
+
+/* @media only screen and (min-width: 1060px) {
+  .btnsbarra {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 588px) {
+  .rowInferior {
+    padding-right: 0px!important;
+  }
+} */
+
+/* MEDIA QUERYS PARA CENTRAR EL CONTENEDOR ULTIMO
+@media only screen and (max-width: 599px){
+  .verticalCenterResponsive {
+    margin-top: 10%!important;
+    margin-left: 0%!important;
+    padding: 0%;
+    width: 375px!important;
+   }
+
+   .vertical-center p{
+    font-size: 14px!important;
+   }
+
+   .vertical-center button{
+      width: 150px;
+      margin-right: 3px;
+      margin-left: 3px;
+   }
+}
+@media only screen and (min-width: 599px) and (max-width: 749px){
+  .verticalCenterResponsive {
+    margin-top: 10%!important;
+    margin-left: 3%!important;
+   }
+
+   .vertical-center p{
+    font-size: 14px!important;
+   }
+
+   .vertical-center button{
+      width: 150px;
+      margin-right: 3px;
+      margin-left: 3px;
+   }
+} */
+/* @media only screen and (min-width: 750px) and (max-width: 820px){
+  .verticalCenterResponsive {
+    margin-top: 14%!important;
+    margin-left: 10%!important;
+   }
+
+   .vertical-center p{
+    font-size: 14px!important;
+   }
+
+   .vertical-center button{
+      width: 150px;
+      margin-right: 3px;
+      margin-left: 3px;
+   }
+}
+
+
+@media only screen and (min-width: 821px) and  (max-width: 900px){
+  .verticalCenterResponsive {
+    margin-top: 14%!important;
+    margin-left: 13%!important;
+   }
+}
+
+@media only screen and (min-width: 901px) and  (max-width: 1100px){
+  .verticalCenterResponsive {
+    margin-left: 20%!important;
+   }
+}
+
+@media only screen and (min-width: 1356px){
+  .verticalCenterResponsive {
+    margin-left: 30%!important;
+   }
+} */
+
+
+
+/* TERMINA */
+/* .temasContainer{
+  scrollbar-base-color: #222;
+  scrollbar-3dlight-color: #222;
+  scrollbar-highlight-color: #222;
+  scrollbar-track-color: #3e3e42;
+  scrollbar-arrow-color: #111;
+  scrollbar-shadow-color: #222;
+  scrollbar-dark-shadow-color: #222; 
+  -ms-overflow-style: -ms-autohiding-scrollbar; */
+/* } */
+
+/* IE
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .scrollable {
+          margin-right: -10px;
+          padding-top: 32px;
+          margin-top: -32px;
+          margin-bottom: -32px;
+          padding-bottom: 32px;
+  
+
+          scrollbar-base-color: #efefef;
+          scrollbar-face-color: #666666;
+          scrollbar-3dlight-color: #666666;
+          scrollbar-highlight-color: #666666;
+          scrollbar-track-color: #efefef;
+          scrollbar-arrow-color: #666666;
+          scrollbar-shadow-color: #666666;
+          scrollbar-dark-shadow-color: #666666;
+          scrollbar-track-color:  #efefef;
+          scrollbar-3dlight-color:  #efefef;
+          scrollbar-darkshadow-color:  #efefef;
+          scrollbar-arrow-color:  #efefef;
+    }
+    
+        .scrollable:after {
+          content: "";
+          height: 32px;
+          display: block;
+      }
+      
+  }
+  
+  Edge
+  @supports (-ms-ime-align:auto)  {
+  .scrollable {
+          margin-right: -10px;
+          padding-top: 16px;
+          margin-top: -16px;
+          margin-bottom: -16px;
+          padding-bottom: 16px;
+  }
+    
+  .scrollable:after {
+      content: "";
+      height: 16px;
+      display: block;
+  }
+  }
+  
+  Firefox
+  From version 64 - https://drafts.csswg.org/css-scrollbars-1/
+  .scrollable {
+      scrollbar-width: thin;
+      scrollbar-color: #666666 #efefef;
+  } */
