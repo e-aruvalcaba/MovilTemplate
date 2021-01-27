@@ -16,7 +16,10 @@
   <link href="offcanvas.css" rel="stylesheet">
 </head>
 
-<body style='background-image: url("assets/img/fondo_blur.jpg");'>
+<body style='background: rgb(46,53,54);
+background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%);'>
+  <!-- background: rgb(46,53,54);
+background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%); -->
 
   <!-- loader -->
 
@@ -31,26 +34,59 @@
 
   <!-- loader -->
   <nav class="navbar fixed-top navbar-dark bg-dark d-none" id="navbar">
-    <img src="IMAGES PRUEBA/logs.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplciacion"
+    <img src="IMAGES PRUEBA/logs.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplicación"
       class="navbar-brand mr-lg-0" href="#"></img>
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
 
-  <div class="container d-none" id="superContainer">
+  <div class="container d-none" id="superContainer" style="width: 100%">
     <div class="row">
       <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
-        <div class="navbar-collapse offcanvas-collapse col-lg-3" id="menuContainer">
+        <div class="navbar-collapse offcanvas-collapse col-12" id="menuContainer" style="color: white">
+          <p class="row d-flex justify-content-center"><strong>Menú del Curso</strong></p>
           <!-- Contenido de menu -->
+          <!-- <div class="col-12 d-flex align-items-center">
+            <i class="fas fa-circle" style="font-size: 8px; margin-top: 3px; color: white"></i>
+            <p class="reset" style="margin-left: 5px!important; font-size: 14px;">Tema 1 No iniciado</p>
+          </div> -->
+
+          <div class="col-12 d-flex reset" style="padding-bottom: 1px!important;">
+            <i class="fas fa-circle" style="font-size: 8px; margin-top: 8px; color: white"></i>
+            <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema 1 No iniciado</p>
+          </div>
+
+          <div class="col-12 d-flex reset" style="padding-bottom: 1px!important;">
+            <i class="fas fa-circle" style="font-size: 8px; margin-top: 8px; color: orange"></i>
+            <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema 1 Iniciado</p>
+          </div>
+
+          <div class="col-12 d-flex reset" style="padding-bottom: 1px!important;">
+            <i class="fas fa-circle" style="font-size: 8px; margin-top: 8px; color:green;"></i>
+            <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema 1 Completado</p>
+          </div>
+
+          <div class="col-12 d-flex reset" style="padding-bottom: 1px!important;">
+            <i class="fas fa-circle" style="font-size: 8px; margin-top: 8px; color:green;"></i>
+            <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Configuraciones necesarias para un buen rol de ejecutivo</p>
+          </div>
+
+          <div class="col-12 d-flex reset" style="padding-bottom: 1px!important;">
+            <i class="fas fa-circle" style="font-size: 8px; margin-top: 8px; color:green;"></i>
+            <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Requerimientos generales para el manejo del material de empaque</p>
+          </div>
+
+
         </div>
       </div>
 
       <div class="col">
+        <button class="btn-primary" onclick="loadContent(event, 2)">Dame</button>
       </div>
 
-      <div class="contenido" class="col">
-        <div class="mainContent" id="content">
+      <div class="contenido" class="col" >
+        <div class="mainContent" id="content" style="height:100%;">
 
         </div>
       </div>

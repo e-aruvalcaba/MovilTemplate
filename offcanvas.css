@@ -1,6 +1,15 @@
 body{
   margin-top: 56px;
 }
+
+a{
+  text-decoration: none!important;
+}
+
+.reset{
+  margin: 0%!important;
+  padding: 0%!important;
+}
 .navbar_col {
   z-index: 9999 !important;
 }
@@ -104,6 +113,10 @@ footer {
     transition-property: all;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0.1s, 0.1s, 0.1s, 0.1s);
+  }
+
+  body{
+    height: 100vh;
   }
 }
 .blck_scroll{

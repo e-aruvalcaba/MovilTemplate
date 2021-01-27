@@ -24,21 +24,17 @@ function loadContent(e, index) {
 
     switch (index) {
         case 1:
-            // iframe = document.getElementById("b1");
             setTimeout(() => {
                 $('#b1').load(arr[index - 1], () => {
                     setTimeout(() => {
-                        // animateContentIn();
                     }, 1000);
                 });
             }, 100);
             break;
         case 2:
-            // iframe = document.getElementById("b2");
             setTimeout(() => {
                 $('#b2').load(arr[index - 1], () => {
                     setTimeout(() => {
-                        // animateContentIn();
                     }, 1000);
                 });
             }, 100);
@@ -47,7 +43,6 @@ function loadContent(e, index) {
             setTimeout(() => {
                 $('#b3').load(arr[index - 1], () => {
                     setTimeout(() => {
-                        // animateContentIn();
                     }, 1000);
                 });
             }, 100);
@@ -55,15 +50,6 @@ function loadContent(e, index) {
         default:
             break;
     }
-
-    // $('#content').animate({
-    //     opacity: 0,
-    //     left: "-9999px",
-    //     display: "none"
-    // }, 500, function () {
-    //     // Animation complete.
-    // });
-
     setTimeout(() => {
         $('#content').load(arr[index - 1], () => {
             setTimeout(() => {
@@ -71,18 +57,6 @@ function loadContent(e, index) {
             }, 1000);
         });
     }, 100);
-
-    // setTimeout(() => {
-    //     $('#content').load("soplas/new.html", () => {
-    //         $('#content').animate({
-    //             opacity: 1,
-    //             left: "0px",
-    //             display: "block"
-    //         }, 1000, function () {
-    //             // Animation complete.
-    //         });
-    //     })
-    // }, 500);
 }
 
 function loadContentIframe(index) {
@@ -102,13 +76,6 @@ function loadContentIframe(index) {
         default:
             break;
     }
-    // $('#content').animate({
-    //     opacity: 0,
-    //     left: "-9999px",
-    //     display: "none"
-    // }, 500, function () {
-    //     // Animation complete.
-    // });
 
     setTimeout(() => {
 
@@ -119,24 +86,7 @@ function loadContentIframe(index) {
             }, 1000);
         }
 
-        // $('#content').load(arr[index - 1], () => {
-        //     setTimeout(() => {
-        //         animateContentIn();
-        //     }, 1000);
-        // });
     }, 100);
-
-    // setTimeout(() => {
-    //     $('#content').load("soplas/new.html", () => {
-    //         $('#content').animate({
-    //             opacity: 1,
-    //             left: "0px",
-    //             display: "block"
-    //         }, 1000, function () {
-    //             // Animation complete.
-    //         });
-    //     })
-    // }, 500);
 }
 
 function animateContentOut() {
