@@ -1,111 +1,5 @@
 var isLoadingNow = true;
 var intervalo;
-
-$(document).ready(function () {
-    var counter = 0;
-    var c = 0;
-    intervalo = setInterval(function () {
-        $(".loading-page .counter h1").html(c + "%");
-        $(".loading-page .counter hr").css("width", c + "%");
-
-        counter++;
-        c++;
-
-        if (counter == 100 && isLoadingNow == false) {
-            clearInterval(intervalo);
-            $("#loader").css("display", "none");
-            $("#navbar").addClass("d-flex");
-            $("#superContainer").addClass("d-block");
-        }
-    }, 50);
-
-})
-
-function stopLoading() {
-    isLoadingNow = false;
-    clearInterval(intervalo);
-    $("#loader").css("display", "none");
-    $("#navbar").addClass("d-flex");
-    $("#superContainer").addClass("d-block");
-}
-
-function loadContent(path) {
-    // arr = ['/movil/temas/botones_contenido.html', '/movil/temas/tema1.html', '/movil/temas/cartas_giratorias.html', '/movil/temas/botones_contenido.html', '/movil/temas/texto1Bloque.html', '/movil/temas/cartas_giratorias.html', '/movil/temas/acordeon.html']
-    // e.preventDefault();
-    // enterPageTransition();
-    $('#content').load(path, () => {
-        // ¿Que hacer al cargar el contenido?
-        // setTimeout(() => {
-        //     leavePageTransition();
-        // }, 1000); 
-
-        // this.fadeIn();
-    });
-}
-
-function enterPageTransition() {
-    $("#page_transition").css("display", "flex");
-    gsap.to($("#page_transition"), { duration: 0.5, left: 0 });
-}
-function leavePageTransition() {
-    gsap.to($("#page_transition"), { duration: 1, left: -1500 });
-    setTimeout(() => {
-        $("#page_transition").css("display", "none");
-    }, 500);
-}
-
-function animateContentOut() {
-    gsap.to($("#content"), { duration: 0.1, x: -1999, opacity: 0 });
-}
-function animateContentIn() {
-    gsap.to($("#content"), { duration: 0.2, x: 0, ease: "none", opacity: 1, });
-}
-
-$('[data-toggle="offcanvas"]').on('click', () => {
-    $('.offcanvas-collapse').toggleClass('open');
-    blockScrollOnMobile();
-    callMenu();
-});
-
-function animateme() {
-    $(".float").removeClass("nextAnimation");
-    gsap.to($(".float"), { duration: 1.5, y: "500" });
-}
-
-function animatemeBack() {
-    gsap.to($(".float"), { duration: 2, ease: "elastic.out(1, 0.3)", y: "0", onComplete: addNextAnimation });
-}
-
-function addNextAnimation() {
-    $(".float").css("y", "0px")
-    $(".float").addClass("nextAnimation");
-}
-
-function callMenu() {
-    if ($('#sidebarCol').hasClass("menu-hide")) {
-        $('#sidebarCol').removeClass("menu-hide");
-        $('#sidebarCol').addClass("menu-show")
-    } else {
-        if ($('#sidebarCol').hasClass("menu-show")) {
-            $('#sidebarCol').removeClass("menu-show");
-            $('#sidebarCol').addClass("menu-hide");
-            $('.navbar-collapse').removeClass("open");
-        }
-    }
-}
-
-function blockScrollOnMobile() {
-    if ($('.offcanvas-collapse').hasClass('open')) {
-        $(".html").addClass("blck_scroll");
-    } else {
-        $(".html").removeClass("blck_scroll");
-    }
-}
-
-
-
-
-
 // INICIA CLONACION DE FUNCIONALIDAD ANIMATE 2017
 
 /*
@@ -205,43 +99,157 @@ var ListaAudios = [];
 var moviePlay = "";
 var ListaPreloadAudio = [];
 
-window.onresize = function () {
-    let maxHeight = window.screen.height,
-        maxWidth = window.screen.width,
-        curHeight = window.innerHeight,
-        curWidth = window.innerWidth;
+/**
+ * Funcionalidad del nuevo cargador
+ */
+$(document).ready(function () {
+    var counter = 0;
+    var c = 0;
+    intervalo = setInterval(function () {
+        $(".loading-page .counter h1").html(c + "%");
+        $(".loading-page .counter hr").css("width", c + "%");
 
-    if (maxWidth == curWidth && maxHeight >= (curHeight - 10) && maxHeight <= (curHeight + 10)) {
-        fullscreen = true;
-    } else {
-        fullscreen = false;
-    }
+        counter++;
+        c++;
 
-    if (fullscreen) {
-        fullscreen = true;
-        $(".contenedor").css("width", "100%");
-    } else {
-        fullscreen = false;
-        $(".contenedor").css("width", "75%");
-    }
+        // if (counter == 100){
+        //     clearInterval(intervalo);
+        // }
 
-    // if (debug) {
-    //     console.log("--------------------------------------"); console.log($("#menuHTML").height());	// console.log($("#div_contenido").height());	// console.log("--------------------------------------");
-    // }
-    // $("#menuHTML").height($("#div_contenido").height() - 30);
-    // $("#menuHTML").height($("#div_contenido").height() - 30);
-    // $("#temasContainer").height($("#menuHTML").height() - 100);
-    // $("#barraInferior").width($("#div_contenido").width() + 1);
-    // $("#mensajesHTML").width($("#div_contenido").width());
-    // $("#ultimoContainer").width($("#div_contenido").width());
-    // let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    // let diff = h - $("#content").height();
-    // $("#content").css("margin-top", (((diff / 2) - 10).toString() + "px"));
+        if (counter == 100 && isLoadingNow == false || counter == 100) {
+            if(intervalo){
+                clearInterval(intervalo);
+            }
+            $("#loader").css("display", "none");
+            $("#navbar").addClass("d-flex");
+            $("#superContainer").addClass("d-block");
+            $("#footer_desktop").addClass("d-lg-flex");
+            
+        }
+    }, 50);
+
+})
+/**
+ * Detener la carga cuando se haya terminado de cargar
+ */
+function stopLoading() {
+    isLoadingNow = false;
+    clearInterval(intervalo);
+    $("#loader").css("display", "none");
+    $("#navbar").addClass("d-flex");
+    $("#superContainer").addClass("d-block");
 }
+
+function loadContent(path) {
+    // enterPageTransition();
+    $('#content').load(path, () => {
+        // ¿Que hacer al cargar el contenido?
+        setTimeout(() => {
+            gsap.to($('#content'), { duration: 0.5, opacity: 1 })
+        }, 1000);
+    });
+}
+
+function enterPageTransition() {
+    $("#page_transition").css("display", "flex");
+    gsap.to($("#page_transition"), { duration: 0.5, left: 0 });
+}
+function leavePageTransition() {
+    gsap.to($("#page_transition"), { duration: 1, left: -1500 });
+    setTimeout(() => {
+        $("#page_transition").css("display", "none");
+    }, 500);
+}
+
+function animateContentOut() {
+    gsap.to($("#content"), { duration: 0.1, x: -1999, opacity: 0 });
+}
+function animateContentIn() {
+    gsap.to($("#content"), { duration: 0.2, x: 0, ease: "none", opacity: 1, });
+}
+
+$('[data-toggle="offcanvas"]').on('click', () => {
+    $('.offcanvas-collapse').toggleClass('open');
+    blockScrollOnMobile();
+    callMenu();
+});
+
+function animateme() {
+    $(".float").removeClass("nextAnimation");
+    gsap.to($(".float"), { duration: 1.5, y: "500" });
+}
+
+function animatemeBack() {
+    gsap.to($(".float"), { duration: 2, ease: "elastic.out(1, 0.3)", y: "0", onComplete: addNextAnimation });
+}
+
+function addNextAnimation() {
+    $(".float").css("y", "0px")
+    $(".float").addClass("nextAnimation");
+}
+
+function callMenu() {
+    if ($('#sidebarCol').hasClass("menu-hide")) {
+        $('#sidebarCol').removeClass("menu-hide");
+        $('#sidebarCol').addClass("menu-show")
+    } else {
+        if ($('#sidebarCol').hasClass("menu-show")) {
+            $('#sidebarCol').removeClass("menu-show");
+            $('#sidebarCol').addClass("menu-hide");
+            $('.navbar-collapse').removeClass("open");
+        }
+    }
+}
+
+function blockScrollOnMobile() {
+    if ($('.offcanvas-collapse').hasClass('open')) {
+        $(".html").addClass("blck_scroll");
+    } else {
+        $(".html").removeClass("blck_scroll");
+    }
+}
+
+
+
+
+
+
+// window.onresize = function () {
+//     let maxHeight = window.screen.height,
+//         maxWidth = window.screen.width,
+//         curHeight = window.innerHeight,
+//         curWidth = window.innerWidth;
+
+//     if (maxWidth == curWidth && maxHeight >= (curHeight - 10) && maxHeight <= (curHeight + 10)) {
+//         fullscreen = true;
+//     } else {
+//         fullscreen = false;
+//     }
+
+//     if (fullscreen) {
+//         fullscreen = true;
+//         $(".contenedor").css("width", "100%");
+//     } else {
+//         fullscreen = false;
+//         $(".contenedor").css("width", "75%");
+//     }
+
+//     // if (debug) {
+//     //     console.log("--------------------------------------"); console.log($("#menuHTML").height());	// console.log($("#div_contenido").height());	// console.log("--------------------------------------");
+//     // }
+//     // $("#menuHTML").height($("#div_contenido").height() - 30);
+//     // $("#menuHTML").height($("#div_contenido").height() - 30);
+//     // $("#temasContainer").height($("#menuHTML").height() - 100);
+//     // $("#barraInferior").width($("#div_contenido").width() + 1);
+//     // $("#mensajesHTML").width($("#div_contenido").width());
+//     // $("#ultimoContainer").width($("#div_contenido").width());
+//     // let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+//     // let diff = h - $("#content").height();
+//     // $("#content").css("margin-top", (((diff / 2) - 10).toString() + "px"));
+// }
 
 // Funciones para el control del audio
 function getAudioInstance() {
-    // $("#templateAudio").attr('crossorigin', 'anonymous');  
     return $("#templateAudio");
 }
 /**
@@ -250,7 +258,6 @@ function getAudioInstance() {
 function reiniciarCurso() {
     habilitar_deshabilitarBarra("h");
     // Resetear el trak intentos, avance y el ultimo visto
-    // TRAK = [];
     TRAK = iniciarTrak();
     intentoAct = 0;
     ULTIMO = 1;
@@ -346,28 +353,33 @@ function mostrarTemaCompletado(texto) {
  * @description Crea dinamicamente los elementos mostrados en el menuHTML ademas les asigna su evento clic y los elementos como el titulo del curso evaluaciones etc.
  */
 function populateMenu(jsonob) {
-    let modulosbreak = [];
+    let modulosbreak = [0, 2];
     // Agregar Nombre del Curso
-    // 
-    // $("#menuContainer").append("<div id='menuTitle' class='col-xs-12 menuTitle'>Menú del curso </div>");
-    // 
     let consecutivo = 0;
     for (let index = 0; index < jsonob.Modulos.length; index++) {
         for (let j = 0; j < jsonob.Modulos[index]['Mod' + (index + 1)].length; j++) {
             id = consecutivo;
+            // debugger
             if (modulosbreak.indexOf(j) !== -1) { //(j === 0) {
 
-                // style='padding-left: 30px;' //Agregar este pading si se necesita estilo de portada de modulo y temas
                 $("#temasContainer").append(
                     "<div id='" + (consecutivo + 1) + "' onclick='llamarTema(" + (consecutivo) + ")' class='col-12 d-flex reset paddingMobile tituloTemaMenu' style='padding-top: 7px!important' data-toggle='offcanvas'>" +
-                    "<i class='fas fa-circle menuIconNoIniciado pl-2'></i>" +
+                    "<i class='fas fa-circle menuIcon pl-2'></i>" +
                     "<p class='reset menuParag'>" + jsonob.Modulos[index]['Mod' + (index + 1)][j] + "</p>" +
                     "</div>"
                 );
             } else {
+                // $("#temasContainer").append(
+                //     "<div id='" + (consecutivo + 1) + "' onclick='llamarTema(" + (consecutivo) + ")' class='col-12 d-flex reset paddingMobile tituloTemaMenu' style='padding-left: 30px!important; padding-top: 7px!important' data-toggle='offcanvas'>" +
+                //     "<i class='fas fa-circle menuIcon pl-2'></i>" +
+                //     "<p class='reset menuParag'>" + jsonob.Modulos[index]['Mod' + (index + 1)][j] + "</p>" +
+                //     "</div>"
+                // );
+
+                // SI se necesita el margen se habilita el codigo de arriba
                 $("#temasContainer").append(
                     "<div id='" + (consecutivo + 1) + "' onclick='llamarTema(" + (consecutivo) + ")' class='col-12 d-flex reset paddingMobile tituloTemaMenu' style='padding-top: 7px!important' data-toggle='offcanvas'>" +
-                    "<i class='fas fa-circle menuIconNoIniciado pl-2'></i>" +
+                    "<i class='fas fa-circle menuIcon pl-2'></i>" +
                     "<p class='reset menuParag'>" + jsonob.Modulos[index]['Mod' + (index + 1)][j] + "</p>" +
                     "</div>"
                 );
@@ -379,7 +391,7 @@ function populateMenu(jsonob) {
         }// end for Temas
     }//End Main For
 
-    stopLoading();
+    
 }// end PopulateMenu function
 
 /**
@@ -421,30 +433,16 @@ if (debug) {
 }
 function initialize() {
 
-    // if (!detectarMovil()) { //bloquear curso si se detecta un navegador mobile 
-    // var myVar = setInterval(myTimer, 30);
     setTimeout(inicializar, 2000);
-    // setTimeout(function () {
-    //     clearInterval(myVar);
-    // }, 1999);
-    window.onresize();
+    // window.onresize();
     if (cursoConAudio) {
         audio = getAudioInstance();
     }
-    // audio[0].play();
-    // } else {
-    //     //Bloquear curso
-    //     $("#blocked").html("Este curso no es compatible con navegadores moviles, favor de lanzarlo en PC o Laptop. Error code: x00001");
-    //     $("#coursebl").css("display", "block");
-    // }
-
 }
+
 function preloadAudio(url) {
     console.log("trying to preload " + url);
     var audioLoaded = new Audio();
-    // once this file loads, it will call loadedAudio()
-    // the file will be kept by the browser as cache
-    //   audioLoaded.addEventListener('canplaythrough', false);
 
     audioLoaded.addEventListener('error', function failed(e) {
         console.log("COULD NOT LOAD AUDIO");
@@ -477,7 +475,7 @@ function preloadImages(arrayOfImages) {
     // 	{src:"images/AC_H05_03_ES_atlas_.png?1606700409514", id:"AC_H05_03_ES_atlas_"}
     // ]}
 
-    queue.loadFile({ src: "temas/images/AC_H05_03_ES_atlas_.png?1606700409514", id: "AC_H05_03_ES_atlas_" });
+    // queue.loadFile({ src: "temas/images/AC_H05_03_ES_atlas_.png?1606700409514", id: "AC_H05_03_ES_atlas_" });
 
     // 	for (let i = 0; i < arrayOfImages.length; i++) {
     // //		const element = ;
@@ -494,15 +492,7 @@ function handleComplete() {
     console.log("Imagen Cargada")
 }
 
-// function myTimer() {
-//     document.getElementById("loaderText").innerHTML = "Cargando <br /> <br /> " + contador + "%";
-//     if (contador < 100)
-//         contador++;
-// }
 function inicializar() {
-    // Ocultar loader
-    // $("#loader-wrappler").remove();
-    // window.clearInterval(myVar)
     InitApi();
 }
 /**
@@ -517,14 +507,6 @@ function InitApi() {
     }
     getAPI(); //Inicializa el API para el uso de las funciones con SCORM que se encuentran en api.JS.
     IdentificarEstado();
-    // Setear el height del menu html igual al tamaño del contenido.
-    // document.getElementById("menuHTML").style.height = (document.getElementById("div_contenido").style.height - 30) + 'px';
-    // $("#menuHTML").height($("#div_contenido").height() - 30);
-    // $("#ultimoContainer").width($("#div_contenido").width() + 3);
-    // let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    // let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    // let diff = h - $("#content").height();
-    // $("#content").css("margin-top", ((diff / 2).toString() + "px"));
 }
 /**
  * @param NA
@@ -549,7 +531,6 @@ function IdentificarEstado() {
             } else {
                 leeOnline();
                 ONLINE = true;
-                //Esta funcion esta en el API.JS se llama y llena la variable sData
                 new_nswf_DoFSCommand("getParam", "");
             }
         } else {
@@ -578,8 +559,6 @@ function initConfig(jsonob) {
             Rutas.push((jsonob["Rutas"][i]["Rut" + (i + 1)])[j]); // se guardan en un arreglo
             index++;
         }
-        // Rutas[i] = jsonob["Rutas"][i]["Rut" + indexRutas][j];
-        // indexRutas++;
     }
     Total = Rutas.length; // total de rutas/temas
     TotalArchivos = Rutas.length; // se guarda el total de los archivos no borrar!  
@@ -670,7 +649,7 @@ function leeLocal() {
  * @description Establece los valores contenidos en el objeto JSON del curso que fue leido previamente del LocalStorage o el CMI SuspendData del LMS y los asigna a objetos locales para trabajarlos.
  */
 function setValues(ob) {
-    
+
     ULTIMO = ob.Ultimo;
     Avance = ob.Avance;
     oportunidades = ob.Evaluaciones[0].MaxIntentos; // Will be deprecated, not functional for multiple evals MUS BE AN ARRAY
@@ -692,10 +671,6 @@ function setValues(ob) {
     if (cursoConAudio) {
         ListaAudios = ob.Audios; //Nueva implementacion 21 11 2020 - Manejar audios del curso
     }
-
-    // for (let i = 0; i < ob.Pag.length; i++) {
-    //     PagTotal += parseInt(ob.Pag[i]);
-    // }
 }
 
 function iniciarTrak() {
@@ -785,39 +760,6 @@ function imprimirIframe() {
     window.frames["Contenido"].print();
 }
 
-/*
-//Funcion para mostrar un mensaje, SWAL desde animate
-function PopUp(texto, titulo, icono) {
-    var efecto = "";
-    if (icono == "error") {
-        efecto = 'animated shake';
-    } else {
-        efecto = 'animated zoomIn';
-    }
-    swal({
-            html: '<i>' + texto + '</i>',
-            title: '<i>' + titulo + '</i>',
-            type: '' + icono + '',
-            animation: false,
-            customClass: efecto,
-            allowOutsideClick: false,
-            confirmButtonColor: '#008000',
-            confirmButtonText: '<i>OK!</i>',
-            reverseButtons: true
-        })
-        .then((result) => { // result captura el resultado
-            /*
-            aqui el codigo a realizar al clickear cualquier boton del swal
-            adelante habra mas ejemplos menos comentados con respecto al uso de swal
-            todo lo que necesitas saber esta en https://sweetalert2.github.io/
-            ojo! sweetAlert es diferente a sweetAlert2 que es el que usamos
-            */
-/*
-        });
-
-}
-*/
-
 /**
  * @param NA
  * @returns void
@@ -829,10 +771,7 @@ function leeOnline() {
         console.log("regresoLMS " + regresoLMS);
     }
     regresoLMS = ComunicacionLMS("leer"); //Recuperar el suspend_data del LMS
-    /*
-    si es la primera vez que entra al curso el suspenData estara vacio
-    de ser asi la informacion que se leera sera la del json generado por excel
-    */
+
     if (regresoLMS == "" || regresoLMS == undefined) {
         if (debug) { console.log("suspent data vacio, generando json"); }
         obj = $.parseJSON(ConfigurationJson);
@@ -870,19 +809,6 @@ function guardarDatos() {
     }
 }
 /**
- * @param NA
- * @returns void
- * @description Limpia el iframe del contenido.
- */
-function limpiarContenido() {
-    if (debug) {
-        console.log("**********************limpiarContenido");
-        // console.log(contenido.src);
-    }
-    // let contenido = document.getElementById("Contenido");
-    // contenido.src = "*";
-}
-/**
  * @param {*}id ID del tema a cargar
  * @returns void
  * @description Carga el contenido especificado por el parametro ID y lo carga en el div contenido del template.
@@ -896,7 +822,7 @@ function ir(id) {
         console.log("**********************IR");
         console.log("ir " + id);
     }
-    limpiarContenido();
+    $('#content').css("opacity", 0);
     if (cursoConAudio) {
         limpiarAudio();
     }
@@ -908,48 +834,15 @@ function ir(id) {
     // }
 
     // Nueva carga de temas
-    loadContent(Rutas[id]);
+    setTimeout(() => {
+        loadContent(Rutas[id]);
+    }, 500);
 
-    // CAMBIAR EL METODO DE CARGA DE LOS TEMAS
-    // let iframe = document.getElementById("Contenido");
-    // iframe.src = Rutas[id];
-    // iframe.onload = function () {
-
-    //     console.log("CARGO EL IFRAME");
-    //     $('#div_contenido').fadeIn();
-    //     if (cursoConAudio) {
-    //         limpiarAudio();
-    //         setTimeout(function () {
-    //             cargarUltimoAudio(currentPagina - 1);
-    //         }, 1500);
-    //     }
-    // };
-    // if(id > 0){
-    //     ULTIMO = id;
-    // }
     IDActual = id;
-    //calcular la pagina donde esta parado el usuario
-    // recalcularPaginaActual(id);
 
     if (debug) { console.log("IDActual: ", IDActual, " ULTIMO: ", ULTIMO); }
     console.log("IDActual: ", IDActual, " ULTIMO: ", ULTIMO);
-    // reset_navegacion();
     actualizaTemasTerminados();
-    // window.onresize();
-}
-/**
- * @param {*}newID	ID del tema que se esta cargando. 
- * @returns void
- * @description Recalcula la pagina actual en la que esta navegando el usuario basandose en el id del tema a cargar.
- */
-function recalcularPaginaActual(newID) {
-    // 
-    // let nPag = 1;
-    // for (let i = 0; i < newID; i++) {
-    //     nPag += parseInt(Pag[i]);
-    // }
-    // currentPagina = nPag;
-
 }
 /**
  * @param {*}Canvas	Canvas del Tema a iniciar. 
@@ -958,7 +851,6 @@ function recalcularPaginaActual(newID) {
  */
 function iniciar_tema() {
     habilitar_deshabilitar_btns(getBtnArray(btnSiguiente), "d", "iniciar_tema");
-    // let reset = true; //valida si el usuario esta entrando el 
     try {
         if (debug) { console.log("inicio_tema", _root.IDActual); }
         //se cambia el estado del tema a 1 "tema iniciado"
@@ -969,17 +861,14 @@ function iniciar_tema() {
         if (controlIrUltimo) { controlIrUltimo = false; }
         //si entra desde un tema adelante con el boton de atras o desde la opcion de ultimo tema ...lo manda a la ultima pagina
         if (controlAtras) { controlAtras = false; }
-     
+
         if (Avance >= _root.ULTIMO) {
             habilitar_deshabilitar_btns(getBtnArray(btnSiguiente), "h", "iniciar_tema");
         }
-        // ULTIMO = IDActual;
         if (IDActual !== 0) {
-            // _root.ULTIMO = _root.IDActual; // se actualiza el ultimo tema
             ULTIMO = IDActual; // se actualiza el ultimo tema			
         }
         _root.Avance = IDActual > _root.Avance ? IDActual : _root.Avance;
-        // actualizarNavegacion(canvasContenido.timeline.position, canvasContenido.timeline.duration);
         guardarDatos();
         if (debug) { console.log("fin inicio tema"); }
 
@@ -1012,7 +901,6 @@ function obtenerFramePorPagina(pagDestino) {
  */
 function final_tema() {
     if (debug) { console.log("*********************FINAL TEMA", _root.IDActual); }
-    //el estado del tema se cambia a 2 lo que significa "terminado"
     if (TRAK[IDActual] < 2) {
         TRAK[IDActual] = 2;
     }
@@ -1076,15 +964,8 @@ function glosarioX() {
 function irUltimo() {
     // let resp = obtenerFramePorPagina(ULTIMO);
     ir(ULTIMO);
-    // controlIrUltimo = true;
     cerrarUltimo();
-    // currentPagina = ULTIMO;
     actualizaTemasTerminados();
-
-    // limpiarAudio();
-    // setTimeout(function () {
-    // 	cargarUltimoAudio(ULTIMO - 1)
-    // }, 1500);
 
     if (cursoConAudio) {
         setTimeout(function () {
@@ -1092,20 +973,12 @@ function irUltimo() {
         }, 1100);
     }
 
-    // if (currentPagina  >= PagTotal) {
-    //     deshabilitarSiguiente();
-    // }
-
-    // ACTUALIZAR CON EL TOTAL DE TEMAS
-    if (Avance >= TRAK.length) {
-        deshabilitarSiguiente();
-    }
+    reset_navegacion();
 }
 function cargarUltimoAudio(ultimoAudioID) {
 
     if (audio[0] && IDActual >= 1) {
         audio[0].src = ListaAudios[ultimoAudioID];
-        // console.log("Ultimo audio cargado " + audio[0].src);
         if (audio[0].src != "") {
             audioIsPlaying = true;
         } else {
@@ -1119,7 +992,6 @@ function cargarUltimoAudio(ultimoAudioID) {
 }
 
 function llamarAudio() {
-
     if (audioIsPlaying) {
         reproducirAudio();
     }
@@ -1154,54 +1026,6 @@ function obtenerMovieclip(valor) {
     if (debug) { console.log("Obtener Canvas"); }
     moviePlay = valor;
 }
-/**
- * @param Valor Canvas del contenido
- * @returns void
- * @description Muestra / Oculta el menuHTML
- */
-// function llamar_menuHTML() {
-//     if (!bussy) {
-//         if (!menu_open) {
-//             $("#menuHTML").addClass("menu-open");
-//             // TweenLite.from($("#menuHTML"), 0.3, { opacity: 0, left: '-400px' });
-//             TweenLite.from($("#menuHTML"), 0.3, { opacity: 0, top: '1400px' });
-//             this.menu_open = true;
-//             setMenuBlur(true);
-//             let stateBackup = [EdoBtns.btnSiguiente, EdoBtns.btnAtras];
-
-//             // Deshabilitar botones atras y siguiente.
-//             habilitar_deshabilitar_btns(getBtnArray(btnAtras, btnSiguiente), "d", "llamar_menu");
-//             EdoBtns.btnSiguiente = stateBackup[0];
-//             EdoBtns.btnAtras = stateBackup[1];
-//         } else {
-//             TweenLite.to($("#menuHTML"), 0.3, { opacity: 0, top: '1400px' });
-//             bussy = false;// Deshabilitar el boton menu
-//             setMenuBlur(false);
-
-//             // Evaluar la habilitacion de los botones segun el edo.
-//             let btnArray = new Array();
-//             if (EdoBtns.btnAtras && currentPagina > 1) { btnArray.push(btnAtras); }
-//             // if (!EdoBtns.btnAtras && !(IDActual !== 1 && pagActual !== 1)) { btnArray.push(btnAtras); }
-//             if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); }
-//             habilitar_deshabilitar_btns(btnArray, "h", "llamar_menu");
-
-//             setTimeout(function () {
-//                 this.menu_open = false;
-//                 $("#menuHTML").removeClass("menu-open");
-//                 $("#btnMenu").css("pointer-events", "all");
-//                 TweenLite.to($("#menuHTML"), 0.01, { opacity: 1, top: "0px" });
-//                 bussy = false;
-//             }, 300);
-//         }
-//     }
-
-//     // Controles de audio en el menu
-//     ejecutarAccionesAudio();
-
-//     window.onresize();
-//     actualizar_menuHTML(TRAK); // actualizar el menu
-//     limpiarSim(); // se limpia la 
-// }
 
 /**
  * @description Desbloquea el contenido del template cuando se termina de escuchar un audio.
@@ -1271,33 +1095,6 @@ function terminaReproduccionAudio() {
     desbloquearAudio();
 }
 
-
-
-//_________________________________________________________________________________________________________________
-
-// function setMenuBlur(action) {
-//     try {
-
-//         let iframe = document.getElementById("Contenido");
-//         var element = iframe.contentWindow.document.querySelector('canvas');
-//         let filterVal = 'blur(0px)';
-
-//         switch (action) {
-//             case true:
-//                 filterVal = 'blur(5px)';
-//                 break;
-//             default:
-//                 filterVal = "";
-//                 break;
-//         }
-
-//         element.style.filter = filterVal;
-//     } catch (error) {
-//         console.log("Error tratando de aplicar blur. Error: " + error)
-//     }
-
-// }
-
 //Función para cargar portada y ocultar contenido no indispensable
 /**
  * @param NA
@@ -1308,54 +1105,9 @@ function cargarPortada() {
     if (debug) { console.log("cargar portada"); }
     var iframe = document.getElementById("Contenido");
     if (debug) { console.log("temas/" + obj.NombreIntro + ".html"); }
-    // iframe.src = "temas/" + obj.NombreIntro + ".html";
-    // $('#div_sim').hide();
-    // $('#loader-wrapper').html("");
-    // $('#div_vid').hide();
-    // limpiarSim();
     ir(0);
+    stopLoading();
 }
-//Función paraactualizar el menu y el estado de los temas
-/**
- * @param NA
- * @returns void
- * @description FUNCION LEGACY ::|:: Actualiza los indicadores y bloqueos/desbloqueos de botones del menu en V1 del Template.
- */
-function actualizarMenu() {
-
-    var cont = 0;
-    var tema = 0;
-    if (debug) { console.log("Actualizar menu " + TRAK); }
-    for (var i = 0; i < Total; i++) {
-        tema = TRAK[i];
-        if (debug) { console.log("ESTADO DE TEMAS " + TRAK[i], tema); }
-        if (tema == 1) {
-            if (debug) { console.log(i, 1); }
-            canvasMenu.cambioEdo(i, 1, true);
-        } else {
-            if (tema == 2) {
-                cont++;
-                if (debug) { console.log(i, 2, cont); }
-                canvasMenu.cambioEdo(i, 2, true);
-            } else {
-                if (debug) { console.log("no entro a ninguno de los anteriores " + i); }
-                canvasMenu.cambioEdo(i, 0, false);
-            }
-        }
-        if (tema == 2 && TRAK[i + 1] == 0) {
-            canvasMenu.cambioEdo((i + 1), 0, true);
-            break;
-        }
-    }
-    //evalua si terminó el curso o si el backdoor esta activo
-    if ((cont >= Total && oportunidades < 3) || backdoor) { //se le reta 2 por: 1 cierre y 1 evaluación
-        this.habilitar_deshabilitar_btns(getBtnArray(btnEval), "h", "actualizar_menu");
-    } else {
-        this.habilitar_deshabilitar_btns(getBtnArray(btnEval), "d", "actualizar_menu");
-        if (debug) { console.log("No se ha completado el curso", cont, Total, terminado); }
-    }
-}
-
 //------------------------------------------------------------------------------------------------------------
 // #region BARRAHTML
 // NUEVAS FUNCIONES PARA LA BARRA HTML
@@ -1368,7 +1120,7 @@ function initbarra(jsonob) {
     btnAtras = document.getElementById("btnAtras");
     btnAtrasD = document.getElementById("btnAtrasD"); // Vista desktop
     btnSiguiente = document.getElementById("btnSiguiente");
-    btnSiguienteD =document.getElementById("btnSiguienteD"); // Vista desktop
+    btnSiguienteD = document.getElementById("btnSiguienteD"); // Vista desktop
     btnMenu = document.getElementById("btnMenu");
     btnEval = document.getElementById("btnEval");
     btnHome = document.getElementById("btnHome");
@@ -1476,11 +1228,10 @@ function getBtnArray(e1, e2, e3, e4, e5, e6, e7, e8) {
         if (paramArray[i] != null && paramArray[i] != undefined) {
             this.btnArray.push(paramArray[i]);
 
-            if(paramArray[i].id === "btnSiguiente"){
-                console.log("Se agrego el boton siguiente al array");
+            if (paramArray[i].id === "btnSiguiente") {
                 this.btnArray.push(btnSiguienteD);
             }
-            if(paramArray[i].id === "btnAtras"){
+            if (paramArray[i].id === "btnAtras") {
                 this.btnArray.push(btnAtrasD);
             }
         }
@@ -1554,18 +1305,15 @@ function habilitar_deshabilitar_eval(action) {
  * 
  * */
 //Función para cambio de frame dentro del div contenido
-function siguiente_frame() {    
-    if(validarLimiteTemas()){
+function siguiente_frame() {
+    if (validarLimiteTemas()) {
         siguienteTema();
         _root.Avance = IDActual > _root.Avance ? IDActual : _root.Avance;
         actualizaTemasTerminados();
         guardarDatos();
     }
 }
-function validarLimiteTemas(){
-    let success = false;
-    console.log( "Validacionde ultimo tema")
-    console.log(IDActual < (TRAK.length - 1));
+function validarLimiteTemas() {
     return IDActual < (TRAK.length - 1);
 }
 /**
@@ -1575,31 +1323,6 @@ function validarLimiteTemas(){
  * 
  * *///Función para retroceder frames dentro del div contenido
 function anterior_frame() {
-
-    // if (!EvalInProgress) {
-    //     // if (pagActual > 0) {  currentPagina -= 1; ULTIMO = currentPagina; temaAnterior(IDActual + 1) }// retrocede una pagina 
-    //     if (pagActual > 0) {
-    //         canvasContenido.gotoAndStop(pagActual - 1); currentPagina -= 1; ULTIMO = currentPagina;
-
-    //         // Funciones audio
-    //         if (cursoConAudio) {
-    //             limpiarAudio();
-
-    //             setTimeout(function () {
-    //                 cargarUltimoAudio(currentPagina - 1);
-    //             }, 1500);
-    //         }
-
-
-    //     }// retrocede una pagina 
-    //     else { if (IDActual > 0) { temaAnterior(); } } //retrocede un tema 	 
-    // } else { //canvasContenido.gotoAndStop(pagActual - 1);
-    //     temaAnterior();
-    //     EvalInProgress = false;
-    // }
-    // reset_navegacion();
-    // actualizaTemasTerminados();
-
     temaAnterior();
     _root.Avance = IDActual > _root.Avance ? IDActual : _root.Avance;
     actualizaTemasTerminados();
@@ -1642,9 +1365,9 @@ var sumaPag = 0;
  * @description Actualiza la navegacion y lleva a cabo validaciones para botones en cada frame.
  * */
 function reset_navegacion() {
-    
+
     //stopAlertas();
-    // debugger
+
     /*Deshabilitar el boton atras */
     this.habilitar_deshabilitar_btns(getBtnArray(this.btnSiguiente), "d", "reset_navegacion");
 
@@ -1654,16 +1377,12 @@ function reset_navegacion() {
     } else { /*Si no es el primer tema se habilita el boton atras */
         this.habilitar_deshabilitar_btns(getBtnArray(this.btnAtras), "d", "reset_navegacion");
     }
-    // 
-    /*Habilitar el boton siguiente si el usuario ya vio ese tema*/
 
-    if (libre && validarLimiteTemas() || TRAK[IDActual] > 1 && IDActual < TRAK.length && validarLimiteTemas()){
-            this.habilitar_deshabilitar_btns(getBtnArray(this.btnSiguiente), "h", "reset_navegacion");
+    /*Habilitar el boton siguiente si el usuario ya vio ese tema*/
+    if (libre && validarLimiteTemas() || TRAK[IDActual] > 1 && IDActual < TRAK.length && validarLimiteTemas()) {
+        this.habilitar_deshabilitar_btns(getBtnArray(this.btnSiguiente), "h", "reset_navegacion");
     }
 
-    // if (ULTIMO > IDActual || libre || Avance > ULTIMO) {
-	// 	this.habilitar_deshabilitar_btns(getBtnArray(this.btnSiguiente), "h", "reset_navegacion");
-    // }
     guardarDatos();
 }
 /**

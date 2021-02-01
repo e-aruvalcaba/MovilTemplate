@@ -13,7 +13,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="offcanvas.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <!-- onload="SCOInitialize(); initialize();" -->
 
@@ -33,7 +33,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
   </div>
 
 
-  <div class="loading-page d-none" id="page_transition" style="left: -1500px!important; position: absolute; z-index: 9999;">
+  <div class="loading-page" id="page_transition" style="left: -6500px!important; position: absolute; z-index: 9999;">
     <div>
       <!-- <p>Cargando</p>
       <h1 id="">0%
@@ -69,7 +69,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
     </button>
   </nav>
 
-  <div class="container d-none" id="superContainer" style="width: 100%">
+  <div class="container d-none pdNav" id="superContainer" style="">
     <div class="row">
       <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
         <div class="navbar-collapse offcanvas-collapse col-12 reset" id="menuContainer" style="color: white">
@@ -100,10 +100,6 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
         </div>
       </div>
 
-      <div class="col-12">
-        <button class="btn-primary" onclick="loadContent(event, 2)">Dame</button>
-      </div>
-
       <div class="contenido col-12 reset">
         <div class="mainContent" id="content" style="height:100%;">
 
@@ -111,7 +107,6 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
       </div>
 
       <!-- MOBILE BOTONES FLOTANTES  -->
-      <!-- <div class="control-buttons d-lg-none"> -->
       <div class="control-buttons d-lg-none d-flex justify-content-center">
         <div class="backButton" id="btnAtras" onclick="anterior_frame()">
           <a href="#" class="float nextAnimation my-float-back">
@@ -134,7 +129,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
   </div>
 
   <!-- FOOTER SOLO PARA LA VISTA DESKTOP -->
-  <footer class="fixed-bottom bg-dark d-none d-lg-flex justify-content-center">
+  <footer id="footer_desktop" class="fixed-bottom bg-dark d-none justify-content-center">
     <!-- OCULTAR EN VISTAS MOVILES-->
     <div class="row d-flex justify-content-center" style="color:white">
 
@@ -154,7 +149,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
         <p class="reset" style="margin-right: 5px;">
           Siguiente
         </p>
-        <a><i class="fa fa-chevron-right iconColor"></i></a>
+        <a><i class="fa fa-chevron-right iconColor" style="margin-left: 3px;"></i></a>
       </div>
 
     </div>
