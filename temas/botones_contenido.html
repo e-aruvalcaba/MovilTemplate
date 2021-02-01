@@ -98,21 +98,9 @@
     <script>
         var tl = gsap.timeline({ defaults: { duration: 0.3 } });
         $("#document").ready(function () {
-
-            // var tl = gsap.timeline({ defaults: { duration: 0.6 } })
+            iniciar_tema();
             tl.from($("#titulo_contenido"), { display: "block", opacity: 0, x: $("#titulo_contenido").position().left - 20, delay: 1 })
                 .from($("#texto_contenido"), { display: "block", opacity: 0, x: $("#texto_contenido").position().left - 20, delay: 1 });
-
-            //texto_contenido
-            //     .from($("#icn1"), { display: "block", opacity: 0, x: $("#icn1").position().left + 20 })
-            //     .from($("#tit1"), { display: "block", opacity: 0, y: $("#tit1").position().top - 20 })
-            //     .from($("#parr1"), { duration: 0.8, display: "block", opacity: 0, y: $("#tit1").position().top - 10 })
-            //     .from($("#parr1_2"), { duration: 0.8, display: "block", opacity: 0, y: $("#tit1").position().top - 10 })
-            //     .from($("#bt2"), { display: "block", opacity: 0, x: $("#bt2").position().left - 20 })
-            //     .from($("#icn2"), { display: "block", opacity: 0, x: $("#icn2").position().left + 20 })
-            //     .from($("#tit2"), { display: "block", opacity: 0, y: $("#tit2").position().top - 20 })
-            //     .from($("#parr2"), { duration: 0.8, display: "block", opacity: 0, y: $("#tit2").position().top - 10 })
-            //     .from($("#parr2_2"), { duration: 0.8, display: "block", opacity: 0, y: $("#tit2").position().top - 10 });
         });
 
         function changeContent(btn) {
@@ -138,6 +126,7 @@
                 case 4:
                     $("#titulo_contenido").html("Titulo del boton 4");
                     $("#texto_contenido").html("Esto es el contenido del boton 4");
+                    final_tema();
                     tl.restart();
                     break;
             }
