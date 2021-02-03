@@ -205,7 +205,6 @@ function callMenu() {
         }
 
         this.menu_open = true;
-        // setMenuBlur(true);
         let stateBackup = [EdoBtns.btnSiguiente, EdoBtns.btnAtras];
 
         // Deshabilitar botones atras y siguiente.
@@ -214,7 +213,6 @@ function callMenu() {
         EdoBtns.btnAtras = stateBackup[1];
 
     } else {
-        debugger
         if ($('#sidebarCol').hasClass("menu-show")) {
 
             if (!isMobile()) {
@@ -296,16 +294,21 @@ function getAudioInstance() {
  * @description Resetea el curso y todas sus variables
  */
 function reiniciarCurso() {
-    leavePageTransition();
+
     habilitar_deshabilitarBarra("h");
     // Resetear el trak intentos, avance y el ultimo visto
-    TRAK = iniciarTrak();
+    for(let i=0; i<NumTemas; i++){
+        TRAK[i] = 0;
+    }
     intentoAct = 0;
-    ULTIMO = 1;
-    Avance = 1;
-    ir(0);
+    ULTIMO = 0;
+    Avance = 0;
     actualizar_menuHTML(TRAK);
-    cerrarUltimo();
+    reset_navegacion();
+    leavePageTransition();
+    setTimeout(() => {
+        ir(0);
+    }, 500);
 }
 
 /**
@@ -1023,7 +1026,7 @@ function glosarioX() {
 function irUltimo() {
     // let resp = obtenerFramePorPagina(ULTIMO);
     ir(ULTIMO);
-    cerrarUltimo();
+    // cerrarUltimo();
     actualizaTemasTerminados();
 
     if (cursoConAudio) {
