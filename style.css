@@ -2,9 +2,9 @@ body {
   /* margin-top: 56px; */
 }
 
-.pdNav{
-  width: 100%; 
-  padding-top: 56px!important;
+.pdNav {
+  width: 100%;
+  padding-top: 56px !important;
 }
 
 a {
@@ -18,14 +18,15 @@ a {
 .navbar_col {
   z-index: 9999 !important;
 }
-.paddingMobile{
-  padding-bottom: 10px!important;
+.paddingMobile {
+  padding-bottom: 10px !important;
 }
-.menuParag{
-  margin-left: 8px!important; font-size: 14px;
+.menuParag {
+  margin-left: 8px !important;
+  font-size: 14px;
 }
-.menuIcon{
-  font-size: 8px;
+.menuIcon {
+  font-size: 6px;
   margin-top: 7px;
   color: white;
 }
@@ -73,8 +74,8 @@ footer {
   width: 60px;
   height: 60px;
   bottom: 10px;
-  /* right: 10px; */
-  right: 40%;
+  right: 14px;
+  /* right: 40%; */
   background-color: #0c9;
   color: #fff;
   border-radius: 50px;
@@ -97,15 +98,23 @@ footer {
   color: black;
 }
 /* MOBILE VIEWS */
-@media (min-width: 991.98px) {
+
+/* @media screen and (min-width: 890px) and (max-width: 1080px) {
+  .sidebarCol {
+    left: 0.5%;
+  }
+} */
+
+@media (min-width: 1280px) {
   .blck_scroll {
     overflow-y: auto !important;
   }
   .sidebarCol {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     overflow-x: hidden; /* Disable horizontal scroll */
+    max-width: 1140px !important;
   }
   .navbar_col {
     height: 90vh !important;
@@ -114,12 +123,12 @@ footer {
     overflow: hidden;
     overflow-y: hidden;
     max-height: 100vh; /* approximate max height */
-    min-width: 360px !important;
-    left: 0px;
+    min-width: 391px !important;
+    /* left: 0px; */
     opacity: 1;
     transition-property: all;
     transition-duration: 0.5s;
-    height: 90vw;
+    height: 46.16vw;
     transition-timing-function: cubic-bezier(0.2s, 0.2s, 0.2s, 0.2s);
   }
   .menu-hide {
@@ -134,13 +143,29 @@ footer {
   body {
     height: 100vh;
   }
-}
-.blck_scroll {
-  overflow-y: hidden;
+
+  .blck_scroll {
+    overflow-y: hidden;
+  }
+
+  .mainNavbar {
+    width: 100%;
+    position: inherit;
+    top: unset;
+    right: unset;
+    left: unset;
+    margin: auto;
+    max-width: 1140px;
+  }
+
+  .pdNav {
+    padding-top: 0px !important;
+  }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1279px) {
   .offcanvas-collapse {
+    display: block;
     position: fixed;
     top: 56px; /* Height of navbar */
     bottom: 0;
@@ -540,7 +565,7 @@ h1 {
   /* font-size: 10px; */
   padding-left: 5px;
   padding-bottom: 2px;
-  /* opacity: 0.30; */
+  opacity: 0.30;
   pointer-events: none;
 }
 
@@ -586,7 +611,7 @@ h1 {
   overflow-x: hidden;
 }
 
-.tituloTemaMenu:hover{
+.tituloTemaMenu:hover {
   background-color: white;
 }
 .tituloTemaMenu:hover p {
@@ -605,7 +630,6 @@ h1 {
 .tituloTemaMenu:hover .menuIconStyleCompletado {
   transform: scale3d(1.5, 1.5, 1.5);
 } */
-
 
 .menu-open {
   display: block;
@@ -654,7 +678,7 @@ h1 {
 }
 
 .indent {
-  text-indent: 18px;
+  text-indent: 35px;
 }
 
 .blur {
@@ -1082,5 +1106,12 @@ h1 {
     top: -20px;
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc,
       0 8px 0 #ccc, 0 9px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 992px){
+  .sidebarCol{
+    /* width: 90%; */
+    left: 0%;
   }
 }

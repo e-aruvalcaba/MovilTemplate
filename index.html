@@ -17,7 +17,7 @@
 </head>
 <!-- onload="SCOInitialize(); initialize();" -->
 
-<body id="body" onload="SCOInitialize(); initialize();">
+<body id="body" onload="SCOInitialize(); initialize();" style="background-color: rgba(0, 204, 255, 1.00);">
   <!-- background: rgb(46,53,54);
 background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%); -->
 
@@ -60,46 +60,86 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
   </div>
 
   <!-- loader -->
-  <nav class="navbar fixed-top navbar-dark bg-dark d-none" id="navbar">
+  <nav class="navbar fixed-top d-none navbar-dark bg-dark mainNavbar" id="navbar">
     <img src="IMAGES PRUEBA/logs.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplicación"
       class="navbar-brand mr-lg-0" href="#"></img>
-    <button class="btn btn-success" onclick="enterPageTransition()">Animacion</button>
+    <!-- <button class="btn btn-success" onclick="enterPageTransition()">Animacion</button> -->
+    <div class="row d-none d-lg-flex justify-content-center" style="color:white">
+
+      <div id="btnAtrasD" onclick="anterior_frame()" class="disabledButton col-5 d-flex justify-content-around"
+        style="cursor: pointer; font-size: 20px;">
+        <a><i class="fa fa-chevron-left iconColor"></i></a>
+        <p class="reset"> Anterior </p>
+      </div>
+
+      <div id="numTemasCompletados" class="col-2 d-flex justify-content-center"
+        style="cursor: default; font-size: 20px;">
+        <p>1/13</p>
+      </div>
+
+      <div id="btnSiguienteD" onclick="siguiente_frame()" class="disabledButton col-5 d-flex justify-content-around"
+        style="cursor: pointer; font-size: 20px;">
+        <p class="reset" style="margin-right: 5px;">
+          Siguiente
+        </p>
+        <a><i class="fa fa-chevron-right iconColor" style="margin-left: 3px;"></i></a>
+      </div>
+
+    </div>
     <button id="menuToggler" class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
 
-  <div class="container d-none pdNav" id="superContainer" style="">
+  <div class="container d-none pdNav" id="superContainer">
     <div class="row">
       <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
-        <div class="navbar-collapse offcanvas-collapse col-12 reset" id="menuContainer" style="color: white">
-          <p class="row d-flex justify-content-center"><strong>Menú del Curso</strong></p>
-          <!-- Contenido de menu -->
-          <!-- <div class="col-12 d-flex align-items-center">
-            <i class="fas fa-circle" style="font-size: 8px; margin-top: 3px; color: white"></i>
-            <p class="reset" style="margin-left: 5px!important; font-size: 14px;">Tema 1 No iniciado</p>
-          </div> -->
-          <div id="temasContainer" class="temasContainer" style="overflow-y: auto; overflow-x: hidden; height: 80vh;">
-            <!-- <div class="col-12 d-flex reset paddingMobile">
-              <i class="fas fa-circle menuIconNoIniciado"></i>
-              <p class="reset menuParag">Tema 1 No iniciado</p>
+        <div class="navbar-collapse offcanvas-collapse col-12 d-lg-flex  reset" id="menuContainer" style="color: white">
+          <div class="col-12 col-lg-6">
+            <p class="row d-flex justify-content-center"><strong>Menú del Curso</strong></p>
+            <!-- Contenido de menu -->
+            <div id="temasContainer" class="temasContainer" style="overflow-y: auto; overflow-x: hidden; height: 80vh;">
+
             </div>
-  
-            <div class="col-12 d-flex reset paddingMobile">
-              <i class="fas fa-circle menuIconIniciado"></i>
-              <p class="reset menuParag">Tema 1 Iniciado</p>
-            </div>
-  
-            <div class="col-12 d-flex reset paddingMobile">
-              <i class="fas fa-circle menuIconCompletado"></i>
-              <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema 1 Completado</p>
-            </div> -->
-  
           </div>
+
+          <div class="col-12 col-lg-6 d-none d-lg-block">
+            <p class="row d-flex justify-content-center"><strong>Instrucciones:</strong></p>
+
+            <div id="temasContainer" class="temasContainer" style="overflow-y: auto; overflow-x: hidden; height: 80vh;">
+
+              <div class="col-12 d-flex reset paddingMobile">
+                <i class="fas fa-circle menuIconStyle pl-2" style="margin-top: 8px;"></i>
+                <p class="reset menuParag" style="margin-left: 30px !important;">Selecciona cada tema para ver su
+                  contenido.</p>
+              </div>
+
+              <div class="col-12 d-flex reset paddingMobile">
+                <i class="fas fa-circle menuIconStyle pl-2" style="margin-top: 8px;"></i>
+                <p class="reset menuParag" style="margin-left: 30px !important;">El curso guarda tu avance con el
+                  siguiente registro:</p>
+              </div>
+
+              <div class="col-12 d-flex reset paddingMobile indent">
+                <i class="fas fa-circle menuIcon menuIconStyleCompletado pl-2"></i>
+                <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema Completado</p>
+              </div>
+
+              <div class="col-12 d-flex reset paddingMobile indent">
+                <i class="fas fa-circle menuIcon menuIconStyleIniciado pl-2"></i>
+                <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema Iniciado</p>
+              </div>
+
+              <div class="col-12 d-flex reset paddingMobile indent">
+                <i class="fas fa-circle menuIcon tituloTemaMenuNoIniciado pl-2"></i>
+                <p class="reset" style="margin-left: 8px!important; font-size: 14px;">Tema No Iniciado</p>
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>
-
       <div class="contenido col-12 reset">
         <div class="mainContent" id="content" style="height:100%;">
 
@@ -113,7 +153,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
             <i class="fa fa-arrow-left my-float"></i>
           </a>
         </div>
-        <div id="btnSiguiente" class="nextButton" onclick="siguiente_frame()" >
+        <div id="btnSiguiente" class="nextButton" onclick="siguiente_frame()">
           <a href="#" class="float nextAnimation">
             <i class="fa fa-arrow-right my-float"></i>
           </a>
@@ -161,9 +201,12 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
   <script src="js/bootstrap.bundle.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/gsap.min.js"></script>
-
-  <script src="js/createjs-2015.11.26.min.js"></script> <!-- CreateJS local -->
-  <!-- <script src="js/modernizr-2.6.2.min.js"></script>Necesario para preloader -->
+  <script src="js/createjs.min.js"></script>
+  <!-- <script src="js/createjs-2015.11.26.min.js"></script> CreateJS local   -->
+  <!-- <script src="temas/intro_movil.js"></script> -->
+  <!-- <script src="js/createjs.min.js"></script>
+  <script src="temas/intro_movil.js"></script>
+  <script src="js/modernizr-2.6.2.min.js"></script>Necesario para preloader -->
   <script src="js/sweetalert2.all.min.js"></script> <!-- Librerias sweetAlert2 -->
   <!-- <script src="js/main.js"></script>Necesario para preloader -->
   <!-- <script src="js/bootstrap.min.js"></script> Librerias Bootstrap -->

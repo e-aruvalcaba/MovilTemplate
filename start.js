@@ -189,6 +189,7 @@ function addNextAnimation() {
 }
 
 function callMenu() {
+    console.log("CALL MENU")
     if ($('#sidebarCol').hasClass("menu-hide")) {
         $('#sidebarCol').removeClass("menu-hide");
         $('#sidebarCol').addClass("menu-show")
@@ -199,6 +200,7 @@ function callMenu() {
             $('.navbar-collapse').removeClass("open");
         }
     }
+    actualizar_menuHTML(TRAK);
 }
 
 function blockScrollOnMobile() {
@@ -389,6 +391,7 @@ function populateMenu(jsonob) {
                 console.log(jsonob.Modulos[index]['Mod' + (index + 1)][j]);
             }
         }// end for Temas
+        // desbloquearTema(0);
     }//End Main For
 
     
@@ -1406,6 +1409,7 @@ function cursoCompletado() {
  * @description Actualiza los indicadores y desbloquea/bloquea los botones segun el avance del TRAK.
  */
 function actualizar_menuHTML(TrakCurso) {
+    debugger
     for (let i = 0; i < TrakCurso.length; i++) {
         var element = $("#" + i).find("i");
         var tema = $("#" + (i + 1));
