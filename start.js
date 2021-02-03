@@ -117,14 +117,14 @@ $(document).ready(function () {
         // }
 
         if (counter == 100 && isLoadingNow == false || counter == 100) {
-            if(intervalo){
+            if (intervalo) {
                 clearInterval(intervalo);
             }
             $("#loader").css("display", "none");
             $("#navbar").addClass("d-flex");
             $("#superContainer").addClass("d-block");
             $("#footer_desktop").addClass("d-lg-flex");
-            
+
         }
     }, 50);
 
@@ -151,14 +151,14 @@ function loadContent(path) {
 }
 
 function enterPageTransition() {
-    $("#page_transition").css("display", "flex");
-    gsap.to($("#page_transition"), { duration: 0.5, left: 0 });
+    $("#ultimoContainer").css("display", "flex");
+    gsap.to($("#ultimoContainer"), { duration: 0.5, ease: "power1.out",  left: 0 });
 }
 function leavePageTransition() {
-    gsap.to($("#page_transition"), { duration: 1, left: -1500 });
+    gsap.to($("#ultimoContainer"), { duration: 1, ease: "power1.out", left: -2500 });
     setTimeout(() => {
-        $("#page_transition").css("display", "none");
-    }, 500);
+        $("#ultimoContainer").css("display", "none");
+    }, 1000);
 }
 
 function animateContentOut() {
@@ -189,15 +189,53 @@ function addNextAnimation() {
 }
 
 function callMenu() {
-    console.log("CALL MENU")
+    console.log("IsMobile? ");
+    console.log(isMobile());
+
+    if (isMobile()) {
+        $('#sidebarCol').css("transform", "inherit");
+    }
+
+    // detectarMovil(){}
     if ($('#sidebarCol').hasClass("menu-hide")) {
         $('#sidebarCol').removeClass("menu-hide");
         $('#sidebarCol').addClass("menu-show")
+        if (!isMobile()) {
+            gsap.to($("#sidebarCol"), { duration: 0.5, ease: "back.out(1.7)", x: "0", opacity: 1 });
+        }
+
+        this.menu_open = true;
+        // setMenuBlur(true);
+        let stateBackup = [EdoBtns.btnSiguiente, EdoBtns.btnAtras];
+
+        // Deshabilitar botones atras y siguiente.
+        habilitar_deshabilitar_btns(getBtnArray(btnAtras, btnSiguiente), "d", "llamar_menu");
+        EdoBtns.btnSiguiente = stateBackup[0];
+        EdoBtns.btnAtras = stateBackup[1];
+
     } else {
+        debugger
         if ($('#sidebarCol').hasClass("menu-show")) {
-            $('#sidebarCol').removeClass("menu-show");
-            $('#sidebarCol').addClass("menu-hide");
-            $('.navbar-collapse').removeClass("open");
+
+            if (!isMobile()) {
+                gsap.to($("#sidebarCol"), { duration: 0.8, ease: "back.out(1.7)", x: "-500", opacity: 0 });
+                setTimeout(() => {
+
+                    $('#sidebarCol').removeClass("menu-show");
+                    $('#sidebarCol').addClass("menu-hide");
+                    $('.navbar-collapse').removeClass("open");
+                }, 800);
+            } else {
+                $('#sidebarCol').removeClass("menu-show");
+                $('#sidebarCol').addClass("menu-hide");
+                $('.navbar-collapse').removeClass("open");
+            }
+            let btnArray = new Array();
+			if (EdoBtns.btnAtras && IDActual > 0) { btnArray.push(btnAtras); btnArray.push(btnAtrasD); }
+			if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); btnArray.push(btnSiguienteD); }
+            habilitar_deshabilitar_btns(btnArray, "h", "llamar_menu");
+            this.menu_open = false;
+            // gsap.to($("#sidebarCol"), { duration: 0.8, ease: "back.out(1.7)", x: "-500", opacity: 0});
         }
     }
     actualizar_menuHTML(TRAK);
@@ -258,6 +296,7 @@ function getAudioInstance() {
  * @description Resetea el curso y todas sus variables
  */
 function reiniciarCurso() {
+    leavePageTransition();
     habilitar_deshabilitarBarra("h");
     // Resetear el trak intentos, avance y el ultimo visto
     TRAK = iniciarTrak();
@@ -361,7 +400,6 @@ function populateMenu(jsonob) {
     for (let index = 0; index < jsonob.Modulos.length; index++) {
         for (let j = 0; j < jsonob.Modulos[index]['Mod' + (index + 1)].length; j++) {
             id = consecutivo;
-            // debugger
             if (modulosbreak.indexOf(j) !== -1) { //(j === 0) {
 
                 $("#temasContainer").append(
@@ -376,7 +414,7 @@ function populateMenu(jsonob) {
                 //     "<i class='fas fa-circle menuIcon pl-2'></i>" +
                 //     "<p class='reset menuParag'>" + jsonob.Modulos[index]['Mod' + (index + 1)][j] + "</p>" +
                 //     "</div>"
-                // );
+                // );<
 
                 // SI se necesita el margen se habilita el codigo de arriba
                 $("#temasContainer").append(
@@ -394,7 +432,7 @@ function populateMenu(jsonob) {
         // desbloquearTema(0);
     }//End Main For
 
-    
+
 }// end PopulateMenu function
 
 /**
@@ -405,6 +443,22 @@ function populateMenu(jsonob) {
 function llamarTema(id) {
     ir(id);
     callMenu();
+}
+
+function isMobile() {
+    let value = false;
+
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+        value = true;
+    }
+
+    return value;
 }
 /**
  * @param NA
@@ -574,6 +628,7 @@ function initConfig(jsonob) {
     $("#NombreDelCurso").html(jsonob.NombreCurso);
 
     if (ULTIMO > 1 || (ULTIMO === 1 && TRAK[0] == 2)) {
+        console.log("mostrarUltimo")
         mostrarUltimo();
     }
 }
@@ -678,7 +733,7 @@ function setValues(ob) {
 
 function iniciarTrak() {
     TRAK = [];
-    for (let i = 0; i < obj.Pag.length; i++) {
+    for (let i = 0; i < numPags; i++) {
         TRAK.push(0);
     }
 
@@ -880,6 +935,7 @@ function iniciar_tema() {
     }
     actualizar_menuHTML(TRAK);
     reset_navegacion();
+    leavePageTransition();
 }
 function obtenerFramePorPagina(pagDestino) {
     // 
@@ -1005,7 +1061,7 @@ function llamarAudio() {
  * @description Oculta el contenedor del mensaje para el punto de retorno (deseas ir al ultimo tema visitado?)
  */
 function cerrarUltimo() {
-    $("#ultimoContainer").css("display", "none");
+    // $("#ultimoContainer").css("display", "none");
 }
 /**
  * @param NA
@@ -1013,8 +1069,9 @@ function cerrarUltimo() {
  * @description Muestra el contenedor del mensaje para el punto de retorno (deseas ir al ultimo tema visitado?)
  */
 function mostrarUltimo() {
-    $("#ultimoContainer").css("display", "block");
-    TweenLite.from($("#ultimoContainer"), 1, { opacity: 0 });
+    enterPageTransition();
+    // $("#ultimoContainer").css("display", "block");
+    // TweenLite.from($("#ultimoContainer"), 1, { opacity: 0 });
 }
 /**
  * @param Valor Canvas del contenido
@@ -1409,7 +1466,6 @@ function cursoCompletado() {
  * @description Actualiza los indicadores y desbloquea/bloquea los botones segun el avance del TRAK.
  */
 function actualizar_menuHTML(TrakCurso) {
-    debugger
     for (let i = 0; i < TrakCurso.length; i++) {
         var element = $("#" + i).find("i");
         var tema = $("#" + (i + 1));

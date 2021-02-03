@@ -33,29 +33,16 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
   </div>
 
 
-  <div class="loading-page" id="page_transition" style="left: -6500px!important; position: absolute; z-index: 9999;">
-    <div>
-      <!-- <p>Cargando</p>
-      <h1 id="">0%
-      </h1> -->
-      <h1 class="h1Cargando" style="color: white;">
-        <span>C</span>
-        <span>A</span>
-        <span>R</span>
-        <span>G</span>
-        <span>A</span>
-        <span>N</span>
-        <span>D</span>
-        <span>O</span>
-      </h1>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <button class="btn btn-danger" onclick="leavePageTransition()">Regresar</button>
+  <div class="loading-page" id="ultimoContainer" style="left: -6500px!important; position: absolute; z-index: 10000;">
+    <div class="col-12 col-lg-6">
+      <div class="row d-flex justify-content-center" style="font-size: 18px;font-weight: bold;color: white;">
+        ¿Deseas continuar en el último tema visto?
+      </div>
+      <br>
+      <div class="col-12 d-flex justify-content-center">
+        <button class="btn btn-danger btnUltimo" onclick="reiniciarCurso();">Iniciar de nuevo</button>
+        <button class="btn btn-danger btnUltimo" onclick="irUltimo();">Continuar</button>
+      </div>
     </div>
   </div>
 
@@ -63,7 +50,8 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
   <nav class="navbar fixed-top d-none navbar-dark bg-dark mainNavbar" id="navbar">
     <img src="IMAGES PRUEBA/logs.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplicación"
       class="navbar-brand mr-lg-0" href="#"></img>
-    <!-- <button class="btn btn-success" onclick="enterPageTransition()">Animacion</button> -->
+    <button class="btn btn-success" onclick="enterPageTransition()">Animacion</button>
+
     <div class="row d-none d-lg-flex justify-content-center" style="color:white">
 
       <div id="btnAtrasD" onclick="anterior_frame()" class="disabledButton col-5 d-flex justify-content-around"
@@ -93,6 +81,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
 
   <div class="container d-none pdNav" id="superContainer">
     <div class="row">
+      <!-- style="transform: translate(-500px, 0); -->
       <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
         <div class="navbar-collapse offcanvas-collapse col-12 d-lg-flex  reset" id="menuContainer" style="color: white">
           <div class="col-12 col-lg-6">

@@ -41,6 +41,7 @@ footer {
 .sidebarCol {
   z-index: 9999 !important;
   /* margin-top: 56px; */
+  transform: unset;
 }
 
 .mainContent {
@@ -115,6 +116,7 @@ footer {
     z-index: 1; /* Stay on top */
     overflow-x: hidden; /* Disable horizontal scroll */
     max-width: 1140px !important;
+    transform: translate(-500px, 0px);
   }
   .navbar_col {
     height: 90vh !important;
@@ -184,6 +186,10 @@ footer {
     visibility: visible;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
+  }
+
+  .sidebarCol{
+    transform: inherit!important;
   }
 }
 
