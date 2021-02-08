@@ -1,0 +1,297 @@
+<style>
+    .paddingUpDown {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* TARJETAS GIRATORIAS */
+    .seenIndicator {
+        border-left: 5px solid;
+        border-color: #a94442;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+        left: -9999;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Para activar en el hover  */
+    /* .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        } */
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+        background-color: #53adf2;
+        color: white;
+    }
+
+    .flip-card-back {
+        overflow: auto;
+        background-color: #53adf2;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    .flipcard_label{
+        font-weight: bold;
+        color: black;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 banner-titulo d-flex justify-content-start align-items-center">
+            <p class="reset">Información acerca del estres en la oficina.</p>
+        </div>
+        <div class="col-12 col-lg-6 paddingUpDown">
+            <img id="bloque1" class="img-fluid" src="assets/img/imagentema.jpg" alt="Ejecutivos discutiendo un tema">
+        </div>
+        <div class="col-12 col-lg-6 paddingUpDown">
+            <h4 id="bloque2">Estres en la oficina</h4>
+            <p id="bloque2_1">Como empleador debe cuidar de los empleados para reducir los riesgos de sufrir estrés en
+                el lugar de
+                trabajo.
+
+                Es común que muchas personas experimenten la sensación de no poder hacer su trabajo correctamente, ya
+                sea por la carga de trabajo, por los plazos de entrega, o simplemente por sentirse poco cualificados.
+
+                Estar estresado es diferente a estar bajo presión. Muchos empleados pueden trabajar bien bajo presión si
+                tienen las cualificaciones adecuadas para la tarea que están realizando y si se les proporciona el apoyo
+                que se necesita. Lo que hace que se estresen es la incapacidad para hacer frente a la presión.</p>
+        </div>
+    </div>
+
+    <!-- INICIAN LAS TARJETAS GIRATORIAS -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col paddingUpDown">
+                <!-- <h5 id="sectionTitle"> Titulo del bloque</h5> -->
+                <!-- <h3>Coloca el puntero sobre las imagenes:</h3> -->
+                <!-- <button onclick="reanimar()">Seguir</button> -->
+                <a id="bloque3" class="d-flex justify-content-start align-items-center"
+                    style="font-size: 20px; color: black;">
+                    <img src="assets/img/click.png" alt="Click para continuar"
+                        style="width: 50px; height: 50px; margin-right: 5px;"> Haz click en las tarjetas para
+                    continuar.</a>
+            </div>
+        </div>
+        <div class="row paddingUpDown">
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard1">
+                    <div class="d-flex justify-content-start flipcard_label">Aprendizaje</div>
+                    <div class="flip-card-inner seenIndicator" id="fc1">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                            alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="    font-size: 150px;"><i class="fas fa-pen"></i></a>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                            <ul style="text-align: start;">
+                                <li>
+                                    Tareas – es importante tener en cuenta la carga de trabajo, las pautas de trabajo y
+                                    el
+                                    ambiente en el trabajo.
+                                </li>
+                                <li>
+                                    Control – cuánto decir a la persona cómo tiene que hacer su trabajo.
+                                </li>
+                                <li>
+                                    Soporte – la importancia del estímulo, el apoyo y los recursos proporcionados por la
+                                    organización.
+                                </li>
+                                <li>
+                                    Relaciones – promocionar el trabajo positivo para evitar conflictos y hacer frente a
+                                    un
+                                    comportamiento inaceptable.
+                                </li>
+                                <li>
+                                    Posición – los empleados han de entender las funciones dentro de la organización, no
+                                    deben haber posiciones en conflicto.
+                                </li>
+                                <li>
+                                    Cambio – cómo se organiza el cambio (grande o pequeño), cómo se gestiona y cómo se
+                                    comunica dentro de la compañía.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard2">
+                    <div class="d-flex justify-content-start flipcard_label">Comunicación</div>
+                    <div class="flip-card-inner seenIndicator" id="fc2">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                            alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="font-size: 150px;"><i class="far fa-envelope-open"></i></a>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard3">
+                    <div class="d-flex justify-content-start flipcard_label">Toxicidad</div>
+                    <div class="flip-card-inner seenIndicator" id="fc3">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                            alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="    font-size: 150px;"><i class="fas fa-radiation"></i></a>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard4">
+                    <div class="d-flex justify-content-start flipcard_label">Peligro</div>
+                    <div class="flip-card-inner seenIndicator" id="fc4">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                            alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="    font-size: 150px;"><i class="fas fa-skull-crossbones"></i></a>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TERMINAN LAS TARJETAS GIRATORIAS -->
+
+
+</div>
+
+<script>
+
+    // tl.to($("#body"), { duration: 1.2, backgroundColor: "#8aed66" }); //shorter syntax!
+    $("#document").ready(function () {
+        let clickeado = false;
+        var tl = gsap.timeline({ defaults: { duration: 0.5 } });
+        iniciar_tema();
+
+        let controlActividad = { numTarjetas: 4, vistas: [0, 0, 0, 0], ids: ["fc1", "fc2", "fc3", "fc4"] };
+        var colorStatus = { "visto": "#1afa8a", "noVisto": "#a94442" } // Hacerlo Global
+        $(".flip-card-inner").click((index, element) => {
+
+            const v = index.currentTarget.id;
+            if ($("#" + v).hasClass("flipped")) {
+                $("#" + v).css('transform', 'rotateY(0deg)');
+                $("#" + v).removeClass("flipped")
+            } else {
+                $("#" + v).css('transform', 'rotateY(180deg)');
+                $("#" + v).addClass("flipped")
+            }
+
+            $("#" + v).css("borderColor", colorStatus.visto); // Marcar como visto el objeto clickeado
+            for (let i = 0; i < controlActividad.numTarjetas; i++) {
+
+                if (v === controlActividad.ids[i]) {
+                    controlActividad.vistas[i] = 1;
+                } else {
+                    $("#fc" + (i + 1)).css('transform', 'rotateY(0deg)');
+                    $("#fc" + (i + 1)).removeClass("flipped")
+                }
+            }
+            validaCompleto();
+
+
+        });
+
+        // Bloquear las tarjetas antes de entrar
+        $(".flip-card").each(function (index, element) {
+            $(this).css("pointerEvents", "none");
+        });
+
+        // Animaciones de entrada desde la derecha
+        const animacionEntrada = { "derecha": 9999, "izquierda": -9999, "arriba": -9999, "abajo": 9999 }
+
+        tl.from($("#bloque1"), { x: $("#bloque1").position().left - 20, duration: 1, delay: 0.75 })
+            // .from($("#bloque2"), { x: $("#bloque2").position().left - 20, onComplete: stopAnimacion() })
+            .fromTo("#bloque2", { x: $("#bloque2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+            .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1, onComplete: stopAnimacion })
+            //    Segunda parte de la animacion del tema
+            .fromTo("#bloque3", { y: $("#bloque3").position().top + 10, opacity: 0 }, { y: 0, opacity: 1 })
+            .fromTo("#gcard1", { y: $("#bloque3").position().top + 10, opacity: 0 }, { y: 0, opacity: 1 })
+            .fromTo("#gcard2", { y: $("#bloque3").position().top + 10, opacity: 0 }, { y: 0, opacity: 1 })
+            .fromTo("#gcard3", { y: $("#bloque3").position().top + 10, opacity: 0 }, { y: 0, opacity: 1 })
+            .fromTo("#gcard4", { y: $("#bloque3").position().top + 10, opacity: 0 }, { y: 0, opacity: 1, onComplete: liberarTarjetas })
+
+        // Desbloquear las tarjetas
+        function liberarTarjetas() {
+            $(".flip-card").each(function (index, element) {
+                $(this).css("pointerEvents", "all");
+            });
+        }
+
+        function stopAnimacion(timeLine) {
+            tl.pause();
+        }
+
+
+        function validaCompleto() {
+
+            let completada = false;
+
+            if (controlActividad.vistas.find(x => x === 0) === undefined) {
+                console.log("Actividad completada");
+                final_tema();
+            }
+        }
+
+        $("#bloque1").click(() => {
+            if (!clickeado) {
+                tl.resume();
+                clickeado = true;
+            }
+        })
+    });
+
+
+</script>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cartas Giratorias</title>
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../awesome/all.css"> -->
+    <style>
+        /* body {
+            font-family: Arial, Helvetica, sans-serif;
+        } */
+
+        .seenIndicator {
+            border-left: 5px solid;
+            border-color: #a94442;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            left: -9999;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Para activar en el hover  */
+        /* .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        } */
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #53adf2;
+            color: white;
+        }
+
+        .flip-card-back {
+            overflow: auto;
+            background-color: #53adf2;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col paddingUpDown">
+                <!-- <h5 id="sectionTitle"> Titulo del bloque</h5> -->
+                <!-- <h3>Coloca el puntero sobre las imagenes:</h3> -->
+                <!-- <button onclick="reanimar()">Seguir</button> -->
+                <a class="d-flex justify-content-start align-items-center" style="font-size: 20px; color: black;">
+                    <img src="assets/img/click.png" alt="Click para continuar" style="width: 50px; height: 50px; margin-right: 5px;"> Haz click en las tarjetas para continuar.</a> 
+            </div>
+        </div>
+        <div class="row paddingUpDown">
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard1">
+                    <div class="d-flex justify-content-start">Negocios</div>
+                    <div class="flip-card-inner seenIndicator" id="fc1">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                                alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="font-size: 150px;"><i class="fas fa-pen"></i></a> 
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                            <ul style="text-align: start;">
+                                <li>
+                                    Tareas – es importante tener en cuenta la carga de trabajo, las pautas de trabajo y
+                                    el
+                                    ambiente en el trabajo.
+                                </li>
+                                <li>
+                                    Control – cuánto decir a la persona cómo tiene que hacer su trabajo.
+                                </li>
+                                <li>
+                                    Soporte – la importancia del estímulo, el apoyo y los recursos proporcionados por la
+                                    organización.
+                                </li>
+                                <li>
+                                    Relaciones – promocionar el trabajo positivo para evitar conflictos y hacer frente a
+                                    un
+                                    comportamiento inaceptable.
+                                </li>
+                                <li>
+                                    Posición – los empleados han de entender las funciones dentro de la organización, no
+                                    deben haber posiciones en conflicto.
+                                </li>
+                                <li>
+                                    Cambio – cómo se organiza el cambio (grande o pequeño), cómo se gestiona y cómo se
+                                    comunica dentro de la compañía.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard2">
+                    <div class="d-flex justify-content-start">Negocios</div>
+                    <div class="flip-card-inner seenIndicator" id="fc2">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                                alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="font-size: 150px;"><i class="far fa-envelope-open"></i></a>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard3">
+                    <div class="d-flex justify-content-start">Negocios</div>
+                    <div class="flip-card-inner seenIndicator" id="fc3">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                                alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="    font-size: 150px;"><i class="fas fa-radiation"></i></a>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard4">
+                    <div class="d-flex justify-content-start">Negocios</div>
+                    <div class="flip-card-inner seenIndicator" id="fc4">
+                        <div class="flip-card-front d-flex justify-content-center align-items-center">
+                            <!-- <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                                alt="Avatar" style="width:150px;height:150px;"> -->
+                            <a style="    font-size: 150px;"><i class="fas fa-skull-crossbones"></i></a> 
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p style="text-align: start; padding: 6px;">Se recomienda que las empresas adopten “normas
+                                de gestión” del estrés en la oficina. Encontramos seis áreas clave a tener en cuenta
+                                para la gestión del estrés:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/gsap.min.js"></script> -->
+    <script>
+        var tl = gsap.timeline( {defaults: {duration: 0.5}});
+        // tl.to($("#body"), { duration: 1.2, backgroundColor: "#8aed66" }); //shorter syntax!
+        $("#document").ready(function () {
+            iniciar_tema();
+            let controlActividad = { numTarjetas: 4, vistas: [0, 0, 0, 0], ids: ["fc1", "fc2", "fc3", "fc4"] };
+            var colorStatus = { "visto": "#1afa8a", "noVisto": "#a94442" } // Hacerlo Global
+            $(".flip-card-inner").click((index, element) => {
+
+                const v = index.currentTarget.id;
+                if ($("#" + v).hasClass("flipped")) {
+                    $("#" + v).css('transform', 'rotateY(0deg)');
+                    $("#" + v).removeClass("flipped")
+                } else {
+                    $("#" + v).css('transform', 'rotateY(180deg)');
+                    $("#" + v).addClass("flipped")
+                }
+
+                $("#" + v).css("borderColor", colorStatus.visto); // Marcar como visto el objeto clickeado
+                for (let i = 0; i < controlActividad.numTarjetas; i++) {
+
+                    if (v === controlActividad.ids[i]) {
+                        controlActividad.vistas[i] = 1;
+                    }
+                }
+                validaCompleto();
+            });
+
+            // Bloquear las tarjetas antes de entrar
+            $(".flip-card").each(function (index, element) {
+                $(this).css("pointerEvents", "none");
+            });
+
+            // Animaciones de entrada desde la derecha
+            const animacionEntrada = { "derecha": 9999, "izquierda": -9999, "arriba": -9999, "abajo": 9999 }
+
+            tl.from($("#gcard1"), { display: "block", opacity: 1, y: animacionEntrada.arriba})
+               .from($("#gcard2"), { display: "block", opacity: 1, y: animacionEntrada.arriba })
+               .from($("#gcard3"), { display: "block", opacity: 1, y: animacionEntrada.arriba })
+               .from($("#gcard4"), { display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: liberarTarjetas });
+
+            // tl.from($("#gcard1"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, delay: 1, onComplete: stopAnimacion });
+            // tl.from($("#gcard2"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: stopAnimacion });
+            // tl.from($("#gcard3"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: stopAnimacion });
+            // tl.from($("#gcard4"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: liberarTarjetas });
+
+            // Desbloquear las tarjetas
+            function liberarTarjetas() {
+                $(".flip-card").each(function (index, element) {
+                    $(this).css("pointerEvents", "all");
+                });
+            }
+
+            function stopAnimacion(timeLine) {
+                tl.pause();
+            }
+
+
+            function validaCompleto() {
+
+                let completada = false;
+
+                if (controlActividad.vistas.find(x => x === 0) === undefined) {
+                    // alert("Actividad completada");
+                    console.log("Actividad completada");
+                    final_tema();
+                }
+            }
+        });
+
+
+        function reanimar() {
+            tl.resume();
+        }
+    </script>
+</body>
+
+</html>

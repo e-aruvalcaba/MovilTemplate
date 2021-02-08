@@ -1,5 +1,6 @@
 var isLoadingNow = true;
 var intervalo;
+var localDataStored;
 // INICIA CLONACION DE FUNCIONALIDAD ANIMATE 2017
 
 /*
@@ -189,8 +190,8 @@ function addNextAnimation() {
 }
 
 function callMenu() {
-    console.log("IsMobile? ");
-    console.log(isMobile());
+    // console.log("IsMobile? ");
+    // console.log(isMobile());
 
     if (isMobile()) {
         $('#sidebarCol').css("transform", "inherit");
@@ -211,6 +212,7 @@ function callMenu() {
         habilitar_deshabilitar_btns(getBtnArray(btnAtras, btnSiguiente), "d", "llamar_menu");
         EdoBtns.btnSiguiente = stateBackup[0];
         EdoBtns.btnAtras = stateBackup[1];
+        $('html').css("overflow", "hidden");
 
     } else {
         if ($('#sidebarCol').hasClass("menu-show")) {
@@ -233,6 +235,7 @@ function callMenu() {
 			if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); btnArray.push(btnSiguienteD); }
             habilitar_deshabilitar_btns(btnArray, "h", "llamar_menu");
             this.menu_open = false;
+            $('html').css("overflow", "auto");
             // gsap.to($("#sidebarCol"), { duration: 0.8, ease: "back.out(1.7)", x: "-500", opacity: 0});
         }
     }
@@ -703,6 +706,7 @@ function leeLocal() {
     setValues(obj);
     initConfig(obj);
     cargarPortada();
+    // alert(localStor)
 }
 /**
  * @param {*}ob Objeto JSON de configuracion del curso.
@@ -772,7 +776,7 @@ function leeLocalStorage() {
     var retorno;
     try {
         var nav = getBrowserInfo().split(" ")[0];
-        if (nav == "IE") {
+        if (nav == "IE" || isMobile()) {
             if (debug) {
                 console.log("leyendo cookie");
             }
@@ -795,7 +799,7 @@ function leeLocalStorage() {
 function guardaLocalStorage(clave) {
     try {
         var nav = getBrowserInfo().split(" ")[0];
-        if (nav == "IE") {
+        if (nav == "IE" || isMobile()) {
             if (debug) { console.log("se guarda en cookie"); }
             var expiration_date = new Date();
             expiration_date.setFullYear(expiration_date.getFullYear() + 1);
@@ -803,7 +807,6 @@ function guardaLocalStorage(clave) {
         } else { //Fixed para chrome
             if (debug) { console.log("se guarda en LocalStorage"); }
             window.localStorage.setItem(NombreCurso, JSON.stringify(clave));
-
         }
     } catch (e) {
         console.log("no pudo guardar archivos en local storage:" + e.text);
@@ -902,7 +905,7 @@ function ir(id) {
     IDActual = id;
 
     if (debug) { console.log("IDActual: ", IDActual, " ULTIMO: ", ULTIMO); }
-    console.log("IDActual: ", IDActual, " ULTIMO: ", ULTIMO);
+    // console.log("IDActual: ", IDActual, " ULTIMO: ", ULTIMO);
     actualizaTemasTerminados();
 }
 /**

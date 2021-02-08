@@ -1,16 +1,22 @@
 body {
   /* margin-top: 56px; */
+  background-color: "#fefefe";
 }
-
+.banner-titulo {
+  height: 70px;
+  background-color: #8442f5;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-indent: 0px;
+}
 .pdNav {
   width: 100%;
   padding-top: 56px !important;
 }
-
 a {
   text-decoration: none !important;
 }
-
 .reset {
   margin: 0% !important;
   padding: 0% !important;
@@ -30,27 +36,23 @@ a {
   margin-top: 7px;
   color: white;
 }
-
 footer {
   position: fixed;
   height: 35px;
   bottom: 0;
   width: 100%;
 }
-
 .sidebarCol {
   z-index: 9999 !important;
   /* margin-top: 56px; */
   transform: unset;
 }
-
 .mainContent {
   transition-property: all;
   transition-duration: 0.3s;
   height: 90vw;
   transition-timing-function: cubic-bezier(0.2s, 0.2s, 0.2s, 0.2s);
 }
-
 .contenido {
   position: relative;
   transition-property: all;
@@ -98,6 +100,12 @@ footer {
 .control-buttons :hover i {
   color: black;
 }
+
+.cardButtons{
+  z-index: 16;
+  position: absolute;
+  margin-top: 300px!important;
+}
 /* MOBILE VIEWS */
 
 /* @media screen and (min-width: 890px) and (max-width: 1080px) {
@@ -142,6 +150,10 @@ footer {
     transition-timing-function: cubic-bezier(0.1s, 0.1s, 0.1s, 0.1s);
   }
 
+  .cardButtons{
+      margin-left: 10px!important;
+  }
+
   body {
     height: 100vh;
   }
@@ -163,6 +175,15 @@ footer {
   .pdNav {
     padding-top: 0px !important;
   }
+
+  .banner-titulo {
+    height: 45px;
+    background-color: #8442f5;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-indent: 10px;
+}
 }
 
 @media (max-width: 1279px) {
@@ -467,50 +488,29 @@ h1 {
 
 .menuHTML {
   position: absolute;
-  /* z-index: 6; */
   overflow-y: auto;
   overflow-x: hidden;
-  /* width: 350px; */
-  /* height: 550px; */
-  /* max-height: 580px; */
-  /* Nuevo tamaño para dar espacio a la barra inferior  */
-  /* height: 521px; */
-  /* max-height: 521px; */
   background: rgba(0, 0, 0, 0.8);
   display: none;
-  /* max-width: 450px; */
-  /* z-index: 9998; */
   z-index: 6;
-  /* overflow-x: hidden; */
-  /* Para internet explorer */
   -ms-overflow-x: hidden;
-  /* For hidden */
-  /* margin-left: -70%!important; */
-  /* Para tamaño final 1280x720 */
-  /* margin-left: 15px; */
 }
 
 .content {
   min-height: 931px;
 }
 .ultimoContainer {
-  /* position: absolute; */
   z-index: 9999;
   width: 950px;
-  /* height: 550px; */
   height: 115vh;
   background: rgba(0, 0, 0, 0.75);
   display: none;
-  /* margin-left: 15px; */
-  /* max-width: 950px; */
   position: relative;
 }
 
 .ultimoTema {
-  /* background: dimgray; */
   background: transparent;
   border-radius: 10px;
-  /* width: 360px; */
   width: 450px;
   padding: 35px;
 }
@@ -731,327 +731,7 @@ h1 {
   display: none;
 }
 
-/* Mediaquerys para la barra HTML ESTILO ARCA CONTINENTAL */
-
-/* @media only screen and (max-width: 768px) {
-  .CourseTitle {
-    display: none;
-  }
-  .verticalCenterResponsive {
-    margin-top: 10%;
-  }
-  .btnsbarra{
-    padding-left: 0px;
-    padding-right: 20px;    
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .avance {
-    display: none;
-  }
-} */
-
-/* @media only screen and (min-width: 992px) {
-  .verticalCenterResponsive {
-   margin-left: 20%!important;
-  }  
-}
-
-@media only screen and (min-width: 1150px) {
-  .verticalCenterResponsive {
-   margin-left: 25%!important;
-  }  
-}
-
-@media only screen and (min-width: 1200px) {
-  .verticalCenterResponsive {
-   margin-left: 30%!important;
-  }  
-} */
-
-/* @media only screen and (min-width: 600px) and (max-width: 767px) {
-  .CourseTitle {
-    display: none;
-  }
-} */
-/* 
-@media only screen and (max-width: 992px) {
-  .Title {
-    font-size: 14px!important;
-  }
-  .menuDerecha {
-    display: none;
-  }
-  .rowInferior{
-    padding-right: 0px!important;
-  }
-}
-
-@media only screen and (max-width: 1060px) {
-  .menuHTML {
-    margin-left: 0px;
-  }
-  .barraInferior {
-    margin-left: 0px;
-  }
-  .contenedor {
-    width: 100%;
-  }
-} */
-
-/* @media only screen and (min-width: 1060px) {
-  .btnsbarra {
-    padding-left: 0px;
-    padding-right: 20px;
-  }
-}
-
-@media only screen and (max-width: 588px) {
-  .rowInferior {
-    padding-right: 0px!important;
-  }
-} */
-
-/* MEDIA QUERYS PARA CENTRAR EL CONTENEDOR ULTIMO
-@media only screen and (max-width: 599px){
-  .verticalCenterResponsive {
-    margin-top: 10%!important;
-    margin-left: 0%!important;
-    padding: 0%;
-    width: 375px!important;
-   }
-
-   .vertical-center p{
-    font-size: 14px!important;
-   }
-
-   .vertical-center button{
-      width: 150px;
-      margin-right: 3px;
-      margin-left: 3px;
-   }
-}
-@media only screen and (min-width: 599px) and (max-width: 749px){
-  .verticalCenterResponsive {
-    margin-top: 10%!important;
-    margin-left: 3%!important;
-   }
-
-   .vertical-center p{
-    font-size: 14px!important;
-   }
-
-   .vertical-center button{
-      width: 150px;
-      margin-right: 3px;
-      margin-left: 3px;
-   }
-} */
-/* @media only screen and (min-width: 750px) and (max-width: 820px){
-  .verticalCenterResponsive {
-    margin-top: 14%!important;
-    margin-left: 10%!important;
-   }
-
-   .vertical-center p{
-    font-size: 14px!important;
-   }
-
-   .vertical-center button{
-      width: 150px;
-      margin-right: 3px;
-      margin-left: 3px;
-   }
-}
-
-
-@media only screen and (min-width: 821px) and  (max-width: 900px){
-  .verticalCenterResponsive {
-    margin-top: 14%!important;
-    margin-left: 13%!important;
-   }
-}
-
-@media only screen and (min-width: 901px) and  (max-width: 1100px){
-  .verticalCenterResponsive {
-    margin-left: 20%!important;
-   }
-}
-
-@media only screen and (min-width: 1356px){
-  .verticalCenterResponsive {
-    margin-left: 30%!important;
-   }
-} */
-
-/* TERMINA */
-/* .temasContainer{
-  scrollbar-base-color: #222;
-  scrollbar-3dlight-color: #222;
-  scrollbar-highlight-color: #222;
-  scrollbar-track-color: #3e3e42;
-  scrollbar-arrow-color: #111;
-  scrollbar-shadow-color: #222;
-  scrollbar-dark-shadow-color: #222; 
-  -ms-overflow-style: -ms-autohiding-scrollbar; */
-/* } */
-
-/* IE
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .scrollable {
-          margin-right: -10px;
-          padding-top: 32px;
-          margin-top: -32px;
-          margin-bottom: -32px;
-          padding-bottom: 32px;
-  
-
-          scrollbar-base-color: #efefef;
-          scrollbar-face-color: #666666;
-          scrollbar-3dlight-color: #666666;
-          scrollbar-highlight-color: #666666;
-          scrollbar-track-color: #efefef;
-          scrollbar-arrow-color: #666666;
-          scrollbar-shadow-color: #666666;
-          scrollbar-dark-shadow-color: #666666;
-          scrollbar-track-color:  #efefef;
-          scrollbar-3dlight-color:  #efefef;
-          scrollbar-darkshadow-color:  #efefef;
-          scrollbar-arrow-color:  #efefef;
-    }
-    
-        .scrollable:after {
-          content: "";
-          height: 32px;
-          display: block;
-      }
-      
-  }
-  
-  Edge
-  @supports (-ms-ime-align:auto)  {
-  .scrollable {
-          margin-right: -10px;
-          padding-top: 16px;
-          margin-top: -16px;
-          margin-bottom: -16px;
-          padding-bottom: 16px;
-  }
-    
-  .scrollable:after {
-      content: "";
-      height: 16px;
-      display: block;
-  }
-  }
-  
-  Firefox
-  From version 64 - https://drafts.csswg.org/css-scrollbars-1/
-  .scrollable {
-      scrollbar-width: thin;
-      scrollbar-color: #666666 #efefef;
-  } */
-
-/* RIBBON */
-.ribbon {
-  width: 48%;
-  height: 188px;
-  position: relative;
-  float: left;
-  margin-bottom: 30px;
-  background: url(https://html5book.ru/wp-content/uploads/2015/10/snow-road.jpg);
-  background-size: cover;
-  text-transform: uppercase;
-  color: white;
-}
-.ribbon:nth-child(even) {
-  margin-right: 4%;
-}
-@media (max-width: 500px) {
-  .ribbon {
-    width: 100%;
-  }
-  .ribbon:nth-child(even) {
-    margin-right: 0%;
-  }
-}
-
-/* Pruebas con cintas para titulos */
-
-.ribbon3 {
-  /* width: 150px; */
-  height: 50px;
-  line-height: 50px;
-  padding-left: 15px;
-  padding-bottom: 10px;
-  color: white;
-  /* max-width: 350px; */
-  /* position: absolute; */
-  /* left: -8px; */
-  /* top: 20px; */
-  background: #59324c;
-}
-.ribbon3:before,
-.ribbon3:after {
-  content: "";
-  position: absolute;
-}
-.ribbon3:before {
-  height: 0;
-  width: 0;
-  top: -8.5px;
-  left: 0.1px;
-  /* border-bottom: 9px solid black; */
-  /* border-left: 9px solid transparent; */
-}
-.ribbon3:after {
-  height: 0;
-  width: 0;
-  right: -14.5px;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  border-left: 15px solid #59324c;
-}
-
-.ribbon5 {
-  display: block;
-  width: calc(100% + 20px);
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin-left: -10px;
-  margin-right: -10px;
-  background: #edba19;
-  position: relative;
-  top: 20px;
-}
-.ribbon5:before,
-.ribbon5:after {
-  content: "";
-  position: absolute;
-}
-.ribbon5:before {
-  height: 0;
-  width: 0;
-  bottom: -10px;
-  left: 0;
-  border-top: 10px solid #cd8d11;
-  border-left: 10px solid transparent;
-}
-.ribbon5:after {
-  height: 0;
-  width: 0;
-  right: 0;
-  bottom: -10px;
-  border-top: 10px solid #cd8d11;
-  border-right: 10px solid transparent;
-}
-
-/* .col-12{
-    padding: 0%!important;
-    margin: 0%!important;
-  } */
+/* CARGADOR */
 
 .h1Cargando {
   cursor: default;
