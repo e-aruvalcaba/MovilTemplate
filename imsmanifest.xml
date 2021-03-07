@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="FLNC001"
+version="1.4" 
+xmlns="https://www.imsglobal.org/xsd/imscp_v1p1"
+xmlns:adlcp="https://www.adlnet.org/xsd/adlcp_v1p3"
+xmlns:adlseq="https://www.adlnet.org/xsd/adlseq_v1p3"
+xmlns:adlnav="https://www.adlnet.org/xsd/adlnav_v1p3"
+xmlns:imsss="https://www.imsglobal.org/xsd/imsss"
+xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+xmlns:imsmd="https://www.imsglobal.org/xsd/imsmd_rootv1p2p1"
+xmlns:dc="https://www.datango.com/xsd/dc"
+xsi:schemaLocation="https://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+https://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+https://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+https://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+https://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+<metadata>
+<schema>ADL SCORM</schema>
+<schemaversion>1.2</schemaversion>
+</metadata>
+  <organizations default="Freelance_Learning">
+    <organization identifier="Freelance_Learning">
+      <title>Mobile_Elearning</title>
+      <item identifier="SCORM_ITEM_SAP" identifierref="SCORM_RESOURCE_SAP" isvisible="true">
+        <title>Mobile_Elearning</title>
+		<adlcp:masteryscore>80</adlcp:masteryscore>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="SCORM_RESOURCE_SAP" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="index.html" />
+    </resource>
+  </resources>
+</manifest>
+
+
+
+
+

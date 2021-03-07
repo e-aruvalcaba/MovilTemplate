@@ -23,12 +23,13 @@
     height: 600px;
   }
 
-  .cardButtonEllipse{
+  .cardButtonEllipse {
     border-radius: 66px;
     height: 50px;
     width: 50px;
   }
-  .cardButtonEllipse:focus{
+
+  .cardButtonEllipse:focus {
     outline: none;
   }
 
@@ -67,7 +68,8 @@
   }
 
   .description {
-    margin: 0 0 48px;
+    /* margin: 0 0 48px; */
+    text-align: justify;
   }
 
   .footer {
@@ -152,32 +154,46 @@
 
 <div class="container-fluid" style="overflow: hidden; margin-top: 15px;">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6"> 
+    <div class="col-12 col-lg-6">
       <div class="col-12">
         <div class="row">
-          <h4>Composicion de los atomos</h4>
-          <p class="reset">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de un
-            elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los átomos son
-            microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
-            obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
-            valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
-            resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han incorporado
-            principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín atŏmus,
-            calco del griego ἄτομον (átomon) </p>
-           
+          <div class="fondo_textos">
+            <h4 class="t-st">Composicion de los atomos</h4>
+            <p class="reset p-st">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de
+              un
+              elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los
+              átomos son
+              microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
+              obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
+              valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
+              resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han
+              incorporado
+              principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín
+              atŏmus,
+              calco del griego ἄτομον (átomon) </p>
+          </div>
+
         </div>
-        <div class="row">
-          <h4>Composicion de los atomos</h4>
-          <p class="reset">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de un
-            elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los átomos son
-            microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
-            obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
-            valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
-            resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han incorporado
-            principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín atŏmus,
-            calco del griego ἄτομον (átomon) </p>
-           
+        <div class="row" style="padding-top: 5px;">
+          <div class="fondo_textos">
+            <h4>Composicion de los atomos</h4>
+            <p class="reset p-st">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de
+              un
+              elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los
+              átomos son
+              microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
+              obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
+              valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
+              resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han
+              incorporado
+              principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín
+              atŏmus,
+              calco del griego ἄτομον (átomon) </p>
+
+
+          </div>
         </div>
+
         <!-- <h4>Composicion de los atomos</h4>
         <p class="reset">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de un
           elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los átomos son
@@ -188,8 +204,8 @@
           principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín atŏmus,
           calco del griego ἄτομον (átomon) </p> -->
       </div>
-      
-     
+
+
 
       <!-- < ἄτομος, unión de α (a, que significa «sin»), y τόμος (tómos, «sección»), que
             literalmente es «que no se puede cortar, indivisible»,3​ y fue el nombre que se dice les dio Demócrito de
@@ -202,53 +218,55 @@
             electrones que protones, entonces tiene una carga global negativa o positiva, respectivamente, y se denomina
             ion (anión si es negativa y catión si es positiva). -->
     </div>
-    <div class="col-12 col-lg-6 justify-content-between">
+    <div class="col-12 col-lg-6 justify-content-between" style="padding-top: 5px; margin: auto;">
       <div class="col-11 col-lg-11 reset d-flex justify-content-between cardButtons">
-        <a class="btn cardButtonEllipse disabledButton" id="prev" href="#"><i class="fa fa-chevron-left d-flex justify-content-center" style="padding-top: 10px;"></i></a>
-        <a class="btn cardButtonEllipse " id="next" href="#"><i class="fa fa-chevron-right d-flex justify-content-center" style="padding-top: 10px;"></i></a>
+        <a class="btn cardButtonEllipse disabledButton" id="prev" href="#"><i
+            class="fa fa-chevron-left d-flex justify-content-center" style="padding-top: 10px;"></i></a>
+        <a class="btn cardButtonEllipse " id="next" href="#"><i
+            class="fa fa-chevron-right d-flex justify-content-center" style="padding-top: 10px;"></i></a>
       </div>
       <div id="tl0" class="card m-auto">
         <div class="products">
           <div class="product active" product-id="1" product-color="#D18B49">
-            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Stag.svg"
-                style=" width: 300px;height: 300px;" /></div>
+            <div class="thumbnail"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Stag.svg"
+                style=" width: 250px;height: 250px;" /></div>
             <h1 class="title">The Magnificent Stag</h1>
-            <p class="description"> asdasdsadasdsad asFusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            <p class="description p-st"> asdasdsadasdsad asFusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
               nibh,
               ut fermentum massa
               justo sit amet risus.</p>
           </div>
           <div class="product" product-id="2" product-color="#542F13">
             <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Bear.svg"
-                style=" width: 300px;height: 300px;" /></div>
+                style=" width: 250px;height: 250px;" /></div>
             <h1 class="title">The Courageous Bear</h1>
-            <p class="description">123131312 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+            <p class="description p-st">123131312 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
               fermentum massa
               justo sit amet risus.</p>
           </div>
           <div class="product" product-id="3" product-color="#A5AAAE">
             <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Mouse.svg"
-                style=" width: 300px;height: 300px;" /></div>
+                style=" width: 250px;height: 250px;" /></div>
             <h1 class="title">The Sneaky Mouse</h1>
-            <p class="description">sad123123123Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+            <p class="description p-st">sad123123123Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
               ut
               fermentum massa
               justo sit amet risus.</p>
           </div>
           <div class="product" product-id="4" product-color="#ED8D1F">
             <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Fox.svg"
-                style=" width: 300px;height: 300px;" /></div>
+                style=" width: 250px;height: 250px;" /></div>
             <h1 class="title">The Cunning Fox</h1>
-            <p class="description">123132asdasd Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+            <p class="description p-st">123132asdasd Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
               ut
               fermentum massa
               justo sit amet risus.</p>
           </div>
           <div class="product" product-id="5" product-color="#C4C8CB">
             <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Rabbit.svg"
-                style=" width: 300px;height: 300px;" /></div>
+                style=" width: 250px;height: 250px;" /></div>
             <h1 class="title">The Jumpy Rabbit</h1>
-            <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+            <p class="description p-st">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
               massa
               justo sit amet risus.</p>
           </div>
@@ -269,6 +287,7 @@
 <script>
 
   $(document).ready(function () {
+    iniciar_tema();
     var currentCardSelected = 0;
     var cardNumber = 5;
     var getProductHeight = $('.product.active').height();
@@ -389,13 +408,14 @@
       if (target >= cardNumber - 1) {
         $('#prev').removeClass("disabledButton");
         $('#next').addClass("disabledButton");
+        // Actividad completada al bloquearse el boton siguiente / al ver todas las tarjetas
+        final_tema();
         return;
       }
 
       if (target > 0 && target < cardNumber) {
         $('#prev').removeClass("disabledButton");
         $('#next').removeClass("disabledButton");
-        // Actividad completada??
         return;
       }
     }

@@ -12,7 +12,7 @@ Notas:
 //Variables Globales
 window.start = this;
 var termino = false;
-var banderillas = false;
+var banderillas = true;
 var Rutas = new Array();
 var Pag = new Array();
 var PagTotal = 0;
@@ -100,6 +100,14 @@ var ListaAudios = [];
 var moviePlay = "";
 var ListaPreloadAudio = [];
 
+// window.onresize = function(){
+    
+//     if(isMobile() || $(window).width() < 1200){
+//         console.log("Entro window")
+//         $("#sidebarCol").css("height", "unset");
+//     }
+// }
+
 /**
  * Funcionalidad del nuevo cargador
  */
@@ -153,9 +161,10 @@ function loadContent(path) {
 
 function enterPageTransition() {
     $("#ultimoContainer").css("display", "flex");
-    gsap.to($("#ultimoContainer"), { duration: 0.5, ease: "power1.out",  left: 0 });
+    gsap.to($("#ultimoContainer"), { duration: 0.5, ease: "power1.out", left: 0 });
 }
 function leavePageTransition() {
+    // debugger
     gsap.to($("#ultimoContainer"), { duration: 1, ease: "power1.out", left: -2500 });
     setTimeout(() => {
         $("#ultimoContainer").css("display", "none");
@@ -189,10 +198,15 @@ function addNextAnimation() {
     $(".float").addClass("nextAnimation");
 }
 
-function callMenu() {
-    // console.log("IsMobile? ");
-    // console.log(isMobile());
+// function resizeMenuHeight() {
+//     // Setear el height del contenedor para que no haga scroll al aparecer
+//     debugger
+//     if(isMobile() === false && $(window).width() > 1999){
+//         $("#sidebarCol").css("height", ($(window).height() - 56).toString());
+//     }
+// }
 
+function callMenu() {
     if (isMobile()) {
         $('#sidebarCol').css("transform", "inherit");
     }
@@ -200,9 +214,10 @@ function callMenu() {
     // detectarMovil(){}
     if ($('#sidebarCol').hasClass("menu-hide")) {
         $('#sidebarCol').removeClass("menu-hide");
-        $('#sidebarCol').addClass("menu-show")
+        // resizeMenuHeight();
+        $('#sidebarCol').addClass("menu-show");
         if (!isMobile()) {
-            gsap.to($("#sidebarCol"), { duration: 0.5, ease: "back.out(1.7)", x: "0", opacity: 1 });
+            // gsap.to($("#sidebarCol"), { duration: 0.2, x: "0", opacity: 1 });
         }
 
         this.menu_open = true;
@@ -218,21 +233,21 @@ function callMenu() {
         if ($('#sidebarCol').hasClass("menu-show")) {
 
             if (!isMobile()) {
-                gsap.to($("#sidebarCol"), { duration: 0.8, ease: "back.out(1.7)", x: "-500", opacity: 0 });
-                setTimeout(() => {
+                // gsap.to($("#sidebarCol"), { duration: 0.2, x: $("#sidebarCol").position().left - 100, opacity: 0 });
+                // setTimeout(() => {
 
-                    $('#sidebarCol').removeClass("menu-show");
-                    $('#sidebarCol').addClass("menu-hide");
-                    $('.navbar-collapse').removeClass("open");
-                }, 800);
+                $('#sidebarCol').removeClass("menu-show");
+                $('#sidebarCol').addClass("menu-hide");
+                $('.navbar-collapse').removeClass("open");
+                // }, 100);
             } else {
                 $('#sidebarCol').removeClass("menu-show");
                 $('#sidebarCol').addClass("menu-hide");
                 $('.navbar-collapse').removeClass("open");
             }
             let btnArray = new Array();
-			if (EdoBtns.btnAtras && IDActual > 0) { btnArray.push(btnAtras); btnArray.push(btnAtrasD); }
-			if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); btnArray.push(btnSiguienteD); }
+            if (EdoBtns.btnAtras && IDActual > 0) { btnArray.push(btnAtras); btnArray.push(btnAtrasD); }
+            if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); btnArray.push(btnSiguienteD); }
             habilitar_deshabilitar_btns(btnArray, "h", "llamar_menu");
             this.menu_open = false;
             $('html').css("overflow", "auto");
@@ -300,7 +315,7 @@ function reiniciarCurso() {
 
     habilitar_deshabilitarBarra("h");
     // Resetear el trak intentos, avance y el ultimo visto
-    for(let i=0; i<NumTemas; i++){
+    for (let i = 0; i < NumTemas; i++) {
         TRAK[i] = 0;
     }
     intentoAct = 0;
@@ -338,7 +353,7 @@ function alertas(tipo, texto) {
             mostrarSiguiente(texto);
             break;
         case 2:
-            texto = texto === "" || texto === null || texto === undefined || texto === NaN ? "Tema Completado. Presione Siguiente para continuar..." : texto;
+            texto = texto === "" || texto === null || texto === undefined || texto === NaN ? "Tema Completado. Clic en Siguiente para continuar..." : texto;
             mostrarTemaCompletado(texto);
             break;
     }
@@ -351,8 +366,8 @@ function alertas(tipo, texto) {
  */
 function inicializaMensajes() {
     tl = new TimelineMax({ repeat: 0, onComplete: stopAlertas });
-    tl.from($("#mensajesHTML"), 1, { opacity: 0, left: '400px' })
-    tl.to($("#mensajesHTML"), 1, { opacity: 0, left: '400px', delay: 5 });
+    tl.from($("#mensajesHTML"), 1, { opacity: 0, right: '100px' })
+    tl.to($("#mensajesHTML"), 1, { opacity: 0, right: '400px', delay: 5 });
     $("#div_contenido").css("min-width", "800px");
 }
 
@@ -464,6 +479,7 @@ function isMobile() {
         value = true;
     }
 
+    // console.log(value)
     return value;
 }
 /**
@@ -878,6 +894,9 @@ function guardarDatos() {
  * @description Carga el contenido especificado por el parametro ID y lo carga en el div contenido del template.
  */
 function ir(id) {
+    if ($("#btnSiguiente").hasClass("nextAnimation")) {
+        $("#btnSiguiente").removeClass("nextAnimation");
+    }
     if (menu_open) {
         callMenu();
     }
@@ -900,6 +919,7 @@ function ir(id) {
     // Nueva carga de temas
     setTimeout(() => {
         loadContent(Rutas[id]);
+        // window.onresize();
     }, 500);
 
     IDActual = id;
@@ -941,7 +961,7 @@ function iniciar_tema() {
     }
     actualizar_menuHTML(TRAK);
     reset_navegacion();
-    leavePageTransition();
+    // leavePageTransition();
 }
 function obtenerFramePorPagina(pagDestino) {
     // 
@@ -968,6 +988,7 @@ function final_tema() {
     if (debug) { console.log("*********************FINAL TEMA", _root.IDActual); }
     if (TRAK[IDActual] < 2) {
         TRAK[IDActual] = 2;
+        $("#btnSiguiente").addClass("nextAnimation");
     }
     if (IDActual > 0) {
         ULTIMO = IDActual; // se actualiza el ultimo tema
@@ -1039,6 +1060,7 @@ function irUltimo() {
     }
 
     reset_navegacion();
+    leavePageTransition();
 }
 function cargarUltimoAudio(ultimoAudioID) {
 
@@ -1225,12 +1247,15 @@ function habilitar_deshabilitar_btns(arraybtn, action, functionName) {
         return;
     }
     name = "disabledButton";
+    hidd = "nextHiddenButton"
     for (let index = 0; index < arraybtn.length; index++) {
         if (action === "d") {
             $("#" + arraybtn[index].id.toString()).addClass(name);
+            $("#" + arraybtn[index].id.toString()).find("a").addClass(hidd);
             EdoBtns[arraybtn[index].id.toString()] = false;
         } else {
             $("#" + arraybtn[index].id.toString()).removeClass(name);
+            $("#" + arraybtn[index].id.toString()).find("a").removeClass(hidd);
             EdoBtns[arraybtn[index].id.toString()] = true;
         }
     }

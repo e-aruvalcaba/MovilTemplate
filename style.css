@@ -2,6 +2,26 @@ body {
   /* margin-top: 56px; */
   background-color: "#fefefe";
 }
+
+/* CONFIGURACION DE TEXTOS PARA EL TEMPLATE */
+
+.p-st{
+  font-size: 18px!important;
+}
+
+.t-st{
+  font-size: 20px!important;
+}
+
+/* TERMINAN ESTILOS PARA TEXTOS DEL TEMPLATE */
+
+.fondo_textos {
+  background-color: whitesmoke;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: justify!important;
+  margin-top: 5px!important;
+}
 .banner-titulo {
   height: 70px;
   background-color: #8442f5;
@@ -29,11 +49,11 @@ a {
 }
 .menuParag {
   margin-left: 8px !important;
-  font-size: 14px;
+  font-size: 18px;
 }
 .menuIcon {
   font-size: 6px;
-  margin-top: 7px;
+  margin-top: 11px;
   color: white;
 }
 footer {
@@ -76,35 +96,37 @@ footer {
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 10px;
+  bottom: 15px;
   right: 14px;
   /* right: 40%; */
-  background-color: #0c9;
+  background-color: black;
   color: #fff;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
-  transition: 0.3s;
+  transition: 0.7s;
 }
 
 .my-float {
   margin-top: 22px;
-}
-
-.my-float-back {
+}.my-float-back {
   left: 10px;
+}.my-float > a:hover  {
+  color:white!important
+}.my-float-back > a:hover{
+  color:white!important
 }
-.control-buttons :hover {
+/* .control-buttons :hover {
   background-color: rgb(59, 194, 243) !important;
-}
-.control-buttons :hover i {
+} */
+/* .control-buttons :hover i {
   color: black;
-}
+} */
 
-.cardButtons{
+.cardButtons {
   z-index: 16;
   position: absolute;
-  margin-top: 300px!important;
+  margin-top: 300px !important;
 }
 /* MOBILE VIEWS */
 
@@ -124,7 +146,7 @@ footer {
     z-index: 1; /* Stay on top */
     overflow-x: hidden; /* Disable horizontal scroll */
     max-width: 1140px !important;
-    transform: translate(-500px, 0px);
+    /* transform: translate(-500px, 0px); */
   }
   .navbar_col {
     height: 90vh !important;
@@ -150,8 +172,8 @@ footer {
     transition-timing-function: cubic-bezier(0.1s, 0.1s, 0.1s, 0.1s);
   }
 
-  .cardButtons{
-      margin-left: 10px!important;
+  .cardButtons {
+    margin-left: 10px !important;
   }
 
   body {
@@ -183,7 +205,7 @@ footer {
     font-weight: bold;
     font-size: 20px;
     text-indent: 10px;
-}
+  }
 }
 
 @media (max-width: 1279px) {
@@ -209,8 +231,8 @@ footer {
     transform: translateX(-100%);
   }
 
-  .sidebarCol{
-    transform: inherit!important;
+  .sidebarCol {
+    transform: inherit !important;
   }
 }
 
@@ -319,26 +341,6 @@ footer {
   color: #f60d54;
 }
 
-.nextAnimation {
-  animation-name: buttonNextAnimation;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes buttonNextAnimation {
-  0% {
-    background-color: rgb(0, 0, 0);
-    transform: translateY(0px);
-  }
-  50% {
-    background-color: rgb(114, 114, 114);
-    transform: translateY(-5px);
-  }
-  100% {
-    background-color: rgb(0, 0, 0);
-    transform: translateY(0px);
-  }
-}
 
 /* ANIMATE STYLES */
 
@@ -389,18 +391,18 @@ h1 {
   width: 100%;
 }
 
-.back-link a {
+/* .back-link a {
   color: #4ca340;
   text-decoration: none;
   border-bottom: 1px #4ca340 solid;
-}
+} */
 
-.back-link a:hover,
+/* .back-link a:hover,
 .back-link a:focus {
   color: #408536;
   text-decoration: none;
   border-bottom: 1px #408536 solid;
-}
+} */
 
 .entry-header {
   text-align: left;
@@ -571,7 +573,7 @@ h1 {
   /* font-size: 10px; */
   padding-left: 5px;
   padding-bottom: 2px;
-  opacity: 0.30;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -795,9 +797,62 @@ h1 {
   }
 }
 
-@media (max-width: 1100px) and (min-width: 992px){
-  .sidebarCol{
+@media (max-width: 1100px) and (min-width: 992px) {
+  .sidebarCol {
     /* width: 90%; */
     left: 0%;
   }
+}
+
+
+
+
+
+.nextAnimation {
+  animation-name: buttonNextAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+  animation-delay: 0.5s;
+}
+
+@keyframes buttonNextAnimation {
+  0% {
+    background-color: rgb(0, 0, 0);
+    /* transform: translateY(0px); */
+  }
+  50% {
+    background-color: white;
+    color:black;
+    /* transform: translateY(-5px); */
+  }
+  100% {
+    background-color: rgb(0, 0, 0);
+    /* transform: translateY(0px); */
+  }
+}
+
+.floating {
+  animation-name: floatingAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  /* animation-delay: infinite; */
+}
+
+@keyframes floatingAnimation {
+  0% {
+    /* background-color: rgb(0, 0, 0); */
+    transform: translateY(0px);
+  }
+  50% {
+    /* background-color: rgb(114, 114, 114); */
+    transform: translateY(-1px);
+  }
+  100% {
+    /* background-color: rgb(0, 0, 0); */
+    transform: translateY(0px);
+  }
+}
+
+.nextHiddenButton{
+  right: -200%;
 }
