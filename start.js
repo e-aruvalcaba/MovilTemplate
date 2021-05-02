@@ -1193,7 +1193,8 @@ function cargarPortada() {
     if (debug) { console.log("cargar portada"); }
     var iframe = document.getElementById("Contenido");
     if (debug) { console.log("temas/" + obj.NombreIntro + ".html"); }
-    ir(0);
+    // ir(0);
+    loadContent(obj.Portada);
     stopLoading();
 }
 //------------------------------------------------------------------------------------------------------------

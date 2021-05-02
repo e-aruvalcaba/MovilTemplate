@@ -1,0 +1,449 @@
+<style>
+  .btns {
+    border-radius: 2px;
+    padding: 8px 12px;
+    color: #D18B49;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+
+  .card {
+    background: #FFFFFF;
+    max-width: 400px;
+    /* margin: 100px auto; */
+    border-radius: 12px;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    height: 600px;
+  }
+
+  .cardButtonEllipse {
+    border-radius: 66px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .cardButtonEllipse:focus {
+    outline: none;
+  }
+
+  .products {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+
+  .product {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+
+  .product.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .thumbnail {
+    margin: 0 0 48px;
+  }
+
+  .title {
+    margin: 0 0 12px;
+    color: #D18B49;
+    font-size: 24px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+
+  .description {
+    /* margin: 0 0 48px; */
+    text-align: justify;
+  }
+
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 -12px -12px;
+  }
+
+  [ripple] {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  [ripple] .ripple {
+    position: absolute;
+    background: #FFFFFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation: ripple 2s;
+    animation: ripple 2s;
+    animation-iteration-count: infinite;
+
+    animation-delay: 0ms;
+  }
+
+  @-webkit-keyframes ripple {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 0.2;
+    }
+
+    100% {
+      -webkit-transform: scale(20);
+      transform: scale(20);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scale(20);
+      transform: scale(20);
+      opacity: 0;
+      left: -500px;
+    }
+  }
+
+  @keyframes zoomOutLeft {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scale(20);
+      transform: scale(20);
+      opacity: 0;
+      left: -500px;
+    }
+  }
+</style>
+
+<div class="container-fluid" style="overflow: hidden; margin-top: 15px;">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <div class="col-12">
+        <div class="row">
+          <div class="fondo_textos">
+            <h4 class="t-st">Composicion de los atomos</h4>
+            <p class="reset p-st">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de
+              un
+              elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los
+              átomos son
+              microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
+              obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
+              valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
+              resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han
+              incorporado
+              principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín
+              atŏmus,
+              calco del griego ἄτομον (átomon) </p>
+          </div>
+
+        </div>
+        <div class="row" style="padding-top: 5px;">
+          <div class="fondo_textos">
+            <h4>Composicion de los atomos</h4>
+            <p class="reset p-st">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de
+              un
+              elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los
+              átomos son
+              microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
+              obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
+              valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
+              resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han
+              incorporado
+              principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín
+              atŏmus,
+              calco del griego ἄτομον (átomon) </p>
+
+
+          </div>
+        </div>
+
+        <!-- <h4>Composicion de los atomos</h4>
+        <p class="reset">El átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de un
+          elemento químico.1​ Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los átomos son
+          microscópicos; los tamaños típicos son alrededor de 100 pm (cien mil millonésima parte de un metro).2​ No
+          obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan
+          valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé
+          resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han incorporado
+          principios cuánticos para explicar y predecir mejor su comportamiento. El término proviene del latín atŏmus,
+          calco del griego ἄτομον (átomon) </p> -->
+      </div>
+
+
+
+      <!-- < ἄτομος, unión de α (a, que significa «sin»), y τόμος (tómos, «sección»), que
+            literalmente es «que no se puede cortar, indivisible»,3​ y fue el nombre que se dice les dio Demócrito de
+            Abdera, discípulo de Leucipo de Mileto, a las partículas que él concebía como las de menor tamaño posible.4​
+            Cada átomo se compone de un núcleo y uno o más electrones unidos al núcleo. El núcleo está compuesto de uno o
+            más protones y típicamente un número similar de neutrones. Los protones y los neutrones son llamados
+            nucleones. Más del 99,94 % de la masa del átomo está en el núcleo. Los protones tienen una carga eléctrica
+            positiva, los electrones tienen una carga eléctrica negativa y los neutrones no tienen carga eléctrica. Si el
+            número de protones y electrones son iguales, ese átomo es eléctricamente neutro. Si un átomo tiene más o menos
+            electrones que protones, entonces tiene una carga global negativa o positiva, respectivamente, y se denomina
+            ion (anión si es negativa y catión si es positiva). -->
+    </div>
+    <div class="col-12 col-lg-6 justify-content-between" style="padding-top: 5px; margin: auto;">
+      <div class="col-11 col-lg-11 reset d-flex justify-content-between cardButtons">
+        <a class="btn cardButtonEllipse disabledButton" id="prev" href="#"><i
+            class="fa fa-chevron-left d-flex justify-content-center" style="padding-top: 10px;"></i></a>
+        <a class="btn cardButtonEllipse " id="next" href="#"><i
+            class="fa fa-chevron-right d-flex justify-content-center" style="padding-top: 10px;"></i></a>
+      </div>
+      <div id="tl0" class="card m-auto">
+        <div class="products">
+          <div class="product active" product-id="1" product-color="#D18B49">
+            <div class="thumbnail"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Stag.svg"
+                style=" width: 250px;height: 250px;" /></div>
+            <h1 class="title">The Magnificent Stag</h1>
+            <p class="description p-st"> asdasdsadasdsad asFusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+              nibh,
+              ut fermentum massa
+              justo sit amet risus.</p>
+          </div>
+          <div class="product" product-id="2" product-color="#542F13">
+            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Bear.svg"
+                style=" width: 250px;height: 250px;" /></div>
+            <h1 class="title">The Courageous Bear</h1>
+            <p class="description p-st">123131312 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+              fermentum massa
+              justo sit amet risus.</p>
+          </div>
+          <div class="product" product-id="3" product-color="#A5AAAE">
+            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Mouse.svg"
+                style=" width: 250px;height: 250px;" /></div>
+            <h1 class="title">The Sneaky Mouse</h1>
+            <p class="description p-st">sad123123123Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+              ut
+              fermentum massa
+              justo sit amet risus.</p>
+          </div>
+          <div class="product" product-id="4" product-color="#ED8D1F">
+            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Fox.svg"
+                style=" width: 250px;height: 250px;" /></div>
+            <h1 class="title">The Cunning Fox</h1>
+            <p class="description p-st">123132asdasd Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+              ut
+              fermentum massa
+              justo sit amet risus.</p>
+          </div>
+          <div class="product" product-id="5" product-color="#C4C8CB">
+            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Rabbit.svg"
+                style=" width: 250px;height: 250px;" /></div>
+            <h1 class="title">The Jumpy Rabbit</h1>
+            <p class="description p-st">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+              massa
+              justo sit amet risus.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row d-flex justify-content-center">
+        <a class="btns disabledButton" id="prev" href="#" ripple="" ripple-color="#666666">Prev</a>
+        <a class="btns" id="next" href="#" ripple="" ripple-color="#666666">Next</a>
+      </div> -->
+    </div> <!-- col-12 -->
+  </div> <!-- row -->
+
+
+
+
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    iniciar_tema();
+    var currentCardSelected = 0;
+    var cardNumber = 5;
+    var getProductHeight = $('.product.active').height();
+
+    $('.products').css({
+      height: getProductHeight
+    });
+
+    function calcProductHeight() {
+      getProductHeight = $('.product.active').height();
+
+      $('.products').css({
+        height: getProductHeight
+      });
+    }
+
+    function animateContentColor() {
+      var getProductColor = $('.product.active').attr('product-color');
+
+      // $('body').css({
+      //   background: getProductColor
+      // });
+
+      // $('.title').css({
+      //   color: getProductColor
+      // });
+
+      // $('.btn').css({
+      //   color: getProductColor
+      // });
+    }
+
+    var productItem = $('.product'),
+      productCurrentItem = productItem.filter('.active');
+
+    // BOTONES
+
+    $('#next').on('click', function (e) {
+      e.preventDefault();
+      currentCardSelected++;
+      // validateButtons(currentCardSelected);
+      disableButtons();
+      siguienteAnimacion();
+
+      setTimeout(() => {
+        var nextItem = productCurrentItem.next();
+
+        productCurrentItem.removeClass('active');
+
+        if (nextItem.length) {
+
+          productCurrentItem = nextItem.addClass('active');
+        } else {
+          productCurrentItem = productItem.first().addClass('active');
+        }
+
+        calcProductHeight();
+        animateContentColor();
+        // validateButtons()
+      }, 600);
+
+    });
+
+    $('#prev').on('click', function (e) {
+      e.preventDefault();
+      currentCardSelected--;
+      // validateButtons(currentCardSelected);
+      disableButtons();
+      anteriorAnimacion();
+
+      setTimeout(() => {
+        var prevItem = productCurrentItem.prev();
+
+        productCurrentItem.removeClass('active');
+
+        if (prevItem.length) {
+          productCurrentItem = prevItem.addClass('active');
+        } else {
+          productCurrentItem = productItem.last().addClass('active');
+        }
+
+        calcProductHeight();
+        animateContentColor();
+        // validateButtons();
+      }, 450);
+
+    });
+
+    // 
+    function siguienteAnimacion() {
+      gsap.to($(".card"), { duration: 1, x: -500, opacity: 0, scale: 0.5, onComplete: siguienteAnimacion2 })
+    }
+    function siguienteAnimacion2() {
+      gsap.fromTo($(".card"), { x: 500, scale: 0.5, opacity: 0 }, { duration: 1, x: 0, scale: 1, opacity: 1, onComplete: validateButtons, onCompleteParams: [currentCardSelected] })
+    }
+
+    function anteriorAnimacion() {
+      gsap.to($(".card"), { duration: 1, x: +500, opacity: 0, scale: 0.5, onComplete: anteriorAnimacion2 })
+    }
+    function anteriorAnimacion2() {
+      gsap.fromTo($(".card"), { x: -500, scale: 0.5, opacity: 0 }, { duration: 1, x: 0, scale: 1, opacity: 1, onComplete: validateButtons, onCompleteParams: [currentCardSelected] });
+    }
+
+    function disableButtons() {
+      $('#prev').addClass("disabledButton");
+      $('#next').addClass("disabledButton");
+    }
+
+    function validateButtons(target) {
+
+      // console.log(target)
+      if (target === 0) {
+        $('#prev').addClass("disabledButton");
+        $('#next').removeClass("disabledButton");
+        return;
+      }
+
+      if (target >= cardNumber - 1) {
+        $('#prev').removeClass("disabledButton");
+        $('#next').addClass("disabledButton");
+        // Actividad completada al bloquearse el boton siguiente / al ver todas las tarjetas
+        final_tema();
+        return;
+      }
+
+      if (target > 0 && target < cardNumber) {
+        $('#prev').removeClass("disabledButton");
+        $('#next').removeClass("disabledButton");
+        return;
+      }
+    }
+    // BOTONES
+
+
+    // Ripple
+    $('[ripple]').on('click', function (e) {
+      var rippleDiv = $('<div class="ripple" />'),
+        rippleSize = 60,
+        rippleOffset = $(this).offset(),
+        rippleY = e.pageY - rippleOffset.top,
+        rippleX = e.pageX - rippleOffset.left,
+        ripple = $('.ripple');
+
+      rippleDiv.css({
+        top: rippleY - (rippleSize / 2),
+        left: rippleX - (rippleSize / 2),
+        background: $(this).attr("ripple-color")
+      }).appendTo($(this));
+
+      window.setTimeout(function () {
+        rippleDiv.remove();
+      }, 1900);
+    });
+
+    validateButtons();
+  });
+
+
+</script>

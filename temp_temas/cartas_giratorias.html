@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cartas Giratorias</title>
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../awesome/all.css"> -->
+    <style>
+        /* body {
+            font-family: Arial, Helvetica, sans-serif;
+        } */
+
+        .seenIndicator {
+            border-left: 5px solid;
+            border-color: #a94442;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            left: -9999;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Para activar en el hover  */
+        /* .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        } */
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #53adf2;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col offset-1">
+                <h5 id="sectionTitle"> Titulo del bloque</h5>
+                <h3>Coloca el puntero sobre las imagenes:</h3>
+                <button onclick="reanimar()">Seguir</button>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard1">
+                    <div class="d-flex justify-content-start">Negocios</div>
+                    <div class="flip-card-inner seenIndicator" id="fc1">
+                        <div class="flip-card-front">
+                            <img src="https://negocios-inteligentes.mx/wp-content/uploads/2018/03/plandenegocios.jpg"
+                                alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard2">
+                    <div class="d-flex justify-content-center">Home Office</div>
+                    <div class="flip-card-inner seenIndicator" id="fc2">
+                        <div class="flip-card-front">
+                            <img src="https://assets.entrepreneur.com/content/3x2/2000/20160601174726-negocios-web.jpeg?width=700&crop=2:1"
+                                alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard3">
+                    <div class="d-flex justify-content-end">Innovacion</div>
+                    <div class="flip-card-inner seenIndicator" id="fc3">
+                        <div class="flip-card-front">
+                            <img src="https://tentulogo.com/wp-content/uploads/2019/01/cabecera-post-ideas-de-negocios.jpg"
+                                alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center pb-5">
+                <div class="flip-card" id="gcard4">
+                    <div class="d-flex justify-content-start">Generar dinero</div>
+                    <div class="flip-card-inner seenIndicator" id="fc4">
+                        <div class="flip-card-front">
+                            <img src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg"
+                                alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/gsap.min.js"></script> -->
+    <script>
+        var tl = gsap.timeline( {defaults: {duration: 1.2}});
+        tl.to($("#body"), { duration: 1.2, backgroundColor: "#8aed66" }); //shorter syntax!
+        $("#document").ready(function () {
+            iniciar_tema();
+            let controlActividad = { numTarjetas: 4, vistas: [0, 0, 0, 0], ids: ["fc1", "fc2", "fc3", "fc4"] };
+            var colorStatus = { "visto": "#1afa8a", "noVisto": "#a94442" } // Hacerlo Global
+            $(".flip-card-inner").click((index, element) => {
+
+                const v = index.currentTarget.id;
+                if ($("#" + v).hasClass("flipped")) {
+                    $("#" + v).css('transform', 'rotateY(0deg)');
+                    $("#" + v).removeClass("flipped")
+                } else {
+                    $("#" + v).css('transform', 'rotateY(180deg)');
+                    $("#" + v).addClass("flipped")
+                }
+
+                $("#" + v).css("borderColor", colorStatus.visto); // Marcar como visto el objeto clickeado
+                for (let i = 0; i < controlActividad.numTarjetas; i++) {
+
+                    if (v === controlActividad.ids[i]) {
+                        controlActividad.vistas[i] = 1;
+                    }
+                }
+                validaCompleto();
+            });
+
+            // Bloquear las tarjetas antes de entrar
+            $(".flip-card").each(function (index, element) {
+                $(this).css("pointerEvents", "none");
+            });
+
+            // Animaciones de entrada desde la derecha
+            const animacionEntrada = { "derecha": 9999, "izquierda": -9999, "arriba": -9999, "abajo": 9999 }
+
+            tl.from($("#gcard1"), { display: "block", opacity: 1, y: animacionEntrada.arriba, delay: 1 })
+               .from($("#gcard2"), { display: "block", opacity: 1, y: animacionEntrada.arriba })
+               .from($("#gcard3"), { display: "block", opacity: 1, y: animacionEntrada.arriba })
+               .from($("#gcard4"), { display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: liberarTarjetas });
+
+            // tl.from($("#gcard1"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, delay: 1, onComplete: stopAnimacion });
+            // tl.from($("#gcard2"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: stopAnimacion });
+            // tl.from($("#gcard3"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: stopAnimacion });
+            // tl.from($("#gcard4"), { duration: 1.2, display: "block", opacity: 1, y: animacionEntrada.arriba, onComplete: liberarTarjetas });
+
+            // Desbloquear las tarjetas
+            function liberarTarjetas() {
+                $(".flip-card").each(function (index, element) {
+                    $(this).css("pointerEvents", "all");
+                });
+            }
+
+            function stopAnimacion(timeLine) {
+                tl.pause();
+            }
+
+
+            function validaCompleto() {
+
+                let completada = false;
+
+                if (controlActividad.vistas.find(x => x === 0) === undefined) {
+                    // alert("Actividad completada");
+                    console.log("Actividad completada");
+                    final_tema();
+                }
+            }
+        });
+
+
+        function reanimar() {
+            tl.resume();
+        }
+    </script>
+</body>
+
+</html>

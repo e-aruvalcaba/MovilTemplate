@@ -5,22 +5,37 @@ body {
 
 /* CONFIGURACION DE TEXTOS PARA EL TEMPLATE */
 
-.p-st{
-  font-size: 18px!important;
+.p-st {
+  font-size: 18px !important;
 }
 
-.t-st{
-  font-size: 20px!important;
+.t-st {
+  font-size: 20px !important;
 }
 
 /* TERMINAN ESTILOS PARA TEXTOS DEL TEMPLATE */
+.paddingUpDown {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+.textTitulo {
+  font-size: 20px !important;
+  color:white;
+  font-weight: bold;
+}
+
+.textParrafo {
+  font-size: 20px !important;
+  color:white;
+}
 .fondo_textos {
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   padding: 10px;
-  text-align: justify!important;
-  margin-top: 5px!important;
+  /* text-align: justify !important; */
+  margin-top: 5px !important;
 }
 .banner-titulo {
   height: 70px;
@@ -109,12 +124,15 @@ footer {
 
 .my-float {
   margin-top: 22px;
-}.my-float-back {
+}
+.my-float-back {
   left: 10px;
-}.my-float > a:hover  {
-  color:white!important
-}.my-float-back > a:hover{
-  color:white!important
+}
+.my-float > a:hover {
+  color: white !important;
+}
+.my-float-back > a:hover {
+  color: white !important;
 }
 /* .control-buttons :hover {
   background-color: rgb(59, 194, 243) !important;
@@ -135,6 +153,13 @@ footer {
     left: 0.5%;
   }
 } */
+
+  /*  Ocupar el 100% de la pantalla en modo movil */
+@media (max-width: 900px) {
+  #superContainer {
+    max-width: unset;
+  }
+}
 
 @media (min-width: 1280px) {
   .blck_scroll {
@@ -340,7 +365,6 @@ footer {
   overflow: hidden;
   color: #f60d54;
 }
-
 
 /* ANIMATE STYLES */
 
@@ -804,10 +828,6 @@ h1 {
   }
 }
 
-
-
-
-
 .nextAnimation {
   animation-name: buttonNextAnimation;
   animation-duration: 0.5s;
@@ -822,7 +842,7 @@ h1 {
   }
   50% {
     background-color: white;
-    color:black;
+    color: black;
     /* transform: translateY(-5px); */
   }
   100% {
@@ -853,6 +873,6 @@ h1 {
   }
 }
 
-.nextHiddenButton{
+.nextHiddenButton {
   right: -200%;
 }

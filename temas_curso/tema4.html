@@ -1,0 +1,374 @@
+<style>
+    .paddingUpDown {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+/* 
+    .textTitulo {
+        font-size: 20px !important;
+        color: white;
+    }
+
+    .textParrafo {
+        font-size: 18px !important;
+        color: white;
+    } */
+
+    .btn-animado {
+        transition: 100ms;
+        animation: parpadeo 4s ease 3s infinite;
+    }
+
+    .over {
+        background-color: cornflowerblue !important;
+    }
+
+    .resps {
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: burlywood;
+    }
+
+    @media (max-width: 900px) {
+        .animatedSvg {
+            margin: auto !important;
+        }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- TITULO Y BARRA MORADA -->
+        <div class="col-12 banner-titulo d-flex justify-content-center align-items-center" style="background-color: unset!important;">
+            <p class="reset" style="font-size: 20px;">Evaluación </p>
+        </div>
+        <!-- http://lumicmedia.com/svg01_js.svg -->
+        <!-- ANIMACION DE ENTRADA DEL TEMA -->
+        <div id="bloque1" class="animatedSvg col-12 offset-lg-2 col-lg-6 paddingUpDown d-flex align-items-center"
+            style="transition: ease 2s;">
+
+            <img id="gif" class="img-fluid" src="http://lumicmedia.com/svg/svg03_js.svg"
+                alt="svg computadoras animadas">
+        </div>
+        <div id="bloque2_1" class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
+            <!-- <h4 id="bloque2" class="textTitulo"></h4> -->
+            <p class="textParrafo">Selecciona la respuesta que consideres correcta</p>
+        </div>
+    </div>
+
+    <!-- Comienza diseño de la evaluacion -->
+    <div id="bloque2_2" class="fondo_textos d-flex col-12 col-lg-9"
+        style="margin: auto; overflow: hidden; margin-bottom: 10px!important;">
+        <div id="bloque2_3" class="col-12 textParrafo">
+            <div class="d-flex">
+                <h4 style="color: white">Pregunta:&nbsp; </h4>
+                <h4 id="contadorPreguntas" style="color: white">1 / 5</h4>
+            </div>
+            <br>
+            <p id="description" class="reset" style="overflow: hidden; font-size: 23px;"> Texto con la descripcion de la
+                pregunta</p>
+            <br>
+            <div id="r1" class="resps resp1 d-flex" data-rId="1">
+                <span>A)&nbsp</span>
+                <p id="textoA" class="reset" style="overflow: hidden;">Te
+                    recomendamos la experiencia de aprendizaje más acertada, asegurando que el contenido motive a
+                    tus colaboradores.</p>
+            </div>
+            <br>
+            <div id="r2" class="resps resp2 d-flex" data-rId="2">
+                <span>B)&nbsp</span>
+                <p id="textoB" class="reset" style="overflow: hidden;">Te
+                    recomendamos la experiencia de aprendizaje más acertada, asegurando que el contenido motive a
+                    tus colaboradores.</p>
+
+            </div>
+            <br>
+            <div id="r3" class="resps resp3 d-flex active" data-rId="3">
+                <span>C)&nbsp</span>
+                <p id="textoC" class="reset" style="overflow: hidden;">Te
+                    recomendamos la experiencia de aprendizaje más acertada, asegurando que el contenido motive a
+                    tus colaboradores.</p>
+
+            </div>
+            <br>
+            <div class="col-12 col-lg-12 d-flex jusitify-content-center">
+                <button id="btnContinuar" class="btn btn-primary col-10 col-lg-3 m-auto">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bloque3" class="fondo_textos d-flex"
+        style="margin: auto; overflow: hidden; margin-bottom: 10px!important; opacity: 0;">
+        <div id="bloque3_1" class="col-12 textParrafo">
+            <span id="iconReprobado" class="d-flex justify-content-center" style="font-size: 170px; color:red"><i
+                    class="fas fa-times-circle"></i></span>
+            <span id="iconAprobado" class="d-flex justify-content-center"
+                style="font-size: 170px; color:rgb(20, 211, 58)"><i class="fas fa-check-circle"></i></span>
+            <br>
+            <h3 class="d-flex justify-content-center">Calificacion:&nbsp; <p id="calificacion">50</p>
+            </h3>
+            <h5 class="d-flex justify-content-center">Intentos:&nbsp; <p id="intentos"> 1 / 3</p>
+            </h5>
+            <p class="d-flex justify-content-start" id="resultadosTexto" class="reset">Este es el resultado de la
+                evaluacion</p>
+
+            <br>
+            <div class="col-12 col-12 d-flex jusitify-content-center">
+                <button id="btnReintentar" class="btn btn-warning col-10 col-lg-3 m-auto">Reintentar</button>
+            </div>
+            <div class="col-12 col-12 d-flex jusitify-content-center mt-2">
+                <button id="btnReiniciarCurso" class="btn btn-warning col-10 col-lg-3 m-auto">Ver de nuevo el
+                    curso</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    $("#document").ready(function () {
+
+        let data = JSON.parse('{ "NombreCurso": "Motor de Evaluacion Prueba", "preguntas": [{ "id": 0, "pregunta": "Las imágenes, íconos y texto se acomodan automáticante según la pantalla del dispositivo.", "respuestas": [{ "1": "Escalable.", "2": "Responsivo.", "3": "Experiencia de usuario." }], "correcta": "2" }, { "id": 1, "pregunta": "El usuario tiene más participacón dentro del curso. Se compone de contenidos interactivos y animados.", "respuestas": [{ "1": "Interactive Learning.", "2": "Motion learning", "3": "Microlearning." }], "correcta": "1" }, { "id": 2, "pregunta": "El mundo digital nos obliga a cambiar constantemente, y sabemos que en las empresas conviven diferentes generaciones", "respuestas": [{ "1": "Nuevos procesos o aplicativos.", "2": "Habilidades por puesto.", "3": "Cambio cultural." }], "correcta": "3" }, { "id": 3, "pregunta": "Los nuevos colaboradores deben conocer la misión de tu empresa, su historia, valores y prácticas clave.", "respuestas": [{ "1": "Onboarding e inducción.", "2": "Cambio cultural.", "3": "Nuevos procesos o aplicativos." }], "correcta": "1" }, { "id": 4, "pregunta": "La tecnología cambia constantemente y es probable que tu empresa tenga contenidos que al día de hoy se han vuelto obsoletos. Se puede convertir y mejorar ese conocimiento existente en contenidos de última tecnología visible en cualquier dispositivo.", "respuestas": [{ "1": "Interactive Learning.", "2": "Migrado de Flash a Html5.", "3": "Microlearning." }], "correcta": "2" }], "control": "0" }');
+        console.log(data);
+        let selected = null;
+        let tl = gsap.timeline({ defaults: { duration: 0.5 } });
+        let correctos = [];
+        let orden1 = [1, 2, 3, 4, 5];
+        let orden2 = [3, 2, 5, 4, 1];
+        let orden3 = [5, 4, 3, 2, 1];
+        let orden4 = [1, 3, 2, 5, 4];
+        let orden5 = [3, 5, 1, 4, 2];
+        let avance = 0;
+        let calificacion = 0;
+        let respuestas = [];
+        let totalPreguntas = 5;
+        let intentoActual = 1;
+        let calMinima = 80;
+        let totalIntentos = 3;
+        let firstTime = true;
+        var orden = [];
+
+        iniciar_tema();
+        animateAvatar(startAnimating());
+
+        function obtenerOrden() {
+            orden = Math.floor(Math.random() * (6 - 1) + 1);
+            switch (orden) {
+                case 1:
+                    orden = orden1;
+                    break;
+                case 2:
+                    orden = orden2;
+                    break;
+                case 3:
+                    orden = orden3;
+                    break;
+                case 4:
+                    orden = orden4;
+                    break;
+                case 5:
+                    orden = orden5;
+                    break;
+            }
+            console.log(orden);
+        }
+        function ocultarResultados() {
+            setTimeout(() => {
+                ocultarBotonesEvaluacion();
+                ocultarIconosEvaluacion();
+            }, 800);
+
+            if (!firstTime) {
+
+                setTimeout(() => {
+                    mostrar();
+                }, 1000);
+                let time = gsap.timeline();
+                time.fromTo("#bloque3", { x: $("#bloque3").position().left, opacity: 1, duration: 0.5 }, { x: $("#bloque3").position().left, opacity: 0 })
+                    .fromTo("#bloque3_1", { x: $("#bloque3_1").position().left, opacity: 1 }, { x: $("#bloque3").position().left, opacity: 0 })
+                    .fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                    .fromTo("#bloque2_3", { x: $("#bloque2_3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+            }
+            if (firstTime) {
+                firstTime = false;
+            }
+
+        }
+        function animateAvatar(callback) {
+            setTimeout(() => {
+                $("#bloque1").removeClass("col-12 col-lg-6");
+                $("#bloque1").addClass("col-6 col-lg-4");
+                $("#gif").css("animationPlayState: running");
+            }, 6000);
+            callback;
+        }
+        function startAnimating() {
+            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 8.5 })
+                .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                .fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                .fromTo("#bloque2_3", { x: $("#bloque2_3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+        }
+
+        $(".resps").click(function (e) {
+            selected = e.currentTarget.dataset.rid;
+            console.log(selected)
+            $(".resps").removeClass("selected");
+            $(".resps").removeClass("over");
+            $(".resp" + selected).toggleClass("selected");
+        });
+        $(".resps").mouseover(function (e) {
+            // debugger
+            let selectedR = e.currentTarget.dataset.rid;
+            // console.log("over " + selected)
+            if (selected === null) {
+                $(".resp" + selectedR).addClass("over")
+            }
+        }).mouseout(function (e) {
+            // console.log("out " + selected)
+            let selectedR = e.currentTarget.dataset.rid;
+            if (selected === null) {
+                $(".resp" + selectedR).removeClass("over")
+            }
+        });
+
+        $("#btnContinuar").click(() => {
+            if (selected === null) {
+                alert("Selecciona una de las opciones para continuar.")
+                return;
+            }
+
+            respuestas[avance - 1] = selected;
+
+            checarAvance();
+            actualizarIndicadorAvance();
+        })
+
+        function actualizarIndicadorAvance() {
+            $("#contadorPreguntas").html(avance + " / " + totalPreguntas)
+        }
+
+        function siguientePregunta() {
+            avance++;
+            // Llenar texto de la pregunta
+            $("#description").html(data.preguntas[orden[avance - 1] - 1].pregunta)
+            // Se llenan las respuestas
+            $("#textoA").html(data.preguntas[orden[avance - 1] - 1].respuestas[0][1])
+            $("#textoB").html(data.preguntas[orden[avance - 1] - 1].respuestas[0][2])
+            $("#textoC").html(data.preguntas[orden[avance - 1] - 1].respuestas[0][3])
+            respuestas.push(selected);
+            correctos.push(data.preguntas[avance - 1].correcta);
+            $(".resps").removeClass("selected");
+        }
+        function ocultar() {
+            $("#bloque2_2").removeClass('d-flex');
+            $("#bloque2_2").addClass('d-none');
+        }
+        function mostrar() {
+            // $("#bloque2_2").css('opacity', '0');
+            $("#bloque2_2").removeClass('d-none');
+            $("#bloque2_2").addClass('d-flex');
+        }
+
+        function mostrarResultados() {
+            // console.log(respuestas);
+            let totalCorrectas = 0;
+            for (let i = 0; i < totalPreguntas; i++) {
+                if (respuestas[i] === correctos[i]) {
+                    totalCorrectas++;
+                }
+            }
+
+            calificacion = ((totalCorrectas * 100) / totalPreguntas);
+            console.log(calificacion);
+
+            $("#intentos").html(intentoActual + " / " + totalIntentos);
+            $("#calificacion").html(calificacion);
+
+            if (Number(calificacion) >= calMinima) {
+                ocultarIconosEvaluacion();
+                ocultarBotonesEvaluacion();
+                $("#iconAprobado").addClass("d-flex");
+                $("#resultadosTexto").html("Felicidades, haz aprobado la evaluación.");
+                final_tema();
+                deshabilitarSiguiente();
+            } else {
+                ocultarIconosEvaluacion();
+                ocultarBotonesEvaluacion();
+                $("#iconReprobado").addClass("d-flex");
+                if (intentoActual < totalIntentos) {
+                    $("#btnReintentar").addClass("d-flex justify-content-center");
+                    $("#btnReiniciarCurso").addClass("d-flex justify-content-center");
+                    $("#resultadosTexto").html("No has logrado aprobar esta evaluación, vuelve a intentar o bien, repasa nuevamente el curso.")
+                } else {
+                    ocultarBotonesEvaluacion();
+                    $("#resultadosTexto").html("No has logrado aprobar esta evaluación en tus 3 intentos, repasa nuevamente el curso para reforzar tus conocimientos e intentalo nuevamente.")
+                }
+            }
+
+            let tii = gsap.timeline();
+            tii.fromTo("#bloque2_2", { x: $("#bloque2_2").position().left, opacity: 0, duration: 0.5, onComplete: ocultar }, { x: $("#bloque2_2").position().left + 20, opacity: 1 })
+                .fromTo("#bloque3", { x: $("#bloque3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                .fromTo("#bloque3_1", { x: $("#bloque3_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+
+        }
+
+        function reintentar() {
+            intentoActual++;
+            obtenerOrden()
+            correctos = [];
+            avance = 0;
+            calificacion = 0;
+            respuestas = [];
+            selected = null;
+            siguientePregunta();
+            actualizarIndicadorAvance();
+            ocultarResultados();
+
+            // mostrar();
+
+            // let tii = gsap.timeline();
+            // tii.fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0, duration: 0.5 }, { x: 0, opacity: 1 })
+        }
+
+        function reiniciarCurso() {
+            alert("Reiniciando Curso");
+        }
+
+        function checarAvance() {
+            if (avance < totalPreguntas) {
+                siguientePregunta();
+                selected = null;
+            } else {
+                mostrarResultados();
+            }
+        }
+
+        function ocultarIconosEvaluacion() {
+            $("#iconReprobado").removeClass("d-flex");
+            $("#iconReprobado").addClass("d-none");
+            $("#iconAprobado").removeClass("d-flex");
+            $("#iconAprobado").addClass("d-none");
+        }
+
+        function ocultarBotonesEvaluacion() {
+            $("#btnReintentar").removeClass("d-flex");
+            $("#btnReintentar").addClass("d-none");
+            $("#btnReiniciarCurso").removeClass("d-flex");
+            $("#btnReiniciarCurso").addClass("d-none");
+        }
+        obtenerOrden();
+        siguientePregunta();
+        actualizarIndicadorAvance();
+        ocultarResultados();
+
+        $("#btnReintentar").click(() => {
+            reintentar();
+        })
+    });
+</script>

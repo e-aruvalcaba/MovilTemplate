@@ -1,0 +1,278 @@
+<style>
+    .naranja {
+        background-color: #ff7d27 !important;
+    }
+
+    .paddingUpDown {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* .textTitulo {
+        font-size: 20px !important;
+        color: white;
+    }
+
+    .textParrafo {
+        font-size: 18px !important;
+        color: white;
+    } */
+
+    .btn-animado {
+        transition: 100ms;
+        animation: parpadeo 4s ease 3s infinite;
+    }
+
+    @media (max-width: 900px) {
+        .animatedSvg {
+            margin: auto !important;
+        }
+        .flip-card{
+            width: 400px!important;
+        }
+        .card-icon{
+            width: 400px!important;
+            height: 300px!important;
+        }
+    }
+
+
+
+    /* TARJETAS ESTILOS */
+    .seenIndicator {
+        border-left: 5px solid;
+        border-color: #a94442;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+        left: -9999;
+        cursor: pointer;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Para activar en el hover  */
+    /* .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        } */
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        /* padding: 10px; */
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+        background-color: #53adf2;
+        color: white;
+    }
+
+    .flip-card-back {
+        padding:10px;
+        overflow: auto;
+        background-color: #53adf2;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    .card-icon{
+
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- TITULO Y BARRA MORADA -->
+        <div class="col-12 banner-titulo d-flex justify-content-center align-items-center" style="background-color: unset!important;">
+            <p class="reset" style="font-size: 20px;">Tema 3: Soluciones de capacitación</p>
+        </div>
+        <!-- http://lumicmedia.com/svg01_js.svg -->
+        <!-- ANIMACION DE ENTRADA DEL TEMA -->
+        <div id="bloque1" class="animatedSvg col-12 offset-lg-2 col-lg-6 paddingUpDown d-flex align-items-center"
+            style="transition: ease 2s;">
+
+            <img id="gif" class="img-fluid" src="http://lumicmedia.com/svg/svg02_js.svg" alt="Secretaria animada">
+        </div>
+        <div class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
+            <!-- <h4 id="bloque2" class="textTitulo"></h4> -->
+            <p id="bloque2_1" class="textParrafo">Hacemos sinergia con nuestros clientes creando
+                excelentes soluciones de capacitación.</p>
+        </div>
+    </div>
+
+    <div id="bloque2_2" class="fondo_textos col-12 col-lg-9" style="margin: auto; overflow: hidden; margin-bottom: 10px!important;">
+        <div id="bloque2_3" class="col-12 textParrafo">
+            <p class="reset" style="overflow: hidden;">
+                Nuestras soluciones cuentan con diseño de contenido y diseño visual personalizados y están desarrollados
+                por expertos, además nuestra metodología de desarrollo permite que el cliente nos acompañe en cada una
+                de las etapas.
+            </p>
+        </div>
+    </div>
+
+    <!-- TARJETAS -->
+
+    <!-- <div id="bloque3" class="row">
+        <div class="col paddingUpDown">
+            <a class="d-flex justify-content-end align-items-center" style="font-size: 20px!important; color: black;">
+                <img src="assets/img/click.png" alt="Click para continuar"
+                    style="width: 50px; height: 50px; margin-right: 5px;"> Haz click en las tarjetas para continuar.</a>
+        </div>
+    </div> -->
+    <div id="bloque4" class="row paddingUpDown">
+
+        <div class="col-12 col-lg-4 d-flex justify-content-center pb-5">
+            <div class="flip-card" id="gcard1" style="border-radius: 20px!important;">
+                <!-- <div class="d-flex justify-content-start">Negocios</div> -->
+                <div class="flip-card-inner seenIndicator" id="fc1" style="border-radius: 20px;">
+                    <div class="flip-card-front d-flex justify-content-center align-items-center" style="border-radius: 20px;">
+                        <!-- <a style="font-size: 150px;"><i class="fas fa-pen"></i></a> -->
+                        <img class="card-icon" src="http://lumicmedia.com/svg/soluciones-motion-learning.svg" alt="motion learning" style="border-radius: 20px;">
+                    </div>
+                    <div class="flip-card-back" style="border-radius: 20px;">
+                        <p class="textTitulo" style="text-align: center;">TITULO 1</p>
+                        <p style="text-align: start; padding: 6px;">
+                            Este es el texto que tendra la tarjeta numero 1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4 d-flex justify-content-center pb-5">
+            <div class="flip-card" id="gcard2" style="border-radius: 20px;">
+                <!-- <div class="d-flex justify-content-start">Negocios</div> -->
+                <div class="flip-card-inner seenIndicator" id="fc2" style="border-radius: 20px;">
+                    <div class="flip-card-front d-flex justify-content-center align-items-center" style="border-radius: 20px;">
+                        <!-- <a style="font-size: 150px;"><i class="far fa-envelope-open"></i></a> -->
+                        <img class="card-icon" src="http://lumicmedia.com/svg/soluciones-microlearning.svg" alt="motion learning" style="border-radius: 20px;">
+                    </div>
+                    <div class="flip-card-back" style="border-radius: 20px;">
+                        <p class="textTitulo" style="text-align: center;">TITULO 2</p>
+                        <p style="text-align: start; padding: 6px;">
+                            Este es el texto que tendra la tarjeta numero 2
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4 d-flex justify-content-center pb-5">
+            <div class="flip-card" id="gcard3" style="border-radius: 20px;">
+                <!-- <div class="d-flex justify-content-start">Negocios</div> -->
+                <div class="flip-card-inner seenIndicator" id="fc3" style="border-radius: 20px;">
+                    <div class="flip-card-front d-flex justify-content-center align-items-center" style="border-radius: 20px;">
+                        <!-- <a style="font-size: 150px;"><i class="fas fa-radiation"></i></a> -->
+                        <img class="card-icon" src="http://lumicmedia.com/svg/soluciones-migrado.svg" alt="motion learning" style="border-radius: 20px;">
+                    </div>
+                    <div class="flip-card-back" style="border-radius: 20px;">
+                        <p class="textTitulo" style="text-align: center;">TITULO 3</p>
+                        <p style="text-align: start; padding: 6px;">
+                            Este es el texto que tendra la tarjeta numero 3
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TARJETAS -->
+    <script>
+        $("#document").ready(function () {
+
+            //--------------------------------------------------------------------------------------- TARJETAS PROGRA 
+            let controlActividad = { numTarjetas: 3, vistas: [0, 0, 0], ids: ["fc1", "fc2", "fc3"] };
+            var colorStatus = { "visto": "#1afa8a", "noVisto": "#a94442" } // Hacerlo Global
+            $(".flip-card-inner").click((index, element) => {
+
+                const v = index.currentTarget.id;
+                if ($("#" + v).hasClass("flipped")) {
+                    $("#" + v).css('transform', 'rotateY(0deg)');
+                    $("#" + v).removeClass("flipped")
+                } else {
+                    $("#" + v).css('transform', 'rotateY(180deg)');
+                    $("#" + v).addClass("flipped")
+                }
+
+                $("#" + v).css("borderColor", colorStatus.visto); // Marcar como visto el objeto clickeado
+                for (let i = 0; i < controlActividad.numTarjetas; i++) {
+
+                    if (v === controlActividad.ids[i]) {
+                        controlActividad.vistas[i] = 1;
+                    }
+                }
+                validaCompleto();
+            });
+
+            // Bloquear las tarjetas antes de entrar
+            $(".flip-card").each(function (index, element) {
+                $(this).css("pointerEvents", "none");
+            });
+
+            //--------------------------------------------------------------------------------------- TARJETAS PROGRA
+
+            var tl = gsap.timeline({ defaults: { duration: 0.5 } });
+            iniciar_tema();
+            animateAvatar(startAnimating());
+
+            function animateAvatar(callback) {
+                setTimeout(() => {
+                    $("#bloque1").removeClass("col-12 col-lg-6");
+                    $("#bloque1").addClass("col-6 col-lg-4");
+                    $("#gif").css("animationPlayState: running");
+                }, 6000);
+                callback;
+            }
+            function startAnimating() {
+                tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 8.5 })
+                    .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                    .fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                    .fromTo("#bloque2_3", { x: $("#bloque2_3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                    // .fromTo("#bloque3", { x: $("#bloque3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                    .fromTo("#bloque4", { x: $("#bloque4").position().left + 5, opacity: 0, onComplete: liberarTarjetas }, { x: 0, opacity: 1 })
+            }
+
+            // Desbloquear las tarjetas
+            function liberarTarjetas() {
+                $(".flip-card").each(function (index, element) {
+                    $(this).css("pointerEvents", "all");
+                });
+            }
+
+            function stopAnimacion(timeLine) {
+                tl.pause();
+            }
+
+
+            function validaCompleto() {
+
+                let completada = false;
+
+                if (controlActividad.vistas.find(x => x === 0) === undefined) {
+                    // alert("Actividad completada");
+                    console.log("Actividad completada");
+                    final_tema();
+                }
+            }
+
+        });
+
+
+    </script>
