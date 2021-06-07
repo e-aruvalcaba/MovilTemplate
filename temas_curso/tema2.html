@@ -1,6 +1,6 @@
 <style>
     .naranja {
-        background-color: #ED7D31 !important;
+        background-color: #66CCFF !important;
     }
 
     .bg-custom{
@@ -45,7 +45,7 @@
     }
 
     .custom-accordion{
-        background-color: #ED7D31!important; 
+        background-color: #66CCFF!important; 
         border: none!important;
     }
 
@@ -76,7 +76,7 @@
     /* }  */
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="row">
         <!-- TITULO Y BARRA MORADA -->
         <div class="col-12 banner-titulo d-flex justify-content-center align-items-center" style="background-color: unset!important;">
@@ -87,7 +87,9 @@
         <div id="bloque1" class="animatedSvg col-12 offset-lg-2 col-lg-6 paddingUpDown d-flex align-items-center"
             style="transition: ease 2s;">
 
-            <img id="gif" class="img-fluid" src="http://lumicmedia.com/svg/svg06_js.svg" alt="svg computadoras animadas">
+            <!-- <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s" src="http://lumicmedia.com/svg/svg06_js.svg" alt="svg computadoras animadas"> -->
+            <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s" src="svgs/svg06_original.svg" alt="svg computadoras animadas">
+
         </div>
         <div class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
             <!-- <h4 id="bloque2" class="textTitulo"></h4> -->
@@ -100,18 +102,18 @@
         <div class="">
             <div id="accordion" class="accordion">
                 <!-- background-color: #ED7D31;border-color: #4472C4; -->
-                <div class="card text-white acc1 custom-accordion">
+                <div class="card text-white acc1 custom-accordion mb-2">
                     <div class="card-header d-flex justify-content-center" id="headingOne">
                         <h5 class="mb-0">
                             <button class="btn acordeonActionBtn" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="false" aria-controls="collapseOne" style="color: white;">
-                                <i class="fas fa-plus"></i> <b> Diseño escalable o responsivo </b>
+                                <i class="fas fa-plus textParrafo"></i> <b> Diseño escalable o responsivo </b>
                             </button>
                         </h5>
                     </div>
 
                     <div id="collapseOne" class="collapse bg-custom" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body textParrafo">
                             Anque los materiales que diseñamos se alinean 100% a la imagen de la empresa, es necesario
                             saber cuándo los contenidos deben ser escalables o responsivos, según el tipo de
                             dispositivo, audiencia y tipo de información.
@@ -122,18 +124,18 @@
                             style="background-color: #ED7D31; border-color: #ED7D31;">Close</button> -->
                     </div>
                 </div>
-                <div class="card text-white acc2 custom-accordion" >
+                <div class="card text-white acc2 custom-accordion mb-2" >
                     <div class="card-header d-flex justify-content-center" id="headingTwo">
                         <h5 class="mb-0">
                             <button class="btn acordeonActionBtn collapsed" data-toggle="collapse"
                                 data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
                                 style="color: white;">
-                                <i class="fas fa-plus"></i> <b>Multidispositivo</b>
+                                <i class="fas fa-plus textParrafo"></i> <b>Multidispositivo</b>
                             </button>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse bg-custom" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body textParrafo">
                             <p>Desarrollamos los materiales de capacitación con tecnología de punta capaz de adaptarse a
                                 cualquier pantalla, en cualquier dispositivo. El usuario puede tomar un curso desde su
                                 computadora y continuarlo en su smartphone o Tablet, administrando su tiempo.
@@ -144,18 +146,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="card text-white acc3 custom-accordion">
+                <div class="card text-white acc3 custom-accordion mb-2">
                     <div class="card-header d-flex justify-content-center" id="headingThree">
                         <h5 class="mb-0">
                             <button class="btn acordeonActionBtn collapsed" data-toggle="collapse"
                                 data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
                                 style="color: white;">
-                                <i class="fas fa-plus"></i> <b>Experiecia de usuario e interfase </b>
+                                <i class="fas fa-plus textParrafo"></i> <b>Experiecia de usuario e interfase </b>
                             </button>
                         </h5>
                     </div>
                     <div id="collapseThree" class="collapse bg-custom" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body textParrafo">
                             <p>Es necesaria una buena experiencia de usuario e interfase del curso para una efectiva
                                 capacitación pensando en el usuario final, además de una correcta estrategia de
                                 capacitación.
@@ -173,19 +175,19 @@
                             <button class="btn acordeonActionBtn collapsed" data-toggle="collapse"
                                 data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
                                 style="color: white;">
-                                <i class="fas fa-plus"></i> <b>Compatibilida Scorm (LMS)</b>
+                                <i class="fas fa-plus textParrafo"></i> <b>Compatibilida Scorm (LMS)</b>
                             </button>
                         </h5>
                     </div>
                     <div id="collapseFour" class="collapse bg-custom" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body textParrafo">
                             <p>Un sistema de gestion en la nube que administre los temas, actividades y evaluaciones es
                                 esencial para una buena organización de los cursos. Podemos recomendarte la mejor
                                 solución según el reto de tu empresa.
                             </p>
-                            <button class="col-12 btn btn-success btn btn-primary closeCollapse" data-toggle="collapse"
+                            <button class="col-12 col-lg-4 btn btn-success btn btn-primary closeCollapse m-auto" data-toggle="collapse"
                                 data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
-                                style="background-color: #ED7D31; border-color: #ED7D31;">Close</button>
+                                style="background-color: #66CCFF; border-color: #66CCFF;">Close</button>
                         </div>
                     </div>
                 </div>
@@ -213,11 +215,11 @@
                 $("#bloque1").removeClass("col-12 col-lg-6");
                 $("#bloque1").addClass("col-6 col-lg-4");
                 $("#gif").css("animationPlayState: running");
-            }, 6000);
+            }, 1500);
             callback;
         }
         function startAnimating() {
-            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 8.5 })
+            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 0.5 })
                 .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                 .fromTo("#accordion", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
         }

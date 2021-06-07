@@ -43,18 +43,19 @@
     }
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="row">
         <!-- TITULO Y BARRA MORADA -->
         <div class="col-12 banner-titulo d-flex justify-content-center align-items-center" style="background-color: unset!important;">
-            <p class="reset" style="font-size: 20px;">Tema 1: Los retos de tu empresa</p>
+            <p class="reset" style="font-size: 20px;">Tema 1: Los retos de tu empresa asdadadasd</p>
         </div>
         <!-- http://lumicmedia.com/svg01_js.svg -->
         <!-- ANIMACION DE ENTRADA DEL TEMA -->
         <div id="bloque1" class="animatedSvg col-12 offset-lg-2 col-lg-6 paddingUpDown d-flex align-items-center"
             style="transition: ease 2s;">
 
-            <img id="gif" class="img-fluid" src="http://lumicmedia.com/svg/svg01_js.svg" alt="Ejecutivo animado">
+            <!-- <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s" src="http://lumicmedia.com/svg/svg01_js.svg" alt="Ejecutivo animado"> -->
+            <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s" src="svgs/svg01_original.svg" alt="Ejecutivo animado">
         </div>
         <div class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
             <!-- <h4 id="bloque2" class="textTitulo"></h4> -->
@@ -170,8 +171,8 @@
         </div>
         <div id="bloque7" class="col-11 col-lg-6 fondo_textos"
             style="height: 450px; margin-bottom: 15px; margin: auto; overflow: auto;">
-            <h4 id="bloque7_1" class="col-12 textTitulo">Clic en los botones para continuar</h4>
-            <div id="bloque7_2" class="col-12 textParrafo">
+            <h4 id="bloque7_1" class="col-12 textTitulo d-flex justify-content-center align-items-center">Haz clic en cada botón para ver su descripción</h4>
+            <div id="bloque7_2" class="col-12 textParrafo d-flex justify-content-center align-items-center">
                 <!-- La primera impresión es importante; te apoyamos para comunicar a los nuevos colaboradores la misión de
                 tu empresa, su historia, valores y prácticas clave; Para ello, diseñamos para tu empresa cursos de
                 inducción innovadores que preparan a las nuevas incorporaciones para que se sientan parte de la empresa,
@@ -272,11 +273,11 @@
                 $("#bloque1").removeClass("col-12 col-lg-6");
                 $("#bloque1").addClass("col-6 col-lg-4");
                 $("#gif").css("animationPlayState: running");
-            }, 6000);
+            }, 1500);
             callback;
         }
         function startAnimating() {
-            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 8.5 })
+            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 1 })
                 // .fromTo("#bloque2", { x: $("#bloque2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                 .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                 .fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })

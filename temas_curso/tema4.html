@@ -3,7 +3,8 @@
         padding-top: 10px;
         padding-bottom: 10px;
     }
-/* 
+
+    /* 
     .textTitulo {
         font-size: 20px !important;
         color: white;
@@ -41,10 +42,11 @@
     }
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="row">
         <!-- TITULO Y BARRA MORADA -->
-        <div class="col-12 banner-titulo d-flex justify-content-center align-items-center" style="background-color: unset!important;">
+        <div class="col-12 banner-titulo d-flex justify-content-center align-items-center"
+            style="background-color: unset!important;">
             <p class="reset" style="font-size: 20px;">Evaluación </p>
         </div>
         <!-- http://lumicmedia.com/svg01_js.svg -->
@@ -52,8 +54,10 @@
         <div id="bloque1" class="animatedSvg col-12 offset-lg-2 col-lg-6 paddingUpDown d-flex align-items-center"
             style="transition: ease 2s;">
 
-            <img id="gif" class="img-fluid" src="http://lumicmedia.com/svg/svg03_js.svg"
-                alt="svg computadoras animadas">
+            <!-- <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s" src="http://lumicmedia.com/svg/svg03_js.svg"
+                alt="svg computadoras animadas"> -->
+            <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s"
+                src="svgs/svg03_original.svg" alt="svg computadoras animadas">
         </div>
         <div id="bloque2_1" class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
             <!-- <h4 id="bloque2" class="textTitulo"></h4> -->
@@ -70,19 +74,19 @@
                 <h4 id="contadorPreguntas" style="color: white">1 / 5</h4>
             </div>
             <br>
-            <p id="description" class="reset" style="overflow: hidden; font-size: 23px;"> Texto con la descripcion de la
+            <p id="description" class="reset textParrafo" style="overflow: hidden; font-size: 23px;"> Texto con la descripcion de la
                 pregunta</p>
             <br>
             <div id="r1" class="resps resp1 d-flex" data-rId="1">
                 <span>A)&nbsp</span>
-                <p id="textoA" class="reset" style="overflow: hidden;">Te
+                <p id="textoA" class="reset textParrafo" style="overflow: hidden;">Te
                     recomendamos la experiencia de aprendizaje más acertada, asegurando que el contenido motive a
                     tus colaboradores.</p>
             </div>
             <br>
             <div id="r2" class="resps resp2 d-flex" data-rId="2">
                 <span>B)&nbsp</span>
-                <p id="textoB" class="reset" style="overflow: hidden;">Te
+                <p id="textoB" class="reset textParrafo" style="overflow: hidden;">Te
                     recomendamos la experiencia de aprendizaje más acertada, asegurando que el contenido motive a
                     tus colaboradores.</p>
 
@@ -90,7 +94,7 @@
             <br>
             <div id="r3" class="resps resp3 d-flex active" data-rId="3">
                 <span>C)&nbsp</span>
-                <p id="textoC" class="reset" style="overflow: hidden;">Te
+                <p id="textoC" class="reset textParrafo" style="overflow: hidden;">Te
                     recomendamos la experiencia de aprendizaje más acertada, asegurando que el contenido motive a
                     tus colaboradores.</p>
 
@@ -205,11 +209,11 @@
                 $("#bloque1").removeClass("col-12 col-lg-6");
                 $("#bloque1").addClass("col-6 col-lg-4");
                 $("#gif").css("animationPlayState: running");
-            }, 6000);
+            }, 1500);
             callback;
         }
         function startAnimating() {
-            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 8.5 })
+            tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 0.5 })
                 .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                 .fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                 .fromTo("#bloque2_3", { x: $("#bloque2_3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })

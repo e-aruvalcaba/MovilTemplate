@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="E-Learning">
   <title>Mobile E-Learning</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- Bootstrap core CSS -->
   <link href="awesome/css/all.min.css" rel="stylesheet">
   <!--load all styles -->
@@ -48,7 +49,7 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
 
   <!-- loader -->
   <nav class="navbar fixed-top d-none navbar-dark bg-dark mainNavbar" id="navbar">
-    <img src="IMAGES PRUEBA/logs.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplicación"
+    <img src="assets/logo.png" style="width: 125px; max-height: 40px; height: 40px;" alt="Logo Aplicación"
       class="navbar-brand mr-lg-0" href="#"></img>
 
     <div class="row d-none d-lg-flex justify-content-center" style="color:white">
@@ -82,8 +83,8 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
     <div class="row">
       <!-- style="transform: translate(-500px, 0); -->
       <div class="col-lg-2 bg-dark sidebarCol menu-hide" id="sidebarCol">
-        <div class="navbar-collapse offcanvas-collapse col-12 d-lg-flex  reset" id="menuContainer" style="color: white">
-          <div class="col-12 col-lg-6">
+        <div class="navbar-collapse offcanvas-collapse col-12 d-lg-flex  reset" id="menuContainer" style="color: white;">
+          <div class="col-12 col-lg-6" style="border-right: 1px solid;">
             <p class="row d-flex justify-content-center"><strong>Menú del Curso</strong></p>
             <!-- Contenido de menu -->
             <div id="temasContainer" class="temasContainer" style="overflow-y: auto; overflow-x: hidden; height: 80vh;">
@@ -128,14 +129,16 @@ background: linear-gradient(346deg, rgba(46,53,54,1) 0%, rgba(172,165,149,1) 90%
 
         </div>
       </div>
-      <div class="contenido col-12 reset" style="background-color: #4472C4; min-height: 95.5vh;">
-        <div class="mainContent" id="content" style="height:100%;">
 
+      <!-- <div class="contenido col-12 reset" style="background-color: #4472C4; min-height: 95.5vh;"> -->
+      <div class="contenido col-12 reset" style="background-color: #6286C9; min-height: 95.5vh;">
+        <div class="mainContent" id="content" style="height:100%;">
         </div>
       </div>
 
       <!-- MOBILE BOTONES FLOTANTES  -->
-      <div class="control-buttons d-lg-none d-flex justify-content-center align-items-start" style="margin-bottom: 3px!important;">
+      <div class="control-buttons d-lg-none d-flex justify-content-center align-items-start"
+        style="margin-bottom: 3px!important;">
         <div class="backButton" id="btnAtras" onclick="anterior_frame()">
           <a href="#" class="float my-float-back floating" style="color:white">
             <i class="fa fa-arrow-left my-float"></i>

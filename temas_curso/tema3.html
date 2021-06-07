@@ -27,12 +27,14 @@
         .animatedSvg {
             margin: auto !important;
         }
-        .flip-card{
-            width: 400px!important;
+
+        .flip-card {
+            width: 400px !important;
         }
-        .card-icon{
-            width: 400px!important;
-            height: 300px!important;
+
+        .card-icon {
+            width: 400px !important;
+            height: 300px !important;
         }
     }
 
@@ -84,22 +86,21 @@
     }
 
     .flip-card-back {
-        padding:10px;
+        padding: 10px;
         overflow: auto;
         background-color: #53adf2;
         color: white;
         transform: rotateY(180deg);
     }
 
-    .card-icon{
-
-    }
+    .card-icon {}
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="row">
         <!-- TITULO Y BARRA MORADA -->
-        <div class="col-12 banner-titulo d-flex justify-content-center align-items-center" style="background-color: unset!important;">
+        <div class="col-12 banner-titulo d-flex justify-content-center align-items-center"
+            style="background-color: unset!important;">
             <p class="reset" style="font-size: 20px;">Tema 3: Soluciones de capacitación</p>
         </div>
         <!-- http://lumicmedia.com/svg01_js.svg -->
@@ -107,7 +108,9 @@
         <div id="bloque1" class="animatedSvg col-12 offset-lg-2 col-lg-6 paddingUpDown d-flex align-items-center"
             style="transition: ease 2s;">
 
-            <img id="gif" class="img-fluid" src="http://lumicmedia.com/svg/svg02_js.svg" alt="Secretaria animada">
+            <!-- <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s" src="http://lumicmedia.com/svg/svg02_js.svg" alt="Secretaria animada"> -->
+            <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s"
+                src="svgs/svg02_original.svg" alt="Secretaria animada">
         </div>
         <div class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
             <!-- <h4 id="bloque2" class="textTitulo"></h4> -->
@@ -116,7 +119,8 @@
         </div>
     </div>
 
-    <div id="bloque2_2" class="fondo_textos col-12 col-lg-9" style="margin: auto; overflow: hidden; margin-bottom: 10px!important;">
+    <div id="bloque2_2" class="fondo_textos col-12 col-lg-12"
+        style="margin: auto; overflow: hidden; margin-bottom: 10px!important;">
         <div id="bloque2_3" class="col-12 textParrafo">
             <p class="reset" style="overflow: hidden;">
                 Nuestras soluciones cuentan con diseño de contenido y diseño visual personalizados y están desarrollados
@@ -141,14 +145,19 @@
             <div class="flip-card" id="gcard1" style="border-radius: 20px!important;">
                 <!-- <div class="d-flex justify-content-start">Negocios</div> -->
                 <div class="flip-card-inner seenIndicator" id="fc1" style="border-radius: 20px;">
-                    <div class="flip-card-front d-flex justify-content-center align-items-center" style="border-radius: 20px;">
+                    <div class="flip-card-front d-flex justify-content-center align-items-center"
+                        style="border-radius: 20px;">
                         <!-- <a style="font-size: 150px;"><i class="fas fa-pen"></i></a> -->
-                        <img class="card-icon" src="http://lumicmedia.com/svg/soluciones-motion-learning.svg" alt="motion learning" style="border-radius: 20px;">
+                        <img class="card-icon" src="svgs//soluciones-motion-learning.svg"
+                            alt="motion learning" style="border-radius: 20px;">
                     </div>
-                    <div class="flip-card-back" style="border-radius: 20px;">
-                        <p class="textTitulo" style="text-align: center;">TITULO 1</p>
-                        <p style="text-align: start; padding: 6px;">
-                            Este es el texto que tendra la tarjeta numero 1
+                    <div class="flip-card-back " style="border-radius: 20px;">
+                        <p class="textParrafo" style="text-align: center; font-weight: bold">Migrado de Flash a html5
+                        </p>
+                        <p class="textParrafo" style="text-align: start; padding: 6px; ">
+                            La tecnología cambia constantemente y es probable que tu empresa tenga contenidos que al día
+                            de hoy se han vuelto obsoletos, pero no todo está perdido. Podemos convertir y mejorar ese
+                            conocimiento existente en contenidos de última tecnología visible en cualquier dispositivo. 
                         </p>
                     </div>
                 </div>
@@ -159,14 +168,20 @@
             <div class="flip-card" id="gcard2" style="border-radius: 20px;">
                 <!-- <div class="d-flex justify-content-start">Negocios</div> -->
                 <div class="flip-card-inner seenIndicator" id="fc2" style="border-radius: 20px;">
-                    <div class="flip-card-front d-flex justify-content-center align-items-center" style="border-radius: 20px;">
+                    <div class="flip-card-front d-flex justify-content-center align-items-center"
+                        style="border-radius: 20px;">
                         <!-- <a style="font-size: 150px;"><i class="far fa-envelope-open"></i></a> -->
-                        <img class="card-icon" src="http://lumicmedia.com/svg/soluciones-microlearning.svg" alt="motion learning" style="border-radius: 20px;">
+                        <img class="card-icon" src="svgs//soluciones-microlearning.svg"
+                            alt="motion learning" style="border-radius: 20px;">
                     </div>
                     <div class="flip-card-back" style="border-radius: 20px;">
-                        <p class="textTitulo" style="text-align: center;">TITULO 2</p>
-                        <p style="text-align: start; padding: 6px;">
-                            Este es el texto que tendra la tarjeta numero 2
+                        <p class="textParrafo" style="text-align: center; font-weight: bold;">Motion learning</p>
+                        <p class="textParrafo" style="text-align: start; padding: 6px; ">
+                            Una presentación audiovisual atractiva que pueda explicar procesos detallados en infografías
+                            llevando mensajes directos y de suma importancia​
+                            ​
+                            Un motion learning puede ser fácilmente distribuido en cualquier vía digital y en cualquier
+                            dispositivo.
                         </p>
                     </div>
                 </div>
@@ -177,15 +192,21 @@
             <div class="flip-card" id="gcard3" style="border-radius: 20px;">
                 <!-- <div class="d-flex justify-content-start">Negocios</div> -->
                 <div class="flip-card-inner seenIndicator" id="fc3" style="border-radius: 20px;">
-                    <div class="flip-card-front d-flex justify-content-center align-items-center" style="border-radius: 20px;">
+                    <div class="flip-card-front d-flex justify-content-center align-items-center"
+                        style="border-radius: 20px;">
                         <!-- <a style="font-size: 150px;"><i class="fas fa-radiation"></i></a> -->
-                        <img class="card-icon" src="http://lumicmedia.com/svg/soluciones-migrado.svg" alt="motion learning" style="border-radius: 20px;">
+                        <img class="card-icon" src="svgs/soluciones-migrado.svg"
+                            alt="motion learning" style="border-radius: 20px;">
                     </div>
                     <div class="flip-card-back" style="border-radius: 20px;">
-                        <p class="textTitulo" style="text-align: center;">TITULO 3</p>
-                        <p style="text-align: start; padding: 6px;">
-                            Este es el texto que tendra la tarjeta numero 3
-                        </p>
+                        <p class="textParrafo" style="text-align: center; font-weight: bold">Interactive learning</p>
+                        <p class="textParrafo" style="text-align: start; padding: 6px;">
+                            El usuario tiene más participacón dentro del curso. Se compone de contenidos interactivos y
+                            animados, ejercicios donde el usuario puede reforzar el conocimiento asi como evaluaciones
+                            para calificar a cada usuario. Este tipo de capacitación funciona perfectamente para
+                            procesos o metodologías establecidos dentro de la empresa.​
+
+                            ​ </p>
                     </div>
                 </div>
             </div>
@@ -237,11 +258,11 @@
                     $("#bloque1").removeClass("col-12 col-lg-6");
                     $("#bloque1").addClass("col-6 col-lg-4");
                     $("#gif").css("animationPlayState: running");
-                }, 6000);
+                }, 1500);
                 callback;
             }
             function startAnimating() {
-                tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 8.5 })
+                tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 0.5 })
                     .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                     .fromTo("#bloque2_2", { x: $("#bloque2_2").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
                     .fromTo("#bloque2_3", { x: $("#bloque2_3").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })

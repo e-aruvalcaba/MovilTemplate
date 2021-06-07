@@ -89,7 +89,7 @@ var NumTemas = 0;
 var Temaslibre = false;
 var btnArray = [];
 var libre = false;
-var tl = new TimelineMax();
+var tl = new gsap.timeline();
 var debug = false;
 // var myVar = setInterval(myTimer, 20);
 var cursoConAudio = false; // Identifica si el curso llevara audios, por este medio se inicializan y ejecutan todos los metodos y funciones para el audio.
@@ -108,6 +108,11 @@ var ListaPreloadAudio = [];
 //     }
 // }
 
+
+function setBodyColor(){
+    console.log("COLOR DEL BODY")
+    $("#contenido").css("background-color", "#6286C9");
+}
 /**
  * Funcionalidad del nuevo cargador
  */
@@ -164,7 +169,6 @@ function enterPageTransition() {
     gsap.to($("#ultimoContainer"), { duration: 0.5, ease: "power1.out", left: 0 });
 }
 function leavePageTransition() {
-    // debugger
     gsap.to($("#ultimoContainer"), { duration: 1, ease: "power1.out", left: -2500 });
     setTimeout(() => {
         $("#ultimoContainer").css("display", "none");
@@ -206,6 +210,32 @@ function addNextAnimation() {
 //     }
 // }
 
+function cerrarMenu(){
+    if ($('#sidebarCol').hasClass("menu-show")) {
+
+        if (!isMobile()) {
+            // gsap.to($("#sidebarCol"), { duration: 0.2, x: $("#sidebarCol").position().left - 100, opacity: 0 });
+            // setTimeout(() => {
+
+            $('#sidebarCol').removeClass("menu-show");
+            $('#sidebarCol').addClass("menu-hide");
+            $('.navbar-collapse').removeClass("open");
+            // }, 100);
+        } else {
+            $('#sidebarCol').removeClass("menu-show");
+            $('#sidebarCol').addClass("menu-hide");
+            $('.navbar-collapse').removeClass("open");
+        }
+        let btnArray = new Array();
+        if (EdoBtns.btnAtras && IDActual > 0) { btnArray.push(btnAtras); btnArray.push(btnAtrasD); }
+        if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); btnArray.push(btnSiguienteD); }
+        habilitar_deshabilitar_btns(btnArray, "h", "llamar_menu");
+        this.menu_open = false;
+        $('html').css("overflow", "auto");
+        // gsap.to($("#sidebarCol"), { duration: 0.8, ease: "back.out(1.7)", x: "-500", opacity: 0});
+    }
+}
+
 function callMenu() {
     if (isMobile()) {
         $('#sidebarCol').css("transform", "inherit");
@@ -230,29 +260,7 @@ function callMenu() {
         $('html').css("overflow", "hidden");
 
     } else {
-        if ($('#sidebarCol').hasClass("menu-show")) {
-
-            if (!isMobile()) {
-                // gsap.to($("#sidebarCol"), { duration: 0.2, x: $("#sidebarCol").position().left - 100, opacity: 0 });
-                // setTimeout(() => {
-
-                $('#sidebarCol').removeClass("menu-show");
-                $('#sidebarCol').addClass("menu-hide");
-                $('.navbar-collapse').removeClass("open");
-                // }, 100);
-            } else {
-                $('#sidebarCol').removeClass("menu-show");
-                $('#sidebarCol').addClass("menu-hide");
-                $('.navbar-collapse').removeClass("open");
-            }
-            let btnArray = new Array();
-            if (EdoBtns.btnAtras && IDActual > 0) { btnArray.push(btnAtras); btnArray.push(btnAtrasD); }
-            if (EdoBtns.btnSiguiente) { btnArray.push(btnSiguiente); btnArray.push(btnSiguienteD); }
-            habilitar_deshabilitar_btns(btnArray, "h", "llamar_menu");
-            this.menu_open = false;
-            $('html').css("overflow", "auto");
-            // gsap.to($("#sidebarCol"), { duration: 0.8, ease: "back.out(1.7)", x: "-500", opacity: 0});
-        }
+        cerrarMenu();
     }
     actualizar_menuHTML(TRAK);
 }
@@ -462,8 +470,11 @@ function populateMenu(jsonob) {
  * @description Carga el tema en el iframe contenido basandose en el id que recibe. 
  */
 function llamarTema(id) {
+    let aaa = gsap.timeline();
+    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#4472C4" }); //shorter syntax!
+
     ir(id);
-    callMenu();
+    cerrarMenu();
 }
 
 function isMobile() {
@@ -1049,6 +1060,9 @@ function glosarioX() {
  */
 function irUltimo() {
     // let resp = obtenerFramePorPagina(ULTIMO);
+    let aaa = gsap.timeline();
+    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#4472C4" }); //shorter syntax!
+
     ir(ULTIMO);
     // cerrarUltimo();
     actualizaTemasTerminados();
