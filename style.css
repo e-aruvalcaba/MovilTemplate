@@ -31,7 +31,8 @@ body {
 }
 .fondo_textos {
   /* background-color: whitesmoke; */
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
+  background-color: #6286C9;
   border-radius: 12px;
   padding: 10px;
   /* text-align: justify !important; */
