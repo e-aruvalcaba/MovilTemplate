@@ -1,0 +1,137 @@
+<style>
+    .btn-objetivos {
+        width: 125px !important;
+        color: black;
+        font-weight: bold;
+    }
+
+    .t-white {
+        color: white !important;
+    }
+
+    @media (min-width: 989px) {
+        .objetivos {
+            float: right;
+        }
+
+        .contenedor {
+            max-width: 400px;
+        }
+
+        .fondoPrincipal {
+            background-image: url("assets/bienvenida.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+</style>
+
+<div class="container-fluid mb-5 p-0 fondoPrincipal" style="height: 100%;">
+    <div class="col-12 col-lg-4 objetivos contenedor" style="height: 100%; background-color: #CF112B;">
+        <div class="div pt-4 contenedorObjetivos">
+            <div class="col-12 col-lg-12">
+                <div class="col-12 d-flex justify-content-center align-items-center pb-3">
+                    <img class="img-fluid rounded-circle" src="assets/mujer_mascara.png" alt="">
+                </div>
+                <div class="col-12 pb-5">
+                    <p id="titulo" class="col-12 reset textTitulo t-white" style="padding-bottom: 10px!important">
+                        Bienvenida
+                    </p>
+                    <p id="textoObjetivo" class="col-12 reset textParrafo t-white">
+                        Bienvenido al curso Recuperación de Cartera de Crédito.
+                        <br>
+                        <br>
+                        Observa los objetivos que perseguimos y los temas que abordamos.
+
+                    </p>
+                    <div id="objetivos" class="col-12">
+                        <p class="reset textParrafo t-white">
+                            Como resultado de este curso:
+                        </p>
+                        <br>
+                        <ul class="reset textParrafo t-white">
+                            <li>
+                                Conocerás las políticas, métodos, técnicas e indicadores institucionales relacionados
+                                con la
+                                recuperación de cartera de crédito.
+                            </li>
+                            <br>
+                            <li>
+                                Comprenderás los elementos clave de la comunicación asertiva y de la negociación
+                                efectiva
+                                para
+                                tener éxito en la recuperación de la cartera de crédito.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="contenidos" class="col-12">
+                        <ul class="reset textParrafo t-white">
+                            <li>
+                                Principales temas del curso
+                            </li>
+                            <li>
+                                Cultura institucional.
+                            </li>
+                            <li>
+                                Sistemas y herramientas de gestión para el seguimiento y control interno.
+                            </li>
+                            <li>
+                                Definición de canales de comunicación.
+                            </li>
+                            <li>
+                                Clasificación de la cartera de clientes.
+                            </li>
+                            <li>
+                                Análisis de las garantías crediticias.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-around align-items-center">
+                    <button id="btnObjetivos" class="btn btn-secondary btn-objetivos">Objetivos</button>
+                    <button id="btnContenidos" class="btn btn-secondary btn-objetivos">Contenidos</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#document").ready(function () {
+        iniciar_tema();
+        let completado = [false,false];
+
+        $("#contenidos").hide();
+        $("#objetivos").hide();
+
+        $("#btnObjetivos").click(function () {
+            $("#titulo").html("Objetivos");
+
+            $("#textoObjetivo").hide();
+            $("#contenidos").hide();
+            $("#objetivos").fadeIn();
+
+            completado[0] = true;
+            checkCompletado();
+        });
+        $("#btnContenidos").click(function () {
+            $("#titulo").html("Contenidos");
+
+            $("#textoObjetivo").hide();
+            $("#objetivos").hide();
+            $("#contenidos").fadeIn(100);
+            completado[1] = true;
+
+            checkCompletado();
+        });
+
+        function checkCompletado(){
+            if(completado[0] && completado[1]){
+                final_tema();
+            }
+        }
+    });
+</script>

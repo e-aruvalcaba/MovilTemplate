@@ -1,6 +1,12 @@
+* {
+  /* font-size: 100%; */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0%!important;
+}
+
 body {
   /* margin-top: 56px; */
-  background-color: "#fefefe";
+  /* background-color: "#fefefe"; */
 }
 
 /* CONFIGURACION DE TEXTOS PARA EL TEMPLATE */
@@ -14,6 +20,7 @@ body {
 }
 
 /* TERMINAN ESTILOS PARA TEXTOS DEL TEMPLATE */
+
 .paddingUpDown {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -21,14 +28,15 @@ body {
 
 .textTitulo {
   font-size: 20px !important;
-  color:white;
-  font-weight: bold;
+  color: black;
+  font-weight: bolder!important;
 }
 
 .textParrafo {
   font-size: 20px !important;
-  color:white;
+  color: black;
 }
+
 .fondo_textos {
   /* background-color: whitesmoke; */
   /* background: rgba(255, 255, 255, 0.3); */
@@ -38,63 +46,74 @@ body {
   /* text-align: justify !important; */
   margin-top: 5px !important;
 }
+
 .banner-titulo {
   height: 70px;
-  background-color: #8442f5;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
   text-indent: 0px;
 }
+
 .pdNav {
   width: 100%;
   padding-top: 56px !important;
 }
+
 a {
   text-decoration: none !important;
 }
+
 .reset {
   margin: 0% !important;
   padding: 0% !important;
 }
+
 .navbar_col {
   z-index: 9999 !important;
 }
+
 .paddingMobile {
   padding-bottom: 10px !important;
 }
+
 .menuParag {
   margin-left: 8px !important;
   font-size: 18px;
 }
+
 .menuIcon {
   font-size: 6px;
   margin-top: 11px;
   color: white;
 }
+
 footer {
   position: fixed;
   height: 35px;
   bottom: 0;
   width: 100%;
 }
+
 .sidebarCol {
   z-index: 9999 !important;
   /* margin-top: 56px; */
   transform: unset;
 }
+
 .mainContent {
   transition-property: all;
   transition-duration: 0.3s;
   height: 90vw;
   transition-timing-function: cubic-bezier(0.2s, 0.2s, 0.2s, 0.2s);
 }
+
 .contenido {
   position: relative;
-  transition-property: all;
-  transition-duration: 0.5s;
+  /* transition-property: all; */
+  /* transition-duration: 0.5s; */
   /* height: 90vw; */
-  transition-timing-function: cubic-bezier(0.5s, 0.5s, 0.5s, 0.5s);
+  /* transition-timing-function: cubic-bezier(0.5s, 0.5s, 0.5s, 0.5s); */
 }
 
 .animationOut {
@@ -108,6 +127,7 @@ footer {
 }
 
 /* Floating Buttons*/
+
 .float {
   position: fixed;
   width: 60px;
@@ -126,18 +146,23 @@ footer {
 .my-float {
   margin-top: 22px;
 }
+
 .my-float-back {
   left: 10px;
 }
-.my-float > a:hover {
+
+.my-float>a:hover {
   color: white !important;
 }
-.my-float-back > a:hover {
+
+.my-float-back>a:hover {
   color: white !important;
 }
+
 /* .control-buttons :hover {
   background-color: rgb(59, 194, 243) !important;
 } */
+
 /* .control-buttons :hover i {
   color: black;
 } */
@@ -147,6 +172,7 @@ footer {
   position: absolute;
   margin-top: 300px !important;
 }
+
 /* MOBILE VIEWS */
 
 /* @media screen and (min-width: 890px) and (max-width: 1080px) {
@@ -155,7 +181,8 @@ footer {
   }
 } */
 
-  /*  Ocupar el 100% de la pantalla en modo movil */
+/*  Ocupar el 100% de la pantalla en modo movil */
+
 @media (max-width: 900px) {
   #superContainer {
     max-width: unset;
@@ -167,10 +194,14 @@ footer {
     overflow-y: auto !important;
   }
   .sidebarCol {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    position: absolute;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
     max-width: 1140px !important;
     /* transform: translate(-500px, 0px); */
   }
@@ -180,50 +211,57 @@ footer {
   .menu-show {
     overflow: hidden;
     overflow-y: hidden;
-    max-height: 100vh; /* approximate max height */
+    max-height: 100%!important;
     min-width: 391px !important;
-    /* left: 0px; */
     opacity: 1;
     transition-property: all;
     transition-duration: 0.5s;
-    height: 46.16vw;
+    height: 100%;
     transition-timing-function: cubic-bezier(0.2s, 0.2s, 0.2s, 0.2s);
+  }
+  .open-animation{
+    animation-name: open;
+    animation-duration: 0.2s;
+  }
+  .close-animation{
+    animation-name: closeA;
+    animation-duration: 0.2s;
   }
   .menu-hide {
     left: -1400px;
-    opacity: 0;
     overflow: hidden;
-    transition-property: all;
-    transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0.1s, 0.1s, 0.1s, 0.1s);
   }
 
+  @keyframes open {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }@keyframes closeA {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
   .cardButtons {
     margin-left: 10px !important;
   }
-
   body {
     height: 100vh;
   }
-
   .blck_scroll {
     overflow-y: hidden;
   }
 
+  /* QUITAR ESTA LINEA PARA VOLVER A LA BARRA FIXED 20 AGOSTO 2021 */
   .mainNavbar {
     width: 100%;
-    position: inherit;
-    top: unset;
-    right: unset;
-    left: unset;
+    /* position: inherit; */
+    /* top: unset; */
+    /* right: unset; */
+    /* left: unset; */
     margin: auto;
     max-width: 1140px;
   }
-
   .pdNav {
     padding-top: 0px !important;
   }
-
   .banner-titulo {
     height: 45px;
     background-color: #8442f5;
@@ -238,7 +276,8 @@ footer {
   .offcanvas-collapse {
     display: block;
     position: fixed;
-    top: 56px; /* Height of navbar */
+    top: 56px;
+    /* Height of navbar */
     bottom: 0;
     left: 100%;
     width: 100%;
@@ -256,7 +295,6 @@ footer {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
-
   .sidebarCol {
     transform: inherit !important;
   }
@@ -314,14 +352,17 @@ footer {
 .lh-100 {
   line-height: 1;
 }
+
 .lh-125 {
   line-height: 1.25;
 }
+
 .lh-150 {
   line-height: 1.5;
 }
 
 /* loader */
+
 .loading-page {
   background: #0d0d0d;
   width: 100vw;
@@ -334,33 +375,40 @@ footer {
   -webkit-box-align: center;
   align-items: center;
 }
+
 .loading-page .counter {
   text-align: center;
 }
+
 .loading-page .counter p {
   font-size: 40px;
   font-weight: 100;
   color: #ff0000;
 }
+
 .loading-page .counter h1 {
   color: white;
   font-size: 60px;
   margin-top: -10px;
 }
+
 .loading-page .counter hr {
   background: #ff0000;
   border: none;
   height: 1px;
 }
+
 .loading-page .counter {
   position: relative;
   width: 200px;
 }
+
 .loading-page .counter h1.abs {
   position: absolute;
   top: 0;
   width: 100%;
 }
+
 .loading-page .counter .color {
   width: 0px;
   overflow: hidden;
@@ -478,7 +526,7 @@ h1 {
   padding-bottom: 5px;
 }
 
-.barraIcons > li {
+.barraIcons>li {
   float: right !important;
 }
 
@@ -526,6 +574,7 @@ h1 {
 .content {
   min-height: 931px;
 }
+
 .ultimoContainer {
   z-index: 9999;
   width: 950px;
@@ -625,7 +674,7 @@ h1 {
   padding-left: 0px;
 }
 
-.tituloModulo > p {
+.tituloModulo>p {
   padding-left: 0px;
 }
 
@@ -647,6 +696,7 @@ h1 {
 .tituloTemaMenu:hover {
   background-color: white;
 }
+
 .tituloTemaMenu:hover p {
   color: black;
   transition: 0.5s, ease-in;
@@ -781,8 +831,7 @@ h1 {
   -webkit-animation: bounce 0.3s ease infinite alternate;
   font-size: 40px;
   color: #fff;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent,
-    0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 .h1Cargando span:nth-child(2) {
@@ -814,11 +863,22 @@ h1 {
 }
 
 /* ANIMATION */
+
 @-webkit-keyframes bounce {
   100% {
     top: -20px;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc,
-      0 8px 0 #ccc, 0 9px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* QUITAR ESTA LINEA PARA VOLVER A LA BARRA FIXED 20 AGOSTO 2021 */
+@media(min-width: 1280px){
+  .contenido{
+    margin-top: 56px!important;
+  }
+  .menu-show{
+    position: fixed;
+    margin-top: 56px;
   }
 }
 

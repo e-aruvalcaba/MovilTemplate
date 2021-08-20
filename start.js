@@ -101,7 +101,7 @@ var moviePlay = "";
 var ListaPreloadAudio = [];
 
 // window.onresize = function(){
-    
+
 //     if(isMobile() || $(window).width() < 1200){
 //         console.log("Entro window")
 //         $("#sidebarCol").css("height", "unset");
@@ -109,9 +109,9 @@ var ListaPreloadAudio = [];
 // }
 
 
-function setBodyColor(){
-    console.log("COLOR DEL BODY")
-    $("#contenido").css("background-color", "#6286C9");
+function setBodyColor() {
+    // console.log("COLOR DEL BODY")
+    // $("#contenido").css("background-color", "#6286C9");
 }
 /**
  * Funcionalidad del nuevo cargador
@@ -210,17 +210,21 @@ function addNextAnimation() {
 //     }
 // }
 
-function cerrarMenu(){
+function cerrarMenu() {
     if ($('#sidebarCol').hasClass("menu-show")) {
 
         if (!isMobile()) {
             // gsap.to($("#sidebarCol"), { duration: 0.2, x: $("#sidebarCol").position().left - 100, opacity: 0 });
-            // setTimeout(() => {
+            $('#sidebarCol').toggleClass("close-animation");
+            setTimeout(() => {
+                $('#sidebarCol').removeClass("menu-show");
+                $('#sidebarCol').addClass("menu-hide");
+                $('.navbar-collapse').removeClass("open");
+            }, 100);
 
-            $('#sidebarCol').removeClass("menu-show");
-            $('#sidebarCol').addClass("menu-hide");
-            $('.navbar-collapse').removeClass("open");
-            // }, 100);
+            setTimeout(() => {
+                $('#sidebarCol').toggleClass("close-animation");
+            }, 200);
         } else {
             $('#sidebarCol').removeClass("menu-show");
             $('#sidebarCol').addClass("menu-hide");
@@ -263,6 +267,9 @@ function callMenu() {
         cerrarMenu();
     }
     actualizar_menuHTML(TRAK);
+
+    $('#sidebarCol').prop( "disabled", true );
+
 }
 
 function blockScrollOnMobile() {
@@ -464,6 +471,21 @@ function populateMenu(jsonob) {
 
 }// end PopulateMenu function
 
+function cambiarColorFranjas(estilo){
+    let gtl = gsap.timeline();
+    
+    switch (estilo) {
+        case "portada":
+            gtl.to($("#body"), { duration: 0.2, backgroundColor: "#f5f5f5" }); //shorter syntax!            
+            break;
+        case "reset":
+            gtl.to($("#body"), { duration: 0.2, backgroundColor: "#ffffff" }); //shorter syntax!            
+            break;
+    }
+
+
+}
+
 /**
  * @param id:Number
  * @returns void
@@ -471,7 +493,7 @@ function populateMenu(jsonob) {
  */
 function llamarTema(id) {
     let aaa = gsap.timeline();
-    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#4472C4" }); //shorter syntax!
+    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#ffffff" }); //shorter syntax!
 
     ir(id);
     cerrarMenu();
@@ -905,6 +927,7 @@ function guardarDatos() {
  * @description Carga el contenido especificado por el parametro ID y lo carga en el div contenido del template.
  */
 function ir(id) {
+    cambiarColorFranjas("reset");
     if ($("#btnSiguiente").hasClass("nextAnimation")) {
         $("#btnSiguiente").removeClass("nextAnimation");
     }
@@ -1060,8 +1083,8 @@ function glosarioX() {
  */
 function irUltimo() {
     // let resp = obtenerFramePorPagina(ULTIMO);
-    let aaa = gsap.timeline();
-    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#4472C4" }); //shorter syntax!
+    // let aaa = gsap.timeline();
+    // aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#4472C4" }); //shorter syntax!
 
     ir(ULTIMO);
     // cerrarUltimo();
