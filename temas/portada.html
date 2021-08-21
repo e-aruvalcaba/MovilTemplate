@@ -1,64 +1,23 @@
-<style>
-    .naranja {
-        background-color: #ff7d27 !important;
-    }
-
-    .paddingUpDown {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .textTitulo {
-        font-size: 20px !important;
-        color: white;
-    }
-
-    .textParrafo {
-        font-size: 18px !important;
-        color: white;
-    }
-
-    .btn-animado {
-        transition: 100ms;
-        animation: parpadeo 4s ease 3s infinite;
-    }
-
-    .btnComenzar {
-        width: 30%;
-        height: 60px;
-        background-color: #ED7D31 !important;
-    }
-
-    @media (max-width: 900px) {
-        .btnComenzar {
-            width: 45%;
-        }
-
-        .animatedSvg {
-            margin: auto !important;
-        }
-    }
-</style>
-
-<div class="container-fluid">
-    <div class="row">
-        <!-- ANIMACION DE ENTRADA DEL TEMA -->
-        <div id="bloque1"
-            class="animatedSvg col-12 col-lg-12 paddingUpDown d-flex align-items-center justify-content-center"
-            style="transition: ease 2s; height: 95vh;">
-
-            <div class="col-12">
-                <img id="gif" class="img-fluid d-flex justify-content-center m-auto" src="svgs/svg07_original.svg" alt="Secretaria animada"
-                    style="max-height: 50vh;">
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary m-auto btnComenzar" onclick="comenzarCurso()">Comenzar</button>
-                </div>
-            </div>
-        </div>
+<div class="d-none d-lg-flex container-fluid embed-responsive embed-responsive-16by9 reset"
+    style="height: 90vh!important; overflow: hidden;">
+    <iframe class="embed-responsive-item" src="assets/intro_cdi_pc.html" style="
+    height: 100%!important;
+    width: 100%;
+    border: none;">
+    </iframe>
+    <div class="col-12 d-flex justify-content-center" style="margin-top: calc(100vh - 25%);">
+        <button class="btn btn-primary" style="height: 45px; width: 150px;">Iniciar Curso</button>
     </div>
+</div>
 
-    <script>
-        function comenzarCurso() {
-            llamarTema(0);  
-        }
-    </script>
+<div class="d-flex justify-content-center d-lg-none container-fluid embed-responsive embed-responsive-16by9 reset"
+    style="height: 90vh!important; overflow: hidden;">
+    <iframe class="embed-responsive-item" src="assets/intro_cdi_movil.html" style="
+    height: 100%!important;
+    width: 100%;
+    border: none;">
+    </iframe>
+    <div class="col-12 d-flex justify-content-center" style="margin-top: calc(100vh - 40vh);">
+        <button class="btn btn-primary" style="height: 45px; width: 150px;">Iniciar Curso</button>
+    </div>
+</div>
