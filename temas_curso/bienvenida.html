@@ -3,7 +3,13 @@
         width: 125px !important;
         color: black;
         font-weight: bold;
+        background-color: ghostwhite;
     }
+    .btn-objetivos :hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    
 
     .t-white {
         color: white !important;
@@ -26,8 +32,8 @@
     }
 </style>
 
-<div class="container-fluid mb-5 p-0 fondoPrincipal" style="height: 100%;">
-    <div class="col-12 col-lg-4 objetivos contenedor" style="height: 100%; background-color: #CF112B;">
+<div class="container-fluid mb-5 p-0 fondoPrincipal animate__animated animate__fadeIn" style="height: 100%;">
+    <div class="col-12 col-lg-4 objetivos contenedor animate__animated animate__fadeIn ann__2" style="height: 100%; background-color: #CF112B;">
         <div class="div pt-4 contenedorObjetivos">
             <div class="col-12 col-lg-12">
                 <div class="col-12 d-flex justify-content-center align-items-center pb-3">
@@ -90,8 +96,8 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-around align-items-center">
-                    <button id="btnObjetivos" class="btn btn-secondary btn-objetivos">Objetivos</button>
-                    <button id="btnContenidos" class="btn btn-secondary btn-objetivos">Contenidos</button>
+                    <button id="btnObjetivos" class="btn btn-objetivos">Objetivos</button>
+                    <button id="btnContenidos" class="btn btn-objetivos">Contenidos</button>
                 </div>
             </div>
 

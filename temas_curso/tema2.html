@@ -8,7 +8,6 @@
     }
 
     .bg-custom {
-        /* background-color: rgb(68, 114, 196) !important; */
         background-color: white;
     }
 
@@ -37,8 +36,7 @@
     }
 
     .custom-accordion {
-        /* background-color: #66CCFF !important; */
-        background-color: #00B0F0!important;
+        background-color: #00B0F0 !important;
         border: none !important;
     }
 
@@ -48,88 +46,66 @@
         }
     }
 
-    /* 
-
-    @keyframes parpadeo {
-        /* 0% {
-            top: 0;
-            left: 0;
-        } */
-
-    /* 50% {
-            opacity: 0.75;
-            -webkit-box-shadow: 0px 2px 15px 6px rgba(0, 0, 0, 0.77);
-            box-shadow: 0px 2px 15px 6px rgba(0, 0, 0, 0.77);
-        } */
-
-    /* 100% {
-        } */
-
-
-    /* }  */
+    .ann1 {
+        animation-delay: 0.5s;
+    }
+    .ann2 {
+        /* --animate-duration: 1.4s; */
+        animation-delay: 1s;
+    }
+    .ann3 {
+        /* animation-duration: 11s; */
+        animation-delay: 2s;
+        /* --animate-duration: 11.8s; */
+    }
 </style>
 
-<div class="container-fluid mb-5">
-    <div class="row">
-        <!-- TITULO Y BARRA MORADA -->
+<div class="container-fluid contenedorAnimado mb-5 animate__animated animate__fadeIn">
+    <div class="row animate__animated animate__slideInLeft ann1">
         <div class="col-12 textTitulo d-flex justify-content-start align-items-center pb-4">
             <p class="reset" style="font-size: 20px;">Tema 2: Tecnología y características</p>
         </div>
-        <!-- http://lumicmedia.com/svg01_js.svg -->
-        <!-- ANIMACION DE ENTRADA DEL TEMA -->
-        <!-- <div id="bloque1" class="animatedSvg col-12 col-lg-6 paddingUpDown d-flex align-items-start"
-            style="transition: ease 2s;">
-
-            <img id="gif" class="img-fluid animate__animated animate__lightSpeedInLeft animate__delay-1s"
-                src="svgs/svg06_original.svg" alt="svg computadoras animadas">
-
-        </div>
-        <div class="col-12 col-lg-4 paddingUpDown d-flex align-items-center">
-            <p id="bloque2_1" class="textParrafo">Nuestras soluciones cuentan con diseño de contenido y diseño visual
-                personalizados. </p>
-        </div> -->
     </div>
 
     <div class="col-12 col-lg-12 paddingUpDown d-lg-flex reset">
-        <div class="d-none d-lg-flex col-lg-6">
-            <img class="img-fluid" src="assets/interact_acordeon.jpg" alt="Hombre leyendo un libro">
+        <div class="d-none d-lg-flex col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
+            <img id="imagenPrincipal" class="img-fluid rounded" src="assets/interact_acordeon.jpg"
+                alt="Hombre leyendo un libro">
         </div>
-        <div class="col-12 col-lg-6">
-            <div class="col-12 mb-2 textParrafo pb-2">
+        <div class="col-12 col-lg-6 ">
+            <div id="textoAcordeon" class="col-12 mb-2 textParrafo animate__animated animate__fadeInDownBig	ann2">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi veniam nostrum et libero earum. Sunt
                 earum asperiores magnam nulla. Dolorum atque molestiae nostrum accusantium tempora, voluptates quae
                 nesciunt voluptas quos!
             </div>
-            <div class="col-12">
+            <div class="col-12 animate__animated animate__fadeInRight ann3">
                 <div id="accordion" class="accordion">
                     <div class="card text-white acc1 custom-accordion mb-2">
-                        <div class="card-header d-flex justify-content-center hand" id="headingOne" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <div class="card-header d-flex justify-content-center hand" id="headingOne"
+                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                            aria-controls="collapseOne">
                             <h5 class="mb-0">
                                 <button class="btn acordeonActionBtn">
                                     <i class="fas fa-plus textParrafo"></i> <b> Diseño escalable o responsivo </b>
                                 </button>
                             </h5>
                         </div>
-    
                         <div id="collapseOne" class="collapse bg-custom" aria-labelledby="headingOne"
                             data-parent="#accordion">
                             <div class="card-body textParrafo">
                                 <p class="reset">
-                                    Anque los materiales que diseñamos se alinean 100% a la imagen de la empresa, es necesario
+                                    Anque los materiales que diseñamos se alinean 100% a la imagen de la empresa, es
+                                    necesario
                                     saber cuándo los contenidos deben ser escalables o responsivos, según el tipo de
-                                    dispositivo, audiencia y tipo de información.    
+                                    dispositivo, audiencia y tipo de información.
                                 </p>
                             </div>
-                            <!-- 
-                            <button class="col-12 btn btn-success btn btn-primary closeCollapse" data-toggle="collapse"
-                                data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
-                                style="background-color: #ED7D31; border-color: #ED7D31;">Close</button> -->
                         </div>
                     </div>
                     <div class="card text-white acc2 custom-accordion mb-2">
-                        <div class="card-header hand d-flex justify-content-center" id="headingTwo" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="card-header hand d-flex justify-content-center" id="headingTwo"
+                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
                             <h5 class="mb-0">
                                 <button class="btn acordeonActionBtn collapsed">
                                     <i class="fas fa-plus textParrafo"></i> <b>Multidispositivo</b>
@@ -139,19 +115,19 @@
                         <div id="collapseTwo" class="collapse bg-custom" aria-labelledby="headingTwo"
                             data-parent="#accordion">
                             <div class="card-body textParrafo">
-                                <p class="reset">Desarrollamos los materiales de capacitación con tecnología de punta capaz de adaptarse a
-                                    cualquier pantalla, en cualquier dispositivo. El usuario puede tomar un curso desde su
+                                <p class="reset">Desarrollamos los materiales de capacitación con tecnología de punta
+                                    capaz de adaptarse a
+                                    cualquier pantalla, en cualquier dispositivo. El usuario puede tomar un curso desde
+                                    su
                                     computadora y continuarlo en su smartphone o Tablet, administrando su tiempo.
                                 </p>
-                                <!-- <button class="col-12 btn btn-success btn btn-primary closeCollapse" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                                    style="background-color: #ED7D31; border-color: #ED7D31;">Close</button> -->
                             </div>
                         </div>
                     </div>
                     <div class="card text-white acc3 custom-accordion mb-2">
-                        <div class="card-header hand d-flex justify-content-center" id="headingThree" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="card-header hand d-flex justify-content-center" id="headingThree"
+                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
                             <h5 class="mb-0">
                                 <button class="btn acordeonActionBtn collapsed">
                                     <i class="fas fa-plus textParrafo"></i> <b>Experiecia de usuario e interfase </b>
@@ -161,20 +137,18 @@
                         <div id="collapseThree" class="collapse bg-custom" aria-labelledby="headingTwo"
                             data-parent="#accordion">
                             <div class="card-body textParrafo">
-                                <p class="reset">Es necesaria una buena experiencia de usuario e interfase del curso para una efectiva
+                                <p class="reset">Es necesaria una buena experiencia de usuario e interfase del curso
+                                    para una efectiva
                                     capacitación pensando en el usuario final, además de una correcta estrategia de
                                     capacitación.
-    
                                 </p>
-                                <!-- <button class="col-12 btn btn-success btn btn-primary closeCollapse" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
-                                    style="background-color: #ED7D31; border-color: #ED7D31;">Close</button> -->
                             </div>
                         </div>
                     </div>
                     <div class="card text-white acc4 custom-accordion">
-                        <div class="card-header hand d-flex justify-content-center" id="headingFour" data-toggle="collapse"
-                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <div class="card-header hand d-flex justify-content-center" id="headingFour"
+                            data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                            aria-controls="collapseFour">
                             <h5 class="mb-0">
                                 <button class="btn acordeonActionBtn collapsed">
                                     <i class="fas fa-plus textParrafo"></i> <b>Compatibilida Scorm (LMS)</b>
@@ -184,17 +158,11 @@
                         <div id="collapseFour" class="collapse bg-custom" aria-labelledby="headingTwo"
                             data-parent="#accordion">
                             <div class="card-body textParrafo">
-                                <p class="reset">Un sistema de gestion en la nube que administre los temas, actividades y evaluaciones es
+                                <p class="reset">Un sistema de gestion en la nube que administre los temas, actividades
+                                    y evaluaciones es
                                     esencial para una buena organización de los cursos. Podemos recomendarte la mejor
                                     solución según el reto de tu empresa.
                                 </p>
-                                <!-- <p style="text-align: center;">
-                                    <button class="col-12 col-lg-4 btn btn-success btn btn-primary closeCollapse"
-                                        data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour"
-                                        style="background-color: #ED7D31; border-color: #ED7D31;">Close</button>
-                                </p> -->
-    
                             </div>
                         </div>
                     </div>
@@ -205,19 +173,21 @@
 </div>
 
 <script>
+    // var tl = null;
+
     $("#document").ready(function () {
         let lastClicked = null;
         let clicked = [false, false, false, false];
         let nBotonesAcordeon = 4;
+        let terminado = false;
 
         $(".btn").on("click", () => {
             let nId = $("#" + $(this)[0].activeElement.id).data("btn-id");
         });
-
-        var tl = gsap.timeline({ defaults: { duration: 0.5 } });
+        tl = gsap.timeline({ defaults: { duration: 0.5 } });
         iniciar_tema();
         // animateAvatar(startAnimating());
-        startAnimating();
+
         function animateAvatar(callback) {
             setTimeout(() => {
                 $("#bloque1").removeClass("col-12 col-lg-6");
@@ -227,18 +197,15 @@
             callback;
         }
         function startAnimating() {
-            // tl.to($("#bloque1"), { scaleX: 1, scaleY: 1, duration: 0.5 })
-            //     .fromTo("#bloque2_1", { x: $("#bloque2_1").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
-            //     .fromTo("#accordion", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+            const animacionEntrada = { "derecha": 9999, "izquierda": -9999, "arriba": -30, "abajo": 9999 }
 
-            tl.fromTo("#accordion", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
-
+            tl.fromTo("#imagenPrincipal", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                .fromTo("#textoAcordeon", { x: $("#textoAcordeon").position().top + 5, opacity: 0 }, { x: 0, opacity: 1 })
+                .fromTo("#accordion", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 });
         }
 
         function resetAcordeon() { //Resetear el icono si esta rotado
             $('.card-header').map((index, elem) => {
-                // $('.acordeonActionBtn').map((index, elem) => {
-
                 if ($("#" + elem.id).find("i").hasClass("rotate-icon")) {
                     $("#" + elem.id)
                         .find("i")
@@ -294,7 +261,8 @@
                 }
             }
 
-            if (completado) {
+            if (completado && !terminado) {
+                terminado = true;
                 final_tema();
             }
         }
@@ -315,5 +283,7 @@
             clicked[3] = true;
             checkCompletado()
         })
+
+        // startAnimating();
     });
 </script>

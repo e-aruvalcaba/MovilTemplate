@@ -12,7 +12,7 @@ Notas:
 //Variables Globales
 window.start = this;
 var termino = false;
-var banderillas = true;
+var banderillas = false;
 var Rutas = new Array();
 var Pag = new Array();
 var PagTotal = 0;
@@ -158,9 +158,8 @@ function loadContent(path) {
     // enterPageTransition();
     $('#content').load(path, () => {
         // ¿Que hacer al cargar el contenido?
-        setTimeout(() => {
-            gsap.to($('#content'), { duration: 0.5, opacity: 1 })
-        }, 1000);
+        gsap.to($('#content'), { duration: 0.5, opacity: 1 })
+
     });
 }
 
@@ -268,7 +267,7 @@ function callMenu() {
     }
     actualizar_menuHTML(TRAK);
 
-    $('#sidebarCol').prop( "disabled", true );
+    $('#sidebarCol').prop("disabled", true);
 
 }
 
@@ -471,9 +470,9 @@ function populateMenu(jsonob) {
 
 }// end PopulateMenu function
 
-function cambiarColorFranjas(estilo){
+function cambiarColorFranjas(estilo) {
     let gtl = gsap.timeline();
-    
+
     switch (estilo) {
         case "portada":
             gtl.to($("#body"), { duration: 0.2, backgroundColor: "#f5f5f5" }); //shorter syntax!            
@@ -921,6 +920,9 @@ function guardarDatos() {
         guardaLocalStorage(obj);
     }
 }
+function comenzarCurso() {
+    ir(0);
+}
 /**
  * @param {*}id ID del tema a cargar
  * @returns void
@@ -951,10 +953,7 @@ function ir(id) {
     // }
 
     // Nueva carga de temas
-    setTimeout(() => {
-        loadContent(Rutas[id]);
-        // window.onresize();
-    }, 500);
+    loadContent(Rutas[id]);
 
     IDActual = id;
 
