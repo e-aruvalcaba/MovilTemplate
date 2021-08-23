@@ -200,7 +200,6 @@ function addNextAnimation() {
     $(".float").css("y", "0px")
     $(".float").addClass("nextAnimation");
 }
-
 // function resizeMenuHeight() {
 //     // Setear el height del contenedor para que no haga scroll al aparecer
 //     debugger

@@ -4,12 +4,19 @@
   margin-bottom: 0%!important;
 }
 
-body {
-  /* margin-top: 56px; */
-  /* background-color: "#fefefe"; */
+.modal-backdrop {
+  /* background-color: red; */
+  opacity: 0.85!important;
 }
 
 /* CONFIGURACION DE TEXTOS PARA EL TEMPLATE */
+.popup{
+    display: none!important;
+}
+
+.parrafoModal{
+  max-height: 500px;
+}
 
 .p-st {
   font-size: 18px !important;

@@ -1,0 +1,395 @@
+<style>
+    .hand {
+        cursor: pointer;
+    }
+
+    .naranja {
+        background-color: #66CCFF !important;
+    }
+
+    .bg-custom {
+        background-color: white;
+    }
+
+    .paddingUpDown {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .btn-animado {
+        transition: 100ms;
+        animation: parpadeo 4s ease 3s infinite;
+    }
+
+    .accordion .card-header i {
+        -moz-transition: -moz-transform 0.5s ease-in-out;
+        -o-transition: -o-transform 0.5s ease-in-out;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .rotate-icon {
+        -webkit-transform: rotate(-225deg);
+        -moz-transform: rotate(-225deg);
+        transform: rotate(-225deg);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .custom-accordion {
+        background-color: #00B0F0 !important;
+        border: none !important;
+    }
+
+    @media (max-width: 900px) {
+        .animatedSvg {
+            margin: auto !important;
+        }
+    }
+
+    .ann1 {
+        animation-delay: 0.5s;
+    }
+
+    .ann2 {
+        /* --animate-duration: 1.4s; */
+        animation-delay: 1s;
+    }
+
+    .ann3 {
+        /* animation-duration: 11s; */
+        animation-delay: 2s;
+        /* --animate-duration: 11.8s; */
+    }
+
+    .primary {
+        background-color: #3366FF;
+    }
+
+    .success {
+        background-color: #3DC64D;
+    }
+
+    .info {
+        background-color: #CCDDF8;
+    }
+
+    .warning {
+        background-color: #FFF135;
+    }
+
+    .danger {
+        background-color: #FF442B;
+    }
+
+    .pop-button {
+        height: 4rem;
+        font-size: 20px;
+        transition: .5s;
+        background-color: #ED7D31; 
+        border-radius: 10px;
+    }
+
+    .pop-button:hover {
+        background-color: rgb(170, 170, 170) !important;
+        color: white;
+        /* border: 2px solid #373737; */
+    }
+
+    .limitedWidht {
+        width: 75%;
+        max-width: 75% !important;
+    }
+
+    .iconoPopup {
+        font-size: 30px;
+        text-align: center;
+        background-color: royalblue;
+        width: 60px;
+        height: 60px;
+        color: ghostwhite;
+    }
+
+    .parpadeo {
+        animation: blinker 1.5s linear infinite;
+    }
+
+    .popupDeshabilitado{
+        background-color: #B7B7B7;
+    }
+
+    @keyframes blinker {
+        0% {
+            background-color: #B7B7B7;
+            /* opacity: 0; */
+        }
+
+        50% {
+            background-color: #D4D4D4;
+            /* opacity: 0; */
+        }
+
+        100% {
+            background-color: #B7B7B7;
+            /* opacity: 0; */
+        }
+    }
+</style>
+
+<div class="container-fluid contenedorAnimado mb-5 animate__animated animate__fadeIn">
+    <div class="row animate__animated animate__slideInLeft ann1">
+        <div class="col-12 textTitulo d-flex justify-content-start align-items-center pt-2 pb-4">
+            <p class="reset" style="font-size: 20px;">Tema 2: Tecnología y características</p>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-12 paddingUpDown d-lg-flex reset">
+
+        <div class="col-12 col-lg-6 d-column ">
+            <div id="textoAcordeon" class="col-12 mb-4 textParrafo animate__animated animate__fadeInRight ann2">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi veniam nostrum et libero earum. Sunt
+                earum asperiores magnam nulla. Dolorum atque molestiae nostrum accusantium tempora, voluptates quae
+                nesciunt voluptas quos!
+            </div>
+
+            <!-- ICONOS DE FONT AWESOME O CUALQUIER OTRA LIBRERIA -->
+            <div class="col-11 p-0 pt-2 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
+                    <button id="b1" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary parpadeo pl-0"
+                        data-toggle="modal" data-target="#modal" data-rid="1">
+                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                            style="background-color: unset;"></i>
+                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                            texto de prueba</p>
+                    </button>
+                </div>
+
+                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
+                    <button id="b2" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                        data-toggle="modal" data-target="#modal" data-rid="2">
+                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                            style="background-color: unset;"></i>
+                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                            texto de prueba</p>
+                    </button>
+                </div>
+
+                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
+                    <button id="b3" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                        data-toggle="modal" data-target="#modal" data-rid="3">
+                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                            style="background-color: unset;"></i>
+                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                            texto de prueba</p>
+                    </button>
+                </div>
+
+                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
+                    <button id="b4" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                        data-toggle="modal" data-target="#modal" data-rid="4">
+                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                            style="background-color: unset;"></i>
+                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                            texto de prueba</p>
+                    </button>
+                </div>
+
+                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
+                    <button id="b5" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                        data-toggle="modal" data-target="#modal" data-rid="5">
+                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                            style="background-color: unset;"></i>
+                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                            texto de prueba</p>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="d-none d-lg-flex col-lg-6 animate__animated animate__fadeIn ann3 ann1">
+            <img id="imagenPrincipal" class="img-fluid rounded" src="assets/interact_acordeon.jpg"
+                alt="Hombre leyendo un libro">
+        </div>
+    </div>
+
+    <script>
+        iniciar_tema();
+        $("#document").ready(function () {
+            let nBotones = 5;
+            let vistos = [false, false, false, false, false];
+            let currentAnimated = 1;
+
+            deshabilitarBotones();
+
+            $(".pop-button").click(function (e) {
+                let currentButton = e.currentTarget.dataset.rid;
+                $("#tituloPopup").html("Se clickeo el boton " + currentButton);
+                // Se enviara al modal el contenido que se necesite cargar basado en el id del boton clickeado
+                $("#textoPopup").html("Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!");
+
+                if(currentButton > 4){
+                    $("#textoPopup").html("Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!");
+                }
+
+                vistos[currentButton - 1] = true;
+                avanzarAnimacion(e.currentTarget.id);
+                checkCompletado();
+            });
+
+            function avanzarAnimacion(e) {
+                $("#" + e).removeClass("parpadeo");
+                $("#" + e).removeClass("popupDeshabilitado");
+                let id = $("#" + e).data("rid");
+                if (id < nBotones) {
+                    $("#b" + (id + 1)).addClass("parpadeo");
+                    habilitarBtns(id + 1);
+                }
+            }
+
+            function deshabilitarBotones() {
+                for (let i = 2; i <= nBotones; i++) {
+                    $("#b" + i).css("pointerEvents", "none");
+                }
+            }
+
+            function habilitarBtns(b) {
+                $("#b" + b).css("pointerEvents", "all");
+            }
+
+            function checkCompletado(){
+                let completo = true;
+
+                for (let i = 0; i < vistos.length; i++) {
+                    if(!vistos[i]){
+                        completo = false;
+                    }
+                }
+
+                if(completo){
+                    final_tema();
+                }
+
+            }
+
+            // $("#tituloPopup").html("Configuraciones necesarias para una buena ambientacion"); 
+
+
+
+            // $(".pop-button").click(function(){
+            //     showModal();
+            // });
+
+            // $('#myModal').on('shown.bs.modal', function () {
+            //     $('#myInput').trigger('focus')
+            // })
+
+            // let lastClicked = null;
+            // let clicked = [false, false, false, false];
+            // let nBotonesAcordeon = 4;
+            // let terminado = false;
+
+            // $(".btn").on("click", () => {
+            //     let nId = $("#" + $(this)[0].activeElement.id).data("btn-id");
+            // });
+            // tl = gsap.timeline({ defaults: { duration: 0.5 } });
+            // iniciar_tema();
+            // // animateAvatar(startAnimating());
+
+            // function animateAvatar(callback) {
+            //     setTimeout(() => {
+            //         $("#bloque1").removeClass("col-12 col-lg-6");
+            //         $("#bloque1").addClass("col-6 col-lg-4");
+            //         $("#gif").css("animationPlayState: running");
+            //     }, 1500);
+            //     callback;
+            // }
+            // function startAnimating() {
+            //     const animacionEntrada = { "derecha": 9999, "izquierda": -9999, "arriba": -30, "abajo": 9999 }
+
+            //     tl.fromTo("#imagenPrincipal", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 })
+            //         .fromTo("#textoAcordeon", { x: $("#textoAcordeon").position().top + 5, opacity: 0 }, { x: 0, opacity: 1 })
+            //         .fromTo("#accordion", { x: $("#accordion").position().left + 5, opacity: 0 }, { x: 0, opacity: 1 });
+            // }
+
+            // function resetAcordeon() { //Resetear el icono si esta rotado
+            //     $('.card-header').map((index, elem) => {
+            //         if ($("#" + elem.id).find("i").hasClass("rotate-icon")) {
+            //             $("#" + elem.id)
+            //                 .find("i")
+            //                 .toggleClass('rotate-icon');
+            //         }
+            //     })
+            // }
+
+            // $('.card-header').on("click", function (e) {
+            //     manageAccordion(1);
+            //     setTimeout(() => {
+            //         manageAccordion(2);
+            //     }, 300); //Administrar el tiempo dependiendo del contenido del acordeon.
+            //     if (lastClicked !== null && e.currentTarget.id === lastClicked[0].id) {
+            //         lastClicked
+            //             .find("i")
+            //             .toggleClass('rotate-icon');
+
+            //         lastClicked = null;
+            //         return;
+            //     }
+            //     resetAcordeon();
+            //     $(this)
+            //         .find("i")
+            //         .addClass('rotate-icon');
+            //     lastClicked = $(this);
+            // })
+
+            // $('.closeCollapse').on("click", function (e) {
+            //     resetAcordeon();
+            // })
+
+            // function manageAccordion(action) {
+            //     let value;
+            //     switch (action) {
+            //         case 1:
+            //             value = 'none';
+            //             break;
+            //         case 2:
+            //             value = 'all';
+            //             break;
+            //     }
+            //     $("#accordion").css('pointerEvents', value);
+            // }
+
+            // function checkCompletado() {
+            //     let completado = true;
+
+            //     for (let i = 0; i < nBotonesAcordeon; i++) {
+            //         if (!clicked[i]) {
+            //             completado = false;
+            //             break;
+            //         }
+            //     }
+
+            //     if (completado && !terminado) {
+            //         terminado = true;
+            //         final_tema();
+            //     }
+            // }
+
+            // $('.acc1').on("click", function (e) {
+            //     clicked[0] = true;
+            //     checkCompletado()
+            // })
+            // $('.acc2').on("click", function (e) {
+            //     clicked[1] = true;
+            //     checkCompletado()
+            // })
+            // $('.acc3').on("click", function (e) {
+            //     clicked[2] = true;
+            //     checkCompletado()
+            // })
+            // $('.acc4').on("click", function (e) {
+            //     clicked[3] = true;
+            //     checkCompletado()
+            // })
+
+            // startAnimating();
+        });
+    </script>
