@@ -477,7 +477,7 @@ function cambiarColorFranjas(estilo) {
             gtl.to($("#body"), { duration: 0.2, backgroundColor: "#f5f5f5" }); //shorter syntax!            
             break;
         case "reset":
-            gtl.to($("#body"), { duration: 0.2, backgroundColor: "#ffffff" }); //shorter syntax!            
+            gtl.to($("#body"), { duration: 0.2, backgroundColor: "#f0f0f0" }); //shorter syntax!            
             break;
     }
 
@@ -491,7 +491,7 @@ function cambiarColorFranjas(estilo) {
  */
 function llamarTema(id) {
     let aaa = gsap.timeline();
-    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#ffffff" }); //shorter syntax!
+    aaa.to($(".contenido"), { duration: 0.2, backgroundColor: "#f5f5f5" }); //shorter syntax!
 
     ir(id);
     cerrarMenu();

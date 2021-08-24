@@ -1,4 +1,8 @@
 <style>
+    .contenedorPrincipal1>* {
+        line-height: 25px !important;
+    }
+
     .hand {
         cursor: pointer;
     }
@@ -82,10 +86,10 @@
     }
 
     .pop-button {
-        height: 4rem;
+        height: 3.7rem;
         font-size: 20px;
         transition: .5s;
-        background-color: #ED7D31; 
+        background-color: #ED7D31;
         border-radius: 10px;
     }
 
@@ -113,7 +117,7 @@
         animation: blinker 1.5s linear infinite;
     }
 
-    .popupDeshabilitado{
+    .popupDeshabilitado {
         background-color: #B7B7B7;
     }
 
@@ -135,79 +139,89 @@
     }
 </style>
 
-<div class="container-fluid contenedorAnimado mb-5 animate__animated animate__fadeIn">
+<div class="contenedorPrincipal1 container-fluid contenedorAnimado mb-5 animate__animated animate__fadeIn">
     <div class="row animate__animated animate__slideInLeft ann1">
         <div class="col-12 textTitulo d-flex justify-content-start align-items-center pt-2 pb-4">
             <p class="reset" style="font-size: 20px;">Tema 2: Tecnología y características</p>
         </div>
     </div>
 
-    <div class="col-12 col-lg-12 paddingUpDown d-lg-flex reset">
+    <div class="col-12 col-lg-12 paddingUpDown d-lg-flex reset" style="padding-bottom: 40px">
 
         <div class="col-12 col-lg-6 d-column ">
-            <div id="textoAcordeon" class="col-12 mb-4 textParrafo animate__animated animate__fadeInRight ann2">
+            <div id="textoAcordeon" class="col-12 mb-2 textParrafo animate__animated animate__fadeInDownBig ann2">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi veniam nostrum et libero earum. Sunt
                 earum asperiores magnam nulla. Dolorum atque molestiae nostrum accusantium tempora, voluptates quae
                 nesciunt voluptas quos!
             </div>
 
             <!-- ICONOS DE FONT AWESOME O CUALQUIER OTRA LIBRERIA -->
-            <div class="col-11 p-0 pt-2 animate__animated animate__fadeInUp animate__delay-1s">
-                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
-                    <button id="b1" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary parpadeo pl-0"
+            <div class="col-11 p-0 pt-2 animate__animated animate__fadeIn animate__delay-1s">
+                <div class="col-12 p-0 mb-1 d-flex justify-content-between align-items-center">
+                    <button id="b1"
+                        class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary parpadeo pl-0"
                         data-toggle="modal" data-target="#modal" data-rid="1">
                         <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
                             style="background-color: unset;"></i>
-                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
-                            texto de prueba</p>
+                        <p class="reset d-flex justify-content-center"
+                            style="text-align: left!important; line-height: 25px!important;"> Este es un
+                            texto de prueba con 2 lineas</p>
                     </button>
                 </div>
 
-                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
-                    <button id="b2" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                <div class="col-12 p-0 mb-1 d-flex justify-content-between align-items-center">
+                    <button id="b2"
+                        class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
                         data-toggle="modal" data-target="#modal" data-rid="2">
-                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                        <i class="d-flex justify-content-start far fa-angry p-3 rounded-circle iconoPopup"
                             style="background-color: unset;"></i>
-                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                        <p class="reset d-flex justify-content-center"
+                            style="text-align: left!important; line-height: 25px!important;"> Este es un
                             texto de prueba</p>
                     </button>
                 </div>
 
-                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
-                    <button id="b3" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                <div class="col-12 p-0 mb-1 d-flex justify-content-between align-items-center">
+                    <button id="b3"
+                        class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
                         data-toggle="modal" data-target="#modal" data-rid="3">
-                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                        <i class="d-flex justify-content-start fas fa-atom p-3 rounded-circle iconoPopup"
                             style="background-color: unset;"></i>
-                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                        <p class="reset d-flex justify-content-center"
+                            style="text-align: left!important; line-height: 25px!important;"> Este es un
                             texto de prueba</p>
                     </button>
                 </div>
 
-                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
-                    <button id="b4" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                <div class="col-12 p-0 mb-1 d-flex justify-content-between align-items-center">
+                    <button id="b4"
+                        class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
                         data-toggle="modal" data-target="#modal" data-rid="4">
-                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                        <i class="d-flex justify-content-start fas fa-bell p-3 rounded-circle iconoPopup"
                             style="background-color: unset;"></i>
-                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                        <p class="reset d-flex justify-content-center"
+                            style="text-align: left!important; line-height: 25px!important;"> Este es un
                             texto de prueba</p>
                     </button>
                 </div>
 
-                <div class="col-12 p-0 mb-3 d-flex justify-content-between align-items-center">
-                    <button id="b5" class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
+                <div class="col-12 p-0 mb-1 d-flex justify-content-between align-items-center">
+                    <button id="b5"
+                        class="btn col-12 d-flex align-items-center col-lg-12 pop-button primary pl-0 popupDeshabilitado"
                         data-toggle="modal" data-target="#modal" data-rid="5">
-                        <i class="d-flex justify-content-start fab fa-accessible-icon p-3 rounded-circle iconoPopup"
+                        <i class="d-flex justify-content-start fab fa-bitcoin p-3 rounded-circle iconoPopup"
                             style="background-color: unset;"></i>
-                        <p class="reset d-flex justify-content-center" style="text-align: center!important;"> Este es un
+                        <p class="reset d-flex justify-content-center"
+                            style="text-align: left!important; line-height: 25px!important;"> Este es un
                             texto de prueba</p>
                     </button>
                 </div>
             </div>
-            
+
         </div>
-        <div class="d-none d-lg-flex col-lg-6 animate__animated animate__fadeIn ann3 ann1">
-            <img id="imagenPrincipal" class="img-fluid rounded" src="assets/interact_acordeon.jpg"
-                alt="Hombre leyendo un libro">
+        <div class="d-none d-lg-flex justify-content-center col-lg-6 animate__animated animate__fadeIn ann3 ann1">
+            <img id="imagenPrincipal" class="img-fluid rounded col-lg-9" src="assets/interact_acordeon.jpg"
+            alt="Hombre leyendo un libro" style="max-height: 689px!important;">
         </div>
     </div>
 
@@ -226,7 +240,7 @@
                 // Se enviara al modal el contenido que se necesite cargar basado en el id del boton clickeado
                 $("#textoPopup").html("Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!");
 
-                if(currentButton > 4){
+                if (currentButton > 4) {
                     $("#textoPopup").html("Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur, fuga placeat obcaecati iste quibusdam et recusandae numquam tempora sed. Dolores nam quae consequuntur inventore suscipit, itaque adipisci illum distinctio!");
                 }
 
@@ -239,9 +253,10 @@
                 $("#" + e).removeClass("parpadeo");
                 $("#" + e).removeClass("popupDeshabilitado");
                 let id = $("#" + e).data("rid");
-                if (id < nBotones) {
+                if (id < nBotones && $("#b" + (id + 1)).prop("visto") !== true) {
                     $("#b" + (id + 1)).addClass("parpadeo");
                     habilitarBtns(id + 1);
+                    $("#b" + (id + 1)).prop("visto", true);
                 }
             }
 
@@ -255,16 +270,16 @@
                 $("#b" + b).css("pointerEvents", "all");
             }
 
-            function checkCompletado(){
+            function checkCompletado() {
                 let completo = true;
 
                 for (let i = 0; i < vistos.length; i++) {
-                    if(!vistos[i]){
+                    if (!vistos[i]) {
                         completo = false;
                     }
                 }
 
-                if(completo){
+                if (completo) {
                     final_tema();
                 }
 

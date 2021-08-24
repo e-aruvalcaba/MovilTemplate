@@ -2,11 +2,12 @@
   /* font-size: 100%; */
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 0%!important;
+  /* line-height: 25px!important; */
 }
 
 .modal-backdrop {
-  /* background-color: red; */
-  opacity: 0.85!important;
+  /* background-color: red!important; */
+  opacity: 0.70!important;
 }
 
 /* CONFIGURACION DE TEXTOS PARA EL TEMPLATE */
@@ -24,6 +25,11 @@
 
 .t-st {
   font-size: 20px !important;
+}
+
+.contenedorPrincipal1{
+  background-color: white!important;
+  padding-bottom: 40px;
 }
 
 /* TERMINAN ESTILOS PARA TEXTOS DEL TEMPLATE */
@@ -64,7 +70,7 @@
 
 .pdNav {
   width: 100%;
-  padding-top: 56px !important;
+  padding-top: 40px !important;
 }
 
 a {
@@ -113,6 +119,7 @@ footer {
   transition-duration: 0.3s;
   height: 90vw;
   transition-timing-function: cubic-bezier(0.2s, 0.2s, 0.2s, 0.2s);
+  /* background-color: #f5f5f5!important; */
 }
 
 .contenido {
@@ -283,7 +290,7 @@ footer {
   .offcanvas-collapse {
     display: block;
     position: fixed;
-    top: 56px;
+    top: 40px;
     /* Height of navbar */
     bottom: 0;
     left: 100%;
@@ -881,11 +888,11 @@ h1 {
 /* QUITAR ESTA LINEA PARA VOLVER A LA BARRA FIXED 20 AGOSTO 2021 */
 @media(min-width: 1280px){
   .contenido{
-    margin-top: 56px!important;
+    margin-top: 40px!important;
   }
   .menu-show{
     position: fixed;
-    margin-top: 56px;
+    margin-top: 40px;
   }
 }
 

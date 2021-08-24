@@ -1,4 +1,8 @@
 <style>
+    .contenedorPrincipal1 {
+        line-height: 25px !important;
+    }
+
     .hand {
         cursor: pointer;
     }
@@ -40,12 +44,6 @@
         border: none !important;
     }
 
-    @media (max-width: 900px) {
-        .animatedSvg {
-            margin: auto !important;
-        }
-    }
-
     .ann1 {
         animation-delay: 0.5s;
     }
@@ -62,7 +60,7 @@
     }
 </style>
 
-<div class="container-fluid contenedorAnimado mb-5 animate__animated animate__fadeIn">
+<div class="contenedorPrincipal1 container-fluid contenedorAnimado mb-5 animate__animated animate__fadeIn" style="height: 100%;">
     <div class="row animate__animated animate__slideInLeft ann1">
         <div class="col-12 textTitulo d-flex justify-content-start align-items-center pt-2 pb-4">
             <p class="reset" style="font-size: 20px;">Tema 1: Tecnología y características</p>
@@ -70,9 +68,10 @@
     </div>
 
     <div class="col-12 col-lg-12 paddingUpDown d-lg-flex reset">
-        <div class="d-none d-lg-flex align-items-start col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
-            <img id="imagenPrincipal" class="img-fluid rounded" src="assets/interact_acordeon.jpg"
-                alt="Hombre leyendo un libro" style="    max-height: 689px!important;">
+        <div
+            class="d-none d-lg-flex justify-content-center align-items-start col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
+            <img id="imagenPrincipal" class="img-fluid rounded col-lg-9" src="assets/interact_acordeon.jpg"
+                alt="Hombre leyendo un libro" style="max-height: 689px!important;">
         </div>
         <div class="col-12 col-lg-6 ">
             <div id="textoAcordeon" class="col-12 mb-2 textParrafo animate__animated animate__fadeInDownBig	ann2">
@@ -80,7 +79,7 @@
                 earum asperiores magnam nulla. Dolorum atque molestiae nostrum accusantium tempora, voluptates quae
                 nesciunt voluptas quos!
             </div>
-            <div class="col-12 animate__animated animate__fadeInRight ann3">
+            <div class="col-12 animate__animated animate__fadeIn ann3">
                 <div id="accordion" class="accordion">
                     <div class="card text-white acc1 custom-accordion mb-2">
                         <div class="card-header d-flex justify-content-center hand p-0" id="headingOne"

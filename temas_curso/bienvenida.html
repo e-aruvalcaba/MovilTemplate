@@ -1,4 +1,9 @@
 <style>
+
+    .contenedorPrincipal1{
+        line-height: 25px!important;
+    }
+
     .btn-objetivos {
         width: 125px !important;
         color: black;
@@ -6,11 +11,12 @@
         background-color: ghostwhite;
         height: 100%;
     }
+
     .btn-objetivos :hover {
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 
-    .objetivos{
+    .objetivos {
         height: 100%;
     }
 
@@ -19,13 +25,17 @@
     }
 
     @media (min-width: 989px) {
+        li {
+            padding-bottom: 10px;
+        }
+
         .objetivos {
             float: right;
-            height: 675px!important;
+            height: 560px !important;
         }
 
         .contenedor {
-            max-width: 400px;
+            max-width: 450px;
         }
 
         .fondoPrincipal {
@@ -34,39 +44,36 @@
             /* background-size: cover; */
         }
     }
-    
 </style>
 
-<div class="container-fluid mb-5 p-0 fondoPrincipal animate__animated animate__fadeIn" style="height: 100%;">
+<div class="container-fluid mb-5 p-0 fondoPrincipal animate__animated animate__fadeIn contenedorPrincipal1" style="height: 100%; background-color: #f5f5f5!important;">
     <div class="col-12 col-lg-4 objetivos contenedor" style="background-color: #CF112B; opacity: 0.8!important;">
         <div class="div pt-4 contenedorObjetivos">
             <div class="col-12 col-lg-12">
                 <div class="col-12 d-flex justify-content-center align-items-center pb-3">
                     <img class="img-fluid rounded-circle" src="assets/mujer_mascara.png" alt="">
                 </div>
-                <div class="col-12 pb-5" style="max-height: 420px!important; overflow: hidden; overflow-y: auto;"> 
+                <div class="col-12 pb-5" style="max-height: 300px!important; overflow: hidden; overflow-y: auto;">
                     <p id="titulo" class="col-12 reset textTitulo t-white" style="padding-bottom: 10px!important">
                         Bienvenida
                     </p>
-                    <p id="textoObjetivo" class="col-12 reset textParrafo t-white">
+                    <p id="textoObjetivo" class="col-12 reset textParrafo t-white pb-2">
                         Bienvenido al curso Recuperación de Cartera de Crédito.
-                        <br>
-                        <br>
-                        Observa los objetivos que perseguimos y los temas que abordamos.
-
                     </p>
+                    <p class="col-12 reset textParrafo t-white" style="margin-bottom: 10px!important;">
+                        Observa los objetivos que perseguimos y los temas que abordamos.
+                    </p>
+                
                     <div id="objetivos" class="col-12">
-                        <p class="reset textParrafo t-white">
+                        <!-- <p class="reset textParrafo t-white" style="margin-bottom: 10px;">
                             Como resultado de este curso:
-                        </p>
-                        <br>
+                        </p> -->
                         <ul class="reset textParrafo t-white">
                             <li>
                                 Conocerás las políticas, métodos, técnicas e indicadores institucionales relacionados
                                 con la
                                 recuperación de cartera de crédito.
                             </li>
-                            <br>
                             <li>
                                 Comprenderás los elementos clave de la comunicación asertiva y de la negociación
                                 efectiva
@@ -113,7 +120,7 @@
 <script>
     iniciar_tema();
     $("#document").ready(function () {
-        let completado = [false,false];
+        let completado = [false, false];
 
         $("#contenidos").hide();
         $("#objetivos").hide();
@@ -139,8 +146,8 @@
             checkCompletado();
         });
 
-        function checkCompletado(){
-            if(completado[0] && completado[1]){
+        function checkCompletado() {
+            if (completado[0] && completado[1]) {
                 final_tema();
             }
         }
